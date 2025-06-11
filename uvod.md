@@ -1,197 +1,166 @@
 # Úvod
 
-## Python
+# Prečo sa oplatí učiť Python
 
-Python je všeobecný, dynamický, objektovo orientovaný programovací jazyk.
-Jeho dizajn kladie dôraz na produktivitu programátora a čitateľnosť kódu.
+Python je programovací jazyk, ktorý je dnes mimoriadne populárny – a to nielen medzi profesionálnymi programátormi, ale aj medzi ľuďmi, ktorí s programovaním začínajú v dospelosti. Je výbornou voľbou pre tých, ktorí chcú preniknúť do sveta technológií, zautomatizovať si prácu alebo sa naučiť pracovať s dátami.
 
-Python pôvodne vyvinul Guido van Rossum.
-Prvá verzia bola vydaná v roku 1991.
+Python vznikol začiatkom 90. rokov, ale práve v poslednom desaťročí sa stal štandardom v mnohých odvetviach – od webového vývoja cez dátovú analytiku až po umelú inteligenciu. Dôvod? Má jednoduchú a zrozumiteľnú syntax, ktorá sa podobá bežnému jazyku, vďaka čomu je ideálny na učenie.
 
-Python bol inšpirovaný týmito jazykmi:
+## Čo robí Python výnimočným pre začiatočníkov:
 
-* ABC
-* Haskell
-* Java
-* Lisp
-* Icon
-* Perl
+* **Čitateľný kód** – namiesto zložitých zátvoriek používa odsadenie, čím sa kód ľahko číta.
+* **Jeden jazyk – mnoho možností** – dá sa použiť na automatizáciu, analýzu dát, tvorbu webových stránok, skriptovanie, aj na prácu s databázami.
+* **Silná komunita a množstvo zdrojov** – na internete je obrovské množstvo tutoriálov, videí a kníh.
+* **Podpora moderných nástrojov** – ako Jupyter Notebook, Anaconda alebo Visual Studio Code, ktoré vám prácu výrazne uľahčia.
 
-Python je vysokoúrovňový, všeobecný, multiplatformový, interpretovaný jazyk.
-Spravuje ho veľká komunita dobrovoľníkov po celom svete. Python je open source.
+Navyše, Python je zadarmo a funguje na Windows, macOS aj Linuxe. Umožňuje vám začať rýchlo – stačí nainštalovať editor, otvoriť súbor, napísať niekoľko riadkov a hneď vidíte výsledok.
 
-Python je minimalistický jazyk. Jednou z jeho najvýraznejších vlastností je, že nepoužíva bodkočiarky ani zátvorky; namiesto toho používa odsadenie.
+Pre ľudí, ktorí chcú zmeniť kariéru, doplniť si zručnosti alebo si len rozšíriť obzory, je Python výborný štartovací bod. Nemusíte mať technické vzdelanie – len chuť učiť sa krok za krokom.
 
-Python podporuje viaceré štýly programovania a nevnucuje programátorovi jediný paradigmát. Podporuje procedurálne, objektovo orientované aj funkcionálne programovanie.
+👉 [Oficiálna stránka jazyka Python](https://www.python.org)
 
-Oficiálna webstránka jazyka Python je [python.org](https://python.org)
+# Základy jazyka Python pre dospelých začiatočníkov
 
-![Python](images/python.jpg)
+Python je programovací jazyk, ktorý je ideálny pre tých, ktorí sa chcú naučiť programovať v dospelosti. Či už ste analytik, administrátor, študent alebo niekto, kto chce zmeniť kariéru – Python je skvelý začiatok.
 
-## Základné charakteristiky
+Je to jazyk, ktorý kombinuje jednoduchosť s veľkou silou. Vďaka svojej čitateľnosti a zrozumiteľnosti sa dá naučiť rýchlejšie než mnoho iných jazykov. Python je vhodný na skriptovanie, automatizáciu, prácu s dátami, vývoj webových aplikácií a oveľa viac.
 
-1. **Vysoká úroveň a čitateľnosť**: Python je navrhnutý pre čitateľnosť kódu.
-2. **Interpretovaný**: Python beží na interpreteri, čo umožňuje okamžité spustenie kódu hneď, ako ho napíšete.
-3. **Dynamické typovanie**: Nemusíte explicitne deklarovať typy premenných; Python ich určí za vás za behu programu.
-4. **Významné odsadenie**: Python používa odsadenie (biele znaky) na definovanie rozsahu, ako sú slučky, funkcie a triedy. Žiadne zátvorky nie sú potrebné.
-5. **Univerzálne použitie**:
+---
 
-   * Webový vývoj (serverová časť)
-   * Vývoj softvéru
-   * Matematika a vedecké výpočty
-   * Scripting systému
-   * Spracovanie veľkých dát
-6. **Multiplatformovosť**: Python funguje na rôznych platformách (Windows, Mac, Linux, Raspberry Pi a pod.).
-7. **Menej riadkov kódu**: Python umožňuje písať programy s menším počtom riadkov oproti mnohým iným jazykom.
+## Prečo sa učiť Python?
 
-## Implementácie Pythonu
+* ✅ Jednoduchá a prehľadná syntax – kód vyzerá ako angličtina
+* ✅ Veľká komunita a množstvo návodov zadarmo
+* ✅ Všestranné využitie (web, data, automatizácia, skriptovanie)
+* ✅ Funguje na Windows, Linux aj Mac
+* ✅ Nevyžaduje predchádzajúce skúsenosti
 
-Formálne je Python špecifikácia jazyka. Existujú tri hlavné implementácie:
+---
 
-* **CPython**: napísaný v jazyku C, najrozšírenejšia implementácia. Keď sa povie "Python", zvyčajne sa myslí CPython.
-* **IronPython**: napísaný v C#, súčasť .NET rámca.
-* **Jython**: implementácia v Jave, prekladá Python do Java bytekódu a spúšťa ho JVM.
-
-V tomto návode budeme pracovať s CPython.
-
-## Popularita
-
-Python patrí medzi najpopulárnejšie programovacie jazyky. Viaceré prieskumy ho radia do prvej desiatky. Medzi veľmi známe projekty v Pythone patria:
-
-* distribuovaný nástroj na správu verzií **Mercurial**
-* webový framework **Django**
-* GUI knižnica **PyQt**
-* správca balíčkov **Yum**
-
-[Prieskum Stackoverflow](https://survey.stackoverflow.co/2023/#programming-scripting-and-markup-languages)
-[Prieskum JetBrains](https://www.jetbrains.com/lp/devecosystem-2023/python/)
-
-## Učebné materiály
-
-**Knihy:**
-
-* [Python Crash Course](https://www.amazon.co.uk/Python-Crash-Course-3Rd-Matthes/dp/1718502702)
-
-**Videá:**
-
-* [Python for Everyone: From Zero to Hero 6 Hours Complete Course](https://www.youtube.com/watch?v=JZDQKj9BOoc)
-* [Python Full Course for Beginners](https://www.youtube.com/watch?v=H2EJuAcrZYU)
-
-## Python skripty
-
-Každý skript v Unixe začína tzv. **shebang** (prvé dva znaky `#!`), za ktorými nasleduje cesta k interpretovi. Shebangy na Windows nefungujú, no je dobrá prax ich pridať aj tam, ak očakávame spustenie na Unixe.
+## Ukážka: Prvý program
 
 ```python
-# simple.py
-
-print("The Python tutorial")
+print("Vitajte v Pythone!")
 ```
 
-Tento skript vypíše na konzolu reťazec "The Python tutorial". Python skripty majú príponu `.py`.
+Spustenie skriptu v termináli:
 
-```
-$ which python
-/usr/bin/python
-```
-
-Pomocou príkazu `which` zisťujeme cestu k Python interpretovi.
-
-Python skripty môžeme spúšťať dvoma spôsobmi:
-
-```
-$ python simple.py
-The Python tutorial
+```bash
+$ python hello.py
+Vitajte v Pythone!
 ```
 
-alebo
+---
 
-```
-$ chmod +x simple.py
-$ ./simple.py
-The Python tutorial
-```
-
-Príkazom `chmod +x` súbor spravíme spustiteľným.
-
-## Zoznamy (Lists)
-
-Python zoznam je základná dátová štruktúra na ukladanie usporiadaných prvkov. Kľúčové vlastnosti:
-
-* **Usporiadané**: poradie prvkov zostáva zachované.
-* **Menniteľné**: prvky môžeme pridať, zmeniť alebo odstrániť.
-* **Kombinované typy**: v jednom zozname môžu byť rôzne typy prvkov.
+## Čítanie vstupu od používateľa
 
 ```python
-vals = [1, 2, 3, 4, 5]
-print(vals)
-
-for val in vals:
-    print(val)
-
-words = ['sky', 'book', 'war', 'cup']
-print(words)
+meno = input("Ako sa voláš? ")
+print("Ahoj", meno)
 ```
 
-## Čítanie vstupu
+```bash
+$ python meno.py
+Ako sa voláš? Eva
+Ahoj Eva
+```
 
-Funkcia `input` načíta riadok vstupu, odstráni koncový newline a vráti ho ako reťazec.
+---
+
+## Práca so zoznamom
+
+Zoznam je skupina hodnôt v hranatých zátvorkách:
 
 ```python
-# read_input.py
+farby = ["červená", "modrá", "zelená"]
+print(farby[0])  # vypíše "červená"
 
-name = input("Enter your name:")
-print("Hello", name)
+for farba in farby:
+    print(farba)
 ```
 
-Príklad vypíše prompt a prečíta meno od používateľa.
+---
 
-```
-$ ./read_input.py
-Enter your name:Peter
-Hello Peter
-```
-
-## Argumenty z príkazového riadka
-
-Argumenty sú dostupné v zozname `sys.argv`, kde `argv[0]` je názov skriptu.
+## Podmienky a cykly
 
 ```python
-# command_line_arguments.py
-import sys
-
-print("Script name:", sys.argv[0])
-print("Arguments:", end=" ")
-
-for arg in sys.argv[1:]:
-    print(arg, end=" ")
-
-print()
+cislo = int(input("Zadaj číslo: "))
+if cislo > 0:
+    print("Číslo je kladné")
+elif cislo < 0:
+    print("Číslo je záporné")
+else:
+    print("Číslo je nula")
 ```
 
-```
-$ ./command_line_arguments.py 1 2 3
-Script name: ./command_line_arguments.py
-Arguments: 1 2 3
-```
+---
 
-## Náhodné hodnoty
-
-Na prácu s náhodnosťou slúži modul `random`.
+## Funkcie
 
 ```python
-import random
+def sucet(a, b):
+    return a + b
 
-r1 = random.randint(0, 10)
-print(r1)
-
-r2 = random.randrange(500, 1000, 50)
-print(r2)
-
-vals = [11, 22, 33, 44, 55, 66, 77]
-r3 = random.choice(vals)
-print(r3)
-
-words = ['sky', 'atom', 'war', 'cup', 'book', 'zebra', 'moon']
-r4 = random.sample(words, 2)
-print(r4)
+print(sucet(3, 5))
 ```
+
+---
+
+## Inštalácia Pythonu
+
+Na oficiálnej stránke [python.org](https://www.python.org/) si môžete stiahnuť Python pre váš operačný systém. Odporúčame tiež nainštalovať si editor ako je [VS Code](https://code.visualstudio.com/).
+
+---
+
+## Tipy pre učenie
+
+* Venujte Pythone aspoň 20 minút denne
+* Skúšajte si kód priamo pri čítaní tutoriálov
+* Nerobte si starosti s chybami – sú súčasťou učenia
+* Začnite s malými projektmi, napríklad:
+
+  * kalkulačka
+  * generátor hesiel
+  * program na prepočet mien alebo jednotiek
+
+---
+
+## Čo je to IDE a ktoré sú najobľúbenejšie?
+
+**IDE (Integrated Development Environment)** je program, ktorý vám pomáha písať, testovať a spúšťať kód. Mnohé IDE obsahujú zvýrazňovanie syntaxe, nápovedu pri písaní kódu, integrovaný terminál a ďalšie funkcie, ktoré uľahčujú učenie aj profesionálne programovanie.
+
+### Najobľúbenejšie IDE pre Python:
+
+1. **Visual Studio Code (VS Code)**
+
+   * Bezplatný a veľmi populárny editor od Microsoftu.
+   * Má rozšírenie pre Python a mnoho iných jazykov.
+   * Funguje na Windows, Linux aj macOS.
+   * Podporuje prácu so súbormi, Gitom, terminálom aj debuggerom.
+
+2. **PyCharm**
+
+   * Výkonné IDE od firmy JetBrains.
+   * Existuje verzia Community (zadarmo) a Professional (platená).
+   * Silné nástroje na prácu s dátami, testovanie a vývoj väčších projektov.
+
+3. **Thonny**
+
+   * Jednoduché a ľahko použiteľné IDE pre úplných začiatočníkov.
+   * Ideálne na prvé kroky, často používané aj v školách.
+
+4. **Jupyter Notebook**
+
+   * Používa sa najmä v dátovej analýze a vede.
+   * Kód sa delí na bunky a môžete ho kombinovať s poznámkami a grafmi.
+
+---
+
+## Odporúčané zdroje
+
+* [W3Schools](https://www.w3schools.com/python/)
+* [Dokumentácia Pythonu](https://docs.python.org/sk/3/)
+
+---
+
+Začni pomaly, buduj si návyky a nezabudni – programovanie je ako učenie jazyka. Čím viac trénuješ, tým plynulejšie to pôjde. 😊
