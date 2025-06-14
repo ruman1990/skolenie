@@ -114,6 +114,28 @@ else:
 
 Ak by sme vynechali odsadenie, program skončí chybou `IndentationError`.
 
+
+# Kľúčové slová v Pythone
+
+| Kľúčové slovo | Kľúčové slovo | Kľúčové slovo | Kľúčové slovo |
+|---------------|---------------|---------------|---------------|
+| False         | None          | True          | and           |
+| as            | assert        | async         | await         |
+| break         | class         | continue      | def           |
+| del           | elif          | else          | except        |
+| finally       | for           | from          | global        |
+| if            | import        | in            | is            |
+| lambda        | nonlocal      | not           | or            |
+| pass          | raise         | return        | try           |
+| while         | with          | yield         |               |
+
+
+Ak chcete získať tento zoznam priamo v Pythone, môžete použiť:
+
+```python
+import keyword
+print(keyword.kwlist)
+
 ---
 
 Toto bol rýchly úvod do základov Pythonu. Pokračujeme v ďalších kapitolách so vstupmi, funkciami a prácou s dátami ✔️.
