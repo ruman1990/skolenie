@@ -161,6 +161,9 @@ Na oficiálnej stránke [python.org](https://www.python.org/) si môžete stiahn
 * [W3Schools](https://www.w3schools.com/python/)
 * [Dokumentácia Pythonu](https://docs.python.org/sk/3/)
 
+## Videá
+* [6 hodinové video](https://www.youtube.com/watch?v=JZDQKj9BOoc)
+
 ---
 
 Začni pomaly, buduj si návyky a nezabudni – programovanie je ako učenie jazyka. Čím viac trénuješ, tým plynulejšie to pôjde. 😊
