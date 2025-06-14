@@ -136,6 +136,84 @@ Ak chcete získať tento zoznam priamo v Pythone, môžete použiť:
 import keyword
 print(keyword.kwlist)
 
+
+Jasné! Tu máš **prehľad, ako komentovať kód v Pythone**, stručne a prehľadne:
+
+---
+
+## 📝 Typy komentárov v Pythone
+
+Python má 2 hlavné typy komentárov:
+
+### 1. **Jednoriadkové komentáre**
+
+Používajú znak `#`.
+
+```python
+# Toto je komentár
+x = 10  # Nastavíme premennú x na hodnotu 10
+```
+
+### 2. **Viacriadkové komentáre (technicky viacero #)**
+
+V Pythone neexistuje špeciálna syntax na blok komentárov – jednoducho použiješ viacero riadkov so znakom `#`.
+
+```python
+# Toto je viacriadkový komentár
+# ktorý vysvetľuje zložitejší kód
+# alebo popisuje funkciu.
+```
+
+---
+
+## 📚 Docstring (dokumentačný reťazec)
+
+Používa sa na dokumentovanie **funkcií, tried alebo modulov**. Je to špeciálny reťazec uzavretý v trojitých úvodzovkách `"""`.
+
+```python
+def vypocitaj_obsah_kruhu(r):
+    """
+    Vypočíta obsah kruhu so zadaným polomerom.
+    
+    Parametre:
+        r (float): polomer kruhu
+        
+    Návratová hodnota:
+        float: obsah kruhu
+    """
+    from math import pi
+    return pi * r ** 2
+```
+
+✅ Tento docstring si môže prečítať aj funkcia `help()`:
+
+```python
+help(vypocitaj_obsah_kruhu)
+```
+
+---
+
+## 🔍 Zhrnutie
+
+| Typ           | Syntax              | Použitie                             |
+| ------------- | ------------------- | ------------------------------------ |
+| Jednoriadkový | `# Komentár`        | Rýchle poznámky k riadku kódu        |
+| Viacriadkový  | viacero `#` riadkov | Vysvetlenie blokov kódu              |
+| Docstring     | `""" popis """`     | Dokumentácia funkcie, triedy, modulu |
+
+---
+
+## ✅ Odporúčania pre komentovanie
+
+* **Komentuj len tam, kde je to potrebné.**
+* Komentár má **vysvetliť „prečo“**, nie len „čo“:
+
+  ```python
+  # Zrýchlime výpočet cache-ovaním výsledkov
+  ```
+* Používaj **angličtinu**, ak je projekt medzinárodný. Inak môžeš pokojne po slovensky.
+* Docstring by mal byť **v každej funkcii a triede**.
+
 ---
 
 Toto bol rýchly úvod do základov Pythonu. Pokračujeme v ďalších kapitolách so vstupmi, funkciami a prácou s dátami ✔️.
