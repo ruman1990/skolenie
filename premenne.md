@@ -136,8 +136,6 @@ def sucet(a: int, b: int) -> int:
 
 ---
 
-Chceš, aby som ti pripravil verziu tohto prehľadu ako `.md` súbor alebo ako interaktívne cvičenie?
-
 
 ## Literály
 
