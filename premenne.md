@@ -125,14 +125,46 @@ osoba = {"meno": "Eva", "vek": 30}  # dict
 
 ---
 
-### 🧠 Extra – Špeciálne typy (od Python 3.5+)
 
-Vďaka modulu `typing` môžeš použiť aj anotácie typov:
+### Prehľadný zoznam typov v Pythone
 
-```python
-def sucet(a: int, b: int) -> int:
-    return a + b
-```
+---
+
+### 🧱 **Vstavané dátové typy v Pythone**
+
+| Typ          | Príklad                     | Popis / Vlastnosti                                                  |
+| ------------ | --------------------------- | ------------------------------------------------------------------- |
+| `int`        | `42`, `-7`, `0`             | Celé čísla. Presná aritmetika.                                      |
+| `float`      | `3.14`, `-0.001`            | Desatinné čísla (s pohyblivou rádovou čiarkou).                     |
+| `complex`    | `2 + 3j`                    | Komplexné čísla. Použitie v špeciálnej matematike.                  |
+| `bool`       | `True`, `False`             | Logické hodnoty. Podtyp `int` (`True == 1`).                        |
+| `NoneType`   | `None`                      | Označuje „žiadnu hodnotu“. Často ako návratová hodnota funkcie.     |
+| `str`        | `'ahoj'`, `"Python"`        | Reťazec (text). Nemenný (immutable).                                |
+| `list`       | `[1, 2, 3]`                 | Usporiadaný, **meniteľný** zoznam.                                  |
+| `tuple`      | `(1, 2, 3)`                 | Usporiadaný, **nemeniteľný** zoznam (immutable).                    |
+| `range`      | `range(3)` → `0,1,2`        | Sekvencia celých čísel. Efektívna pamäťovo.                         |
+| `dict`       | `{"kľúč": "hodnota"}`       | Slovník (mapa kľúčov na hodnoty).                                   |
+| `set`        | `{1, 2, 3}`                 | Množina unikátnych hodnôt. Neusporiadaná.                           |
+| `frozenset`  | `frozenset([1, 2, 3])`      | Nemenná množina.                                                    |
+| `bytes`      | `b"ahoj"`                   | Sekvencia bajtov (binárne dáta). Nemenné.                           |
+| `bytearray`  | `bytearray([65, 66, 67])`   | Mutable verzia `bytes`.                                             |
+| `memoryview` | `memoryview(b"abc")`        | Efektívny prístup do binárnych dát.                                 |
+| `namedtuple` | `Point(x=1, y=2)`           | Nemenný objekt s pomenovanými poľami (z `collections`).             |
+| `dataclass`  | `@dataclass class Osoba...` | Moderná forma na definovanie dátových objektov (od Python 3.7).     |
+| `function`   | `lambda x: x+1`             | Funkčný objekt. Dá sa priradiť do premennej, posielať ako argument. |
+| `type`       | `type(x)`                   | Reprezentuje typ objektu. Typ všetkých typov :)                     |
+| `module`     | `math`, `os`                | Importované moduly.                                                 |
+| `object`     | `object()`                  | Základ všetkých typov v Pythone. Každý typ dedí z `object`.         |
+
+---
+
+### 🧠 Poznámky:
+
+* **Mutable (meniteľné)**: `list`, `dict`, `set`, `bytearray`
+* **Immutable (nemeniteľné)**: `int`, `float`, `str`, `tuple`, `frozenset`, `bytes`, `namedtuple`
+* **Sekvenčné typy**: `str`, `list`, `tuple`, `range`, `bytes`, `bytearray`
+* **Kolekcie**: `list`, `tuple`, `set`, `dict`, `frozenset`
+* **Zložené typy**: `namedtuple`, `dataclass`, `function`, `module`
 
 ---
 
