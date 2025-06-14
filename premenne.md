@@ -54,6 +54,91 @@ TridaAuto = "Tesla"        # PascalCase – pre triedy
 
 ---
 
+## Dátové typy
+
+---
+
+### 🧱 Základné dátové typy v Pythone
+
+| Typ        | Názov            | Príklad              | Popis                             |
+| ---------- | ---------------- | -------------------- | --------------------------------- |
+| `int`      | celé číslo       | `5`, `-42`, `1000`   | celé čísla, bez desatinných miest |
+| `float`    | desatinné číslo  | `3.14`, `-0.001`     | čísla s desatinnou čiarkou        |
+| `str`      | reťazec (string) | `"ahoj"`, `'Python'` | textový reťazec                   |
+| `bool`     | pravda/nepravda  | `True`, `False`      | logické hodnoty                   |
+| `NoneType` | žiadna hodnota   | `None`               | predstavuje „nič“                 |
+
+---
+
+### 📦 Kontajnerové typy
+
+| Typ     | Názov          | Príklad                       | Popis                               |
+| ------- | -------------- | ----------------------------- | ----------------------------------- |
+| `list`  | zoznam         | `[1, 2, 3]`                   | usporiadaný, meniteľný zoznam       |
+| `tuple` | n-tica         | `(1, 2, 3)`                   | usporiadaný, **nemeniteľný** zoznam |
+| `set`   | množina        | `{1, 2, 3}`                   | **neusporiadané**, unikátne hodnoty |
+| `dict`  | slovník (mapa) | `{"meno": "Jana", "vek": 25}` | páry **kľúč: hodnota**              |
+
+---
+
+### 🧮 Typ konverzie (casting)
+
+```python
+int("42")        # → 42
+float("3.14")    # → 3.14
+str(123)         # → '123'
+bool(0)          # → False
+```
+
+---
+
+### 🔍 Kontrola typu
+
+Použi `type()`:
+
+```python
+type(3.14)       # → <class 'float'>
+type("Python")   # → <class 'str'>
+```
+
+Alebo `isinstance()` (lepší na porovnávanie):
+
+```python
+isinstance(5, int)        # → True
+isinstance("x", str)      # → True
+```
+
+---
+
+### ✅ Príklady v praxi
+
+```python
+x = 10             # int
+pi = 3.14159       # float
+meno = "Anna"      # str
+aktivny = True     # bool
+zoznam = [1, 2, 3] # list
+polozka = (4, 5)   # tuple
+cisla = {1, 2, 3}  # set
+osoba = {"meno": "Eva", "vek": 30}  # dict
+```
+
+---
+
+### 🧠 Extra – Špeciálne typy (od Python 3.5+)
+
+Vďaka modulu `typing` môžeš použiť aj anotácie typov:
+
+```python
+def sucet(a: int, b: int) -> int:
+    return a + b
+```
+
+---
+
+Chceš, aby som ti pripravil verziu tohto prehľadu ako `.md` súbor alebo ako interaktívne cvičenie?
+
+
 ## Literály
 
 Literál je pevná hodnota priamo v kóde. Napríklad:
