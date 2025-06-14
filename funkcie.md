@@ -39,28 +39,6 @@ Výhody používania funkcií:
 
 Funkcie v Pythone sú **prvotriedne objekty**. Znamená to, že majú rovnaké postavenie ako iné objekty. Môžu sa priraďovať premenným, ukladať do kolekcií alebo odovzdávať ako argumenty. To prináša do jazyka veľkú flexibilitu.
 
-#### Obsah:
-
-* [Definovanie funkcie](#function-definition)
-* [Typy funkcií](#kinds-of-functions)
-* [Funkcie tretích strán](#third-party-functions)
-* [Inštančné, triedové, obyčajné, vnorené funkcie](#instance-class-plain-inner-functions)
-* [Funkcie ako objekty](#functions-are-objects)
-* [Rozsah platnosti funkcií](#function-scope)
-* [Implicitné hodnoty argumentov](#implicit-arg-value)
-* [Rozbalenie (unpacking)](#unpacking)
-* [Odkazom vs hodnotou](#passing-by-reference)
-* [Globálne premenné](#global-variables)
-* [Kľúčové slovo `pass`](#the-pass-keyword)
-* [Návratové hodnoty](#returning-values)
-* [Ľubovoľný počet argumentov](#arbitrary-number-of-args)
-* [Vnorené funkcie](#nested-functions)
-* [Odosielanie funkcie ako argumentu](#passing-functions-as-parameters)
-* [Redefinícia funkcie](#function-redefinition)
-* [Funkcie musia byť definované pred použitím](#no-function-hoisting)
-* [Kolekcia funkcií](#collection-of-functions)
-* [Uzávery (closures)](#closures)
-
 ---
 
 ## Definovanie funkcie
