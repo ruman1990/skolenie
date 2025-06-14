@@ -30,6 +30,19 @@ match hodnota:
         print("Iná hodnota")
 ```
 
+```
+def popis_cislo(x):
+    match x:
+        case int() if x < 0:
+            print("Záporné číslo")
+        case int() if x == 0:
+            print("Nula")
+        case int() if x > 0:
+            print("Kladné číslo")
+        case _:
+            print("Nie je celé číslo")
+```
+
 ---
 
 ## Cykly: `for` a `while`
