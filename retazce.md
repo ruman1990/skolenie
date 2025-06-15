@@ -224,4 +224,59 @@ for i in teams:
     print(f"{teams[i][0]:15} - {teams[i][1]:15} {results[i]}")
 ```
 
+
+Tu je prehľad všetkých metód reťazcov v Pythone preložený do slovenčiny vo formáte **Markdown**:
+
+---
+
+## 📘 Metódy reťazcov v Pythone
+
+| **Metóda**       | **Popis**                                                                |
+| ---------------- | ------------------------------------------------------------------------ |
+| `capitalize()`   | Prevedie prvý znak na veľké písmeno                                      |
+| `casefold()`     | Prevedie celý reťazec na malé písmená (agresívnejšie ako `lower`)        |
+| `center()`       | Vráti reťazec vycentrovaný v zadanom rozsahu                             |
+| `count()`        | Vráti počet výskytov určenej hodnoty v reťazci                           |
+| `encode()`       | Vráti zakódovanú verziu reťazca (napr. UTF-8)                            |
+| `endswith()`     | Vráti `True`, ak reťazec končí zadanou hodnotou                          |
+| `expandtabs()`   | Nastaví veľkosť tabulátora (tab) v reťazci                               |
+| `find()`         | Vyhľadá hodnotu v reťazci a vráti pozíciu prvého výskytu                 |
+| `format()`       | Formátuje reťazec s danými hodnotami                                     |
+| `format_map()`   | Podobne ako `format()`, používa mapovanie (napr. dictionary)             |
+| `index()`        | Vyhľadá hodnotu a vráti pozíciu (chyba ak nenájde)                       |
+| `isalnum()`      | Vráti `True`, ak reťazec obsahuje len písmená a číslice                  |
+| `isalpha()`      | Vráti `True`, ak reťazec obsahuje len písmená                            |
+| `isascii()`      | Vráti `True`, ak reťazec obsahuje len ASCII znaky                        |
+| `isdecimal()`    | Vráti `True`, ak reťazec obsahuje len desatinné čísla                    |
+| `isdigit()`      | Vráti `True`, ak reťazec obsahuje len číslice                            |
+| `isidentifier()` | Vráti `True`, ak je reťazec platný identifikátor                         |
+| `islower()`      | Vráti `True`, ak všetky písmená sú malé                                  |
+| `isnumeric()`    | Vráti `True`, ak obsahuje len číselné znaky                              |
+| `isprintable()`  | Vráti `True`, ak sú všetky znaky tlačiteľné                              |
+| `isspace()`      | Vráti `True`, ak obsahuje len biele znaky (medzery, taby, nové riadky)   |
+| `istitle()`      | Vráti `True`, ak každé slovo začína veľkým písmenom                      |
+| `isupper()`      | Vráti `True`, ak sú všetky písmená veľké                                 |
+| `join()`         | Spojí prvky zo zoznamu (alebo iterovateľného objektu) do jedného reťazca |
+| `ljust()`        | Vráti reťazec zarovnaný vľavo                                            |
+| `lower()`        | Prevedie celý reťazec na malé písmená                                    |
+| `lstrip()`       | Odstráni biele znaky z ľavej strany                                      |
+| `maketrans()`    | Vytvorí tabuľku pre `translate()`                                        |
+| `partition()`    | Rozdelí reťazec na tri časti podľa výskytu určitej hodnoty               |
+| `replace()`      | Nahradí časť reťazca inou hodnotou                                       |
+| `rfind()`        | Vyhľadá hodnotu a vráti poslednú pozíciu výskytu                         |
+| `rindex()`       | Ako `rfind()`, ale vyhodí chybu ak nenájde                               |
+| `rjust()`        | Vráti reťazec zarovnaný vpravo                                           |
+| `rpartition()`   | Ako `partition()`, ale hľadá od konca                                    |
+| `rsplit()`       | Rozdelí reťazec z prava                                                  |
+| `rstrip()`       | Odstráni biele znaky z pravej strany                                     |
+| `split()`        | Rozdelí reťazec podľa oddeľovača (zľava)                                 |
+| `splitlines()`   | Rozdelí reťazec podľa riadkov                                            |
+| `startswith()`   | Vráti `True`, ak reťazec začína určenou hodnotou                         |
+| `strip()`        | Odstráni biele znaky z oboch strán                                       |
+| `swapcase()`     | Zmení malé písmená na veľké a opačne                                     |
+| `title()`        | Každé slovo začína veľkým písmenom                                       |
+| `translate()`    | Preloží znaky podľa tabuľky z `maketrans()`                              |
+| `upper()`        | Prevedie všetky písmená na veľké                                         |
+| `zfill()`        | Doplní reťazec nulami zľava na danú dĺžku                                |
+
 ---
