@@ -330,3 +330,20 @@ positive = list(filter(lambda x: x > 0, nums))
 * `filter()` – ponechá len tie prvky, ktoré spĺňajú podmienku
 
 ---
+
+funkcie
+
+| **Metóda**  | **Popis**                                                                             |
+| ----------- | ------------------------------------------------------------------------------------- |
+| `append()`  | Pridá prvok na koniec zoznamu                                                         |
+| `clear()`   | Odstráni všetky prvky zo zoznamu                                                      |
+| `copy()`    | Vráti kópiu zoznamu                                                                   |
+| `count()`   | Vráti počet výskytov zadaného prvku                                                   |
+| `extend()`  | Pridá prvky iného zoznamu (alebo iterovateľného objektu) na koniec aktuálneho zoznamu |
+| `index()`   | Vráti index prvého výskytu zadaného prvku                                             |
+| `insert()`  | Vloží prvok na určenú pozíciu                                                         |
+| `pop()`     | Odstráni prvok na určenej pozícii                                                     |
+| `remove()`  | Odstráni prvok so zadanou hodnotou                                                    |
+| `reverse()` | Obráti poradie prvkov v zozname                                                       |
+| `sort()`    | Usporiada prvky v zozname                                                             |
+
