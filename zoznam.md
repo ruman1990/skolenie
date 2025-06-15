@@ -355,3 +355,44 @@ funkcie tuple
 | `count()`  | Vráti počet výskytov určenej hodnoty v n-tici                           |
 | `index()`  | Vyhľadá určenú hodnotu v n-tici a vráti pozíciu, na ktorej bola nájdená |
 
+
+funkcie set
+
+| **Metóda**                      | **Skratka** | **Popis**                                                                     |
+| ------------------------------- | ----------- | ----------------------------------------------------------------------------- |
+| `add()`                         | –           | Pridá prvok do množiny                                                        |
+| `clear()`                       | –           | Odstráni všetky prvky z množiny                                               |
+| `copy()`                        | –           | Vráti kópiu množiny                                                           |
+| `difference()`                  | `-`         | Vráti množinu obsahujúcu rozdiel medzi dvoma (alebo viacerými) množinami      |
+| `difference_update()`           | `-=`        | Odstráni z tejto množiny prvky, ktoré sa nachádzajú aj v inej zadanej množine |
+| `discard()`                     | –           | Odstráni zadaný prvok (ak existuje, inak neurobí nič)                         |
+| `intersection()`                | `&`         | Vráti prienik dvoch množín                                                    |
+| `intersection_update()`         | `&=`        | Z množiny ponechá len tie prvky, ktoré sú aj v inej zadanej množine           |
+| `isdisjoint()`                  | –           | Vráti `True`, ak množiny nemajú spoločné prvky                                |
+| `issubset()`                    | `<=`        | Vráti `True`, ak je množina podmnožinou inej množiny                          |
+| *(žiadna metóda)*               | `<`         | Vráti `True`, ak je množina **vlastná podmnožina** inej množiny               |
+| `issuperset()`                  | `>=`        | Vráti `True`, ak množina obsahuje všetky prvky inej množiny                   |
+| *(žiadna metóda)*               | `>`         | Vráti `True`, ak množina **vlastne obsahuje** inú množinu                     |
+| `pop()`                         | –           | Odstráni a vráti náhodný prvok z množiny                                      |
+| `remove()`                      | –           | Odstráni zadaný prvok (ak neexistuje, vyhodí chybu)                           |
+| `symmetric_difference()`        | `^`         | Vráti množinu obsahujúcu prvky, ktoré sú len v jednej z množín, nie v oboch   |
+| `symmetric_difference_update()` | `^=`        | Aktualizuje množinu tak, že ponechá len symetrický rozdiel medzi ňou a inou   |
+| `union()`                       | `\|`        | Vráti množinu obsahujúcu všetky prvky zo všetkých množín                      |
+| `update()`                      | `\|=`       | Pridá do množiny všetky prvky z inej množiny                                  |
+
+funkcie diciotnary
+
+| **Metóda**     | **Popis**                                                                     |
+| -------------- | ----------------------------------------------------------------------------- |
+| `clear()`      | Odstráni všetky prvky zo slovníka                                             |
+| `copy()`       | Vráti kópiu slovníka                                                          |
+| `fromkeys()`   | Vytvorí nový slovník so zadanými kľúčmi a rovnakou hodnotou                   |
+| `get()`        | Vráti hodnotu priradenú ku kľúču (alebo `None`, ak neexistuje)                |
+| `items()`      | Vráti zoznam dvojíc `(kľúč, hodnota)` ako n-tice                              |
+| `keys()`       | Vráti zoznam všetkých kľúčov v slovníku                                       |
+| `pop()`        | Odstráni prvok so zadaným kľúčom a vráti jeho hodnotu                         |
+| `popitem()`    | Odstráni a vráti **posledný** pridaný pár `(kľúč, hodnota)`                   |
+| `setdefault()` | Vráti hodnotu k zadanému kľúču. Ak kľúč neexistuje, vloží ho s danou hodnotou |
+| `update()`     | Aktualizuje slovník o zadané dvojice `(kľúč: hodnota)`                        |
+| `values()`     | Vráti zoznam všetkých hodnôt v slovníku                                       |
+
