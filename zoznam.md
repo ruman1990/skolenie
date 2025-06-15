@@ -347,3 +347,11 @@ funkcie
 | `reverse()` | Obráti poradie prvkov v zozname                                                       |
 | `sort()`    | Usporiada prvky v zozname                                                             |
 
+
+funkcie tuple
+
+| **Metóda** | **Popis**                                                               |
+| ---------- | ----------------------------------------------------------------------- |
+| `count()`  | Vráti počet výskytov určenej hodnoty v n-tici                           |
+| `index()`  | Vyhľadá určenú hodnotu v n-tici a vráti pozíciu, na ktorej bola nájdená |
+
