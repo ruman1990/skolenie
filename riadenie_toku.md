@@ -104,5 +104,3 @@ if True:
 ```
 
 ---
-
-Toto bol rýchly úvod do základov Pythonu. Pokračujeme v ďalších kapitolách so vstupmi, funkciami a prácou s dátami ✔️.

@@ -22,11 +22,46 @@
 | **import**   |          |            |             |
 
 
+Tu je prehľadná tabuľka základných vstavaných (built-in) funkcií v Pythone spolu s krátkym popisom ich použitia:
+
+| Funkcia                    | Popis                                                      |
+| -------------------------- | ---------------------------------------------------------- |
+| `abs(x)`                   | Vráti absolútnu hodnotu čísla `x`                          |
+| `all(iterable)`            | Vráti `True`, ak sú všetky prvky v iterable pravdivé       |
+| `any(iterable)`            | Vráti `True`, ak aspoň jeden prvok v iterable je pravdivý  |
+| `bin(x)`                   | Vráti binárny reťazec čísla `x`                            |
+| `bool(x)`                  | Prevedie hodnotu na `True` alebo `False`                   |
+| `chr(x)`                   | Vráti znak podľa ASCII kódu `x`                            |
+| `divmod(a, b)`             | Vráti dvojicu `(a // b, a % b)` (delenie a zvyšok)         |
+| `enumerate()`              | Vráti iterátor (index, hodnota) pre každý prvok v iterable |
+| `eval(expr)`               | Vyhodnotí reťazec ako výraz v Pythone                      |
+| `filter(func, iterable)`   | Filtrovanie prvkov podľa funkcie                           |
+| `float(x)`                 | Prevedie hodnotu `x` na desatinné číslo                    |
+| `format(x, spec)`          | Formátuje hodnotu podľa špecifikácie                       |
+| `int(x)`                   | Prevedie hodnotu `x` na celé číslo                         |
+| `input()`                  | Získa vstup od používateľa ako reťazec                     |
+| `len(obj)`                 | Vráti počet prvkov (dĺžku) objektu                         |
+| `list()`                   | Prevedie na zoznam                                         |
+| `map(func, iterable)`      | Aplikuje funkciu na každý prvok iterable                   |
+| `max(iterable)`            | Vráti najväčší prvok                                       |
+| `min(iterable)`            | Vráti najmenší prvok                                       |
+| `next(iterator)`           | Vráti ďalší prvok z iterátora                              |
+| `pow(a, b)`                | Vypočíta `a` na `b-tu` mocninu (`a ** b`)                  |
+| `print()`                  | Vypíše hodnoty na obrazovku                                |
+| `range(start, stop, step)` | Generuje postupnosť čísel                                  |
+| `reversed(seq)`            | Vráti iterátor s prvkami v opačnom poradí                  |
+| `round(x)`                 | Zaokrúhli číslo `x` na celé číslo                          |
+| `sorted(iterable)`         | Vráti zoradený zoznam                                      |
+| `str(x)`                   | Prevedie hodnotu `x` na reťazec                            |
+| `sum(iterable)`            | Vráti súčet prvkov v iterable                              |
+| `tuple()`                  | Prevedie na n-ticu (tuple)                                 |
+| `type(x)`                  | Vráti typ hodnoty `x`                                      |
+| `zip(a, b, ...)`           | Spája prvky z viacerých iterable podľa pozície             |
+
+
 ---
 
 # Funkcie
-
-Funkcia je mapovanie nulového alebo viacerých vstupných parametrov na nulový alebo viacerý počet výstupných parametrov.
 
 Výhody používania funkcií:
 

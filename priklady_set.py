@@ -75,7 +75,7 @@ print("union viacerých:", myset)
 x = {"a", "b", "c"}
 y = (1, 2, 3)
 z = x.union(y)
-print("union so tuple:", z)
+print("union s tuple:", z)
 
 # -- update(): pridá prvky inej množiny priamo do existujúcej množiny --
 set1 = {"a", "b", "c"}

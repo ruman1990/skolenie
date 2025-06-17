@@ -250,9 +250,7 @@ Ak chcete získať tento zoznam priamo v Pythone, môžete použiť:
 ```python
 import keyword
 print(keyword.kwlist)
-
-
-Jasné! Tu máš **prehľad, ako komentovať kód v Pythone**, stručne a prehľadne:
+```
 
 ---
 
@@ -330,5 +328,3 @@ help(vypocitaj_obsah_kruhu)
 * Docstring by mal byť **v každej funkcii a triede**.
 
 ---
-
-Toto bol rýchly úvod do základov Pythonu. Pokračujeme v ďalších kapitolách so vstupmi, funkciami a prácou s dátami ✔️.

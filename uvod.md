@@ -159,7 +159,7 @@ Na oficiálnej stránke [python.org](https://www.python.org/) si môžete stiahn
 ## Odporúčané zdroje
 
 * [W3Schools](https://www.w3schools.com/python/)
-* [Dokumentácia Pythonu](https://docs.python.org/sk/3/)
+* [Dokumentácia Pythonu](https://docs.python.org/3/)
 
 ## Videá
 * [6 hodinové video](https://www.youtube.com/watch?v=JZDQKj9BOoc)
