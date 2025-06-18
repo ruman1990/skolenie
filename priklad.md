@@ -27,3 +27,16 @@ print('Dlzka mena je' , len(meno))
 
 # print(vysledok)
 ```
+
+```
+pocet_hviezd = input("Zadaj počet hviezd: ")
+
+pocet_hviezd = int(pocet_hviezd)
+
+for i in range(1, pocet_hviezd + 1):
+    for j in range(i):
+        print("*", end=" ")
+    print('')
+```
+
+
