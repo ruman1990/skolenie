@@ -1,4 +1,4 @@
-
+```
 vek = input('Kolko mas rokov? ')
 match vek:
     case "18" | '20' if int(vek)>10:
@@ -9,3 +9,4 @@ match vek:
         print("Iná hodnota")
 
 print('hotovo')
+```
