@@ -1,4 +1,22 @@
+```python
+import math
+
+x = int(input('Zadaj cislo '))
+y = int(input('Zadaj cislo2 '))
+
+print(x + y)
+print(x - y)
+print(x * y)
+print(x / y)
+
+print(x % y)
+print(x // y)
+print(x ** y)
 ```
+
+
+
+```python
 vek = input('Kolko mas rokov? ')
 match vek:
     case "18" | '20' if int(vek)>10:
@@ -12,7 +30,7 @@ print('hotovo')
 ```
 
 
-```
+```python
 # vypytame od pouzivatela jeho meno nasledne jeho vek. Vypiseme dlzku mena a zistime a vypiseme ci je vek pouzivatel parne cislo.
 meno = input("Zadaj svoje meno: ")
 vek = int(input("Zadaj svoj vek: "))
@@ -28,7 +46,7 @@ print('Dlzka mena je' , len(meno))
 # print(vysledok)
 ```
 
-```
+```python
 pocet_hviezd = input("Zadaj počet hviezd: ")
 
 pocet_hviezd = int(pocet_hviezd)
