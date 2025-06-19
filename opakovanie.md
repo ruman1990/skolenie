@@ -10,6 +10,12 @@ else:
 
 # napis program ktory ziska z inputu cislo a vypise jeho mocninu
 
+```python
+cislo = int(input("Zadaj cislo: "))
+mocnina = int(input("Zadaj mocninu: "))
+
+print(cislo ** mocnina)
+```
 
 
 # napis program ktory zisti ci je zadane slovo palindrom
