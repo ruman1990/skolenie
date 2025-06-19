@@ -32,3 +32,11 @@ else:
 ```
 
 # napis program ktory vypise hviezdicky obratenu pyramidu
+
+```python
+pocet = int(input("Zadaj pocet riadkov pre obratenu pyramidu: "))
+for i in range(pocet):
+    print('*' * (i + 1))
+for i in reversed(range(pocet-1)):
+    print('*' * (i + 1))
+```
