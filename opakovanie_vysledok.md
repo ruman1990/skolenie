@@ -17,3 +17,13 @@ for i in range(1, n + 1):
     suma += i
 print(f'Vysledok je {suma}')
 ```
+
+Hra na hadanie cisla
+```python
+import random
+tajne = random.randint(1,11)
+cislo = 0
+while cislo != tajne:
+    cislo = int(input("Hadaj cislo: "))
+print("Uhadol si")
+```
