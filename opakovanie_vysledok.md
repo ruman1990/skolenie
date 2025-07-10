@@ -27,3 +27,14 @@ while cislo != tajne:
     cislo = int(input("Hadaj cislo: "))
 print("Uhadol si")
 ```
+
+Pocet parnych cisiel
+```python
+cisla = [1,7,6,22,12,9,11,32]
+
+pocet_parnych = 0
+for i in cisla:
+    if i % 2 == 0:
+        pocet_parnych += 1
+print(pocet_parnych)
+```
