@@ -76,14 +76,5 @@ cisla = [2, 7, 4, 9, 6, 1, 10]
 
 ---
 
-## **Cvičenie 7: Fibonacciho postupnosť**
-
-Vypíš prvých **n** členov Fibonacciho postupnosti:
-
-```python
-# Vstup: n = 7
-# Výstup: 0 1 1 2 3 5 8
-```
-
 ---
 

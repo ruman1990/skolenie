@@ -207,6 +207,26 @@ Python podporuje klasické typy operátorov:
 | `>=`     | väčšie alebo rovné |
 | `<=`     | menšie alebo rovné |
 
+### Priority operátorov:
+
+| **Priorita**   | **Operátory**                                                    | **Popis**                                       |           |
+| -------------- | ---------------------------------------------------------------- | ----------------------------------------------- | --------- |
+| 1 (najvyššia)  | `()`                                                             | Zátvorky – určujú poradie vyhodnocovania        |           |
+| 2              | `**`                                                             | Umocňovanie                                     |           |
+| 3              | `+x`, `-x`, `~x`                                                 | Unárne plus, mínus, bitový NOT                  |           |
+| 4              | `*`, `/`, `//`, `%`                                              | Násobenie, delenie, celočíselné delenie, zvyšok |           |
+| 5              | `+`, `-`                                                         | Sčítanie, odčítanie                             |           |
+| 6              | `<<`, `>>`                                                       | Bitové posuny vľavo a vpravo                    |           |
+| 7              | `&`                                                              | Bitový AND                                      |           |
+| 8              | `^`                                                              | Bitový XOR                                      |           |
+| 9              | \`                                                               | \`                                              | Bitový OR |
+| 10             | `==`, `!=`, `>`, `<`, `>=`, `<=`, `is`, `is not`, `in`, `not in` | Porovnania                                      |           |
+| 11             | `not`                                                            | Logické NOT                                     |           |
+| 12             | `and`                                                            | Logické AND                                     |           |
+| 13             | `or`                                                             | Logické OR                                      |           |
+| 14 (najnižšia) | `=`, `+=`, `-=`, atď.                                            | Priraďovacie operátory                          |           |
+
+
 ---
 
 ## Odsadenie (indentácia)
