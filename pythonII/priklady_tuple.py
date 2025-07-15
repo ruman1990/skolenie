@@ -1,29 +1,8 @@
-# -- Zmena hodnoty v tupli pomocou konverzie na list a späť --
-x = ("apple", "banana", "cherry")
-y = list(x)        # prevedie tuple na list
-y[1] = "kiwi"      # zmení druhý prvok
-x = tuple(y)       # prevedie späť na tuple
-print(x)           # výstup: ('apple', 'kiwi', 'cherry')
-
-# -- Pridanie prvku do tupli (workaround) --
-thistuple = ("apple", "banana", "cherry")
-y = list(thistuple)
-y.append("orange")  # pridá nový prvok
-thistuple = tuple(y)
-print(thistuple)    # výstup: ('apple', 'banana', 'cherry', 'orange')
-
 # -- Pridanie pomocou sčítania tuplov --
 thistuple = ("apple", "banana", "cherry")
 y = ("orange",)     # tuple s jedným prvkom (pozri čiarku!)
 thistuple += y      # spojí tuplu a y
 print(thistuple)    # výstup: ('apple', 'banana', 'cherry', 'orange')
-
-# -- Odstránenie prvku (workaround) --
-thistuple = ("apple", "banana", "cherry")
-y = list(thistuple)
-y.remove("apple")   # vymaže 'apple'
-thistuple = tuple(y)
-print(thistuple)    # výstup: ('banana', 'cherry')
 
 # -- Vymazanie celej tupli pomocou del --
 thistuple = ("apple", "banana", "cherry")

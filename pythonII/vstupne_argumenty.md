@@ -1,7 +1,3 @@
-Samozrejme, tu je slovenský preklad:
-
----
-
 ## Argumenty príkazového riadku v Pythone
 
 Python programy môžu prijímať argumenty z príkazového riadku. Premenná <code>sys.argv</code>
