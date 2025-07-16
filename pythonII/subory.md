@@ -27,7 +27,7 @@
 
 ### 1. **Textové súbory:**
 
-* Obsahujú **čitateľný text** (napr. v Unicode/UTF-8/ASCII).
+* Textové súbory obsahujú čitateľný text, ktorý je uložený v určitom kódovaní (napr. UTF-8, ASCII).
 * Typicky používajú `\n` pre nový riadok.
 * Príklady: `.txt`, `.csv`, `.json`, `.py`
 
