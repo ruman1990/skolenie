@@ -12,3 +12,5 @@ def import_skladu(sklad):
     for x in casti:
         item = x.split(',')
         sklad.produkty[item[0]] = item
+
+#ww

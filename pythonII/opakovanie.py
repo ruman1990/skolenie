@@ -125,4 +125,8 @@ meno = input_meno.strip().title()
 vek = input_vek.strip().title()
 
 if vek.isnumeric():
+<<<<<<< HEAD
     print("spravne zadane")
+=======
+    print("spravne zadane")
+>>>>>>> 192c972d11f2e96d1721478ff272763d95692413
