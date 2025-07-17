@@ -16,6 +16,18 @@ znamky["Adam"] = 4
 priemer = sum(znamky.values()) / len(znamky)
 print(f"Priemerna znamka je: {priemer}" ) 
 
+znamky = {
+    "Jana": 2,
+    "Peter" : 1,
+    "Michal" : 1,
+    "Bohumil" : 3
+}
+
+znamky["Adam"] = 4
+
+priemer = sum(znamky.values()) / len(znamky)
+print(f"Priemerna znamka je: {priemer}" ) 
+
 # ---------------------------------------------------------
 
 # Priklad 2: Zoznam slovníkov
@@ -80,6 +92,16 @@ ekniha.vypis_info()
 # Zadanie:
 # Vytvor triedu StaraKniha, ktorá dedí z Kniha a má metódu je_historicka(),
 # ktorá vráti True ak bola vydaná pred rokom 1950.
+
+class StaraKniha(Kniha):
+
+    def je_historicka(self):
+        return self.rok < 1950
+
+stara = StaraKniha("Python pre zaciatocnikov","Expert na programovanie",1948)
+
+stara.vypis_info()
+print(stara.je_historicka())
 
 class StaraKniha(Kniha):
 
