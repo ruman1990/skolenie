@@ -13,7 +13,11 @@ while True:
     print("6. Hodnota skladu")
     print("7. Odstranenie produktu")
     print("8. Export skladu")
-    print("9. import skladu")
+    print("9. Import skladu")
+    print("10. Vypisat dennik")
+    print("11. Export do XML")
+    print("12. Import z XML")
+    print("13. Vyhladat produkt")
     print("0. Ukoncit program")
     
     volba = input("Zvol moznost: ")
@@ -35,6 +39,14 @@ while True:
         export.export_skladu(sklad)
     elif volba == '9':
         export.import_skladu(sklad)
+    elif volba == '10':
+        sklad.vypisat_dennik()
+    elif volba == '11':
+        export.export_skladu_xml(sklad)
+    elif volba == '12':
+        export.import_skladu_xml(sklad)
+    elif volba == '13':
+        sklad.vyhladat_nazov()
     elif volba == '0':
         print("Ukoncenie programu")
         break

@@ -1,0 +1,6 @@
+[2025-07-17 13:08:15] Boli vypisane produkty
+[2025-07-17 13:08:19] Boli vypisane produkty
+[2025-07-17 13:08:23] Pridanie produktu {nazov}
+[2025-07-17 13:09:38] Boli vypisane produkty
+[2025-07-17 13:09:46] Pridanie produktu muka
+[2025-07-17 13:09:53] Pridanie produktu muka - Chyba: Produkt uz existuje

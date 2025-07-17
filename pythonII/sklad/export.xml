@@ -1,0 +1,12 @@
+<sklad>
+    <produkt>
+        <nazov>Produkt1</nazov>
+        <cena>100</cena>
+        <pocet>10</pocet>
+    </produkt>
+    <produkt>
+        <nazov>Produkt2</nazov>
+        <cena>100</cena>
+        <pocet>10</pocet>
+    </produkt>
+</sklad>

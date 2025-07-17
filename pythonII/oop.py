@@ -1,6 +1,6 @@
+import re
 
-def test():
-    print("Hello from OOP module!")
+text = "123"
 
-def test2():
-    print("This is another test function from OOP module!")
+# Skúsme rôzne prístupy
+print("search:", re.search(r"^\s*\d{3}$", text))       # ✅ nájde 123

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sklad>
+    <produkt>
+        <nazov>voda</nazov>
+        <pocet>5</pocet>
+        <cena>1.5</cena>
+    </produkt>
+    <produkt>
+        <nazov>muka</nazov>
+        <pocet>10</pocet>
+        <cena>2.5</cena>
+    </produkt>
+</sklad>

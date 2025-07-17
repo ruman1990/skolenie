@@ -1,3 +1,2 @@
-Hello! Welcome to demofile.txt  
-This file is for testing purposes.  
-Good Luck!ahojahojahoj
+"25.12.2023 14:00" Ahoj
+"25.12.2023 14:01" Ahoj aj ty
