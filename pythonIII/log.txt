@@ -1,0 +1,8 @@
+[2025-07-19 11:58:45] Boli vypisane produkty
+[2025-07-19 11:59:22] Pridanie produktu voda
+[2025-07-19 11:59:26] Boli vypisane produkty
+[2025-07-19 11:59:43] Naskladnenie voda
+[2025-07-19 11:59:54] Nastavenie ceny produktu voda
+[2025-07-19 11:59:56] Boli vypisane produkty
+[2025-07-19 12:04:31] Boli vypisane produkty
+[2025-07-19 12:04:46] Nastavenie ceny produktu voda
