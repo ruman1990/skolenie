@@ -364,3 +364,37 @@ CREATE TABLE IF NOT EXISTS uzivatel (
 ```
 
 Ak sa pokúsite vložiť meno, ktoré už v tabuľke je, vyhodí sa výnimka.
+
+
+
+---
+
+```python
+
+import sqlite3
+
+# 1. Otvor spojenie
+conn = sqlite3.connect(":memory:")  # alebo 'mojabaza.db'
+
+# 2. Definuj Python funkciu
+def moj_pocet_znakov(text):
+    if text is None:
+        return 0
+    return len(text)
+
+# 3. Registruj ju do SQLite
+conn.create_function("MOJLEN", 1, moj_pocet_znakov)
+
+# 4. Príklad použitia v SQL dotaze
+c = conn.cursor()
+c.execute("SELECT MOJLEN('ahoj svet')")
+print(c.fetchone()[0])  # Výstup: 9
+
+# 5. Vieš ju používať aj na tabuľkách:
+c.execute("CREATE TABLE test(text TEXT)")
+c.execute("INSERT INTO test VALUES ('abcde')")
+c.execute("SELECT text, MOJLEN(text) FROM test")
+print(c.fetchall())  # Výstup: [('abcde', 5)]
+
+conn.close()
+```
