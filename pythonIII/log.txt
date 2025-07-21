@@ -1,8 +1,51 @@
-[2025-07-19 11:58:45] Boli vypisane produkty
-[2025-07-19 11:59:22] Pridanie produktu voda
-[2025-07-19 11:59:26] Boli vypisane produkty
-[2025-07-19 11:59:43] Naskladnenie voda
-[2025-07-19 11:59:54] Nastavenie ceny produktu voda
-[2025-07-19 11:59:56] Boli vypisane produkty
-[2025-07-19 12:04:31] Boli vypisane produkty
-[2025-07-19 12:04:46] Nastavenie ceny produktu voda
+[2025-07-21 08:05:13] Pridanie produktu jablka
+[2025-07-21 08:06:01] Naskladnenie jablka
+[2025-07-21 08:06:22] Nastavenie ceny produktu jablka
+[2025-07-21 08:07:03] Pridanie produktu banany
+[2025-07-21 08:07:14] Naskladnenie banany
+[2025-07-21 08:08:09] Pridanie produktu mlieko
+[2025-07-21 08:08:17] Pridanie produktu mlieko - Chyba: Produkt uz existuje
+[2025-07-21 08:08:22] Nastavenie ceny produktu mlieko
+[2025-07-21 08:08:35] Naskladnenie mlieko
+[2025-07-21 08:09:03] Pridanie produktu chlieb
+[2025-07-21 08:09:22] Nastavenie ceny produktu chlieb
+[2025-07-21 08:09:32] Pridanie produktu rohlik
+[2025-07-21 08:10:01] Vyskladnenie rohlik
+[2025-07-21 08:10:26] Naskladnenie rohlik
+[2025-07-21 08:10:46] Pridanie produktu voda
+[2025-07-21 08:10:53] Pridanie produktu voda - Chyba: Produkt uz existuje
+[2025-07-21 08:11:09] Nastavenie ceny produktu voda
+[2025-07-21 08:11:15] Naskladnenie voda
+[2025-07-21 08:11:33] Pridanie produktu pivo
+[2025-07-21 08:11:57] Nastavenie ceny produktu pivo
+[2025-07-21 08:12:12] Naskladnenie pivo
+[2025-07-21 08:12:24] Pridanie produktu vino
+[2025-07-21 08:12:44] Vyskladnenie vino - Chyba: Produkt nie je na sklade
+[2025-07-21 08:12:56] Nastavenie ceny produktu vino
+[2025-07-21 08:13:03] Pridanie produktu syr
+[2025-07-21 08:13:21] Naskladnenie syr
+[2025-07-21 08:13:39] Pridanie produktu jogurt
+[2025-07-21 08:13:47] Naskladnenie jogurt
+[2025-07-21 08:13:52] Nastavenie ceny produktu jogurt
+[2025-07-21 08:14:07] Pridanie produktu kava
+[2025-07-21 08:14:26] Naskladnenie kava
+[2025-07-21 08:14:40] Vyskladnenie kava
+[2025-07-21 08:14:55] Nastavenie ceny produktu kava
+[2025-07-21 08:15:09] Pridanie produktu caj
+[2025-07-21 08:15:18] Naskladnenie caj
+[2025-07-21 08:15:36] Nastavenie ceny produktu caj
+[2025-07-21 08:15:56] Pridanie produktu dzus
+[2025-07-21 08:16:03] Naskladnenie dzus
+[2025-07-21 08:16:22] Nastavenie ceny produktu dzus
+[2025-07-21 08:16:37] Pridanie produktu cokolada
+[2025-07-21 08:16:44] Pridanie produktu cokolada - Chyba: Produkt uz existuje
+[2025-07-21 08:16:57] Nastavenie ceny produktu cokolada
+[2025-07-21 08:17:12] Naskladnenie cokolada
+[2025-07-21 08:17:26] Pridanie produktu cukor
+[2025-07-21 08:17:44] Naskladnenie cukor
+[2025-07-21 08:17:56] Vyskladnenie cukor
+[2025-07-21 08:18:09] Nastavenie ceny produktu cukor
+[2025-07-21 08:18:18] Boli vypisane produkty
+[2025-07-21 08:18:22] Pridanie produktu muka
+[2025-07-21 08:18:39] Naskladnenie muka
+[2025-07-21 08:18:55] Vyskladnenie muka
