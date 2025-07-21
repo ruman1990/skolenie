@@ -1,3 +1,6 @@
+##  Flask aplikácia
+
+```python
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -30,3 +33,6 @@ def add_numbers():
 # Spustenie servera
 if __name__ == "__main__":
     app.run(debug=True)
+```
+
+---

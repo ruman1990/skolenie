@@ -108,12 +108,3 @@ for cislo in fibonacci(20):
     print(cislo)
 # 0, 1, 1, 2, 3, 5, 8, 13
 ```
-
----
-
-Ak ťa zaujíma ešte viac:
-
-* rozdiel medzi generátorom a iterátorom v praxi
-* pokročilé použitie (napr. pre pipeline spracovania dát)
-* alebo úloha na skúšku
-  napíš a rád rozšírim alebo zadám cvičenie! 😊

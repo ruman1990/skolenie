@@ -5,8 +5,7 @@
 Funkcionálne programovanie je štýl programovania, v ktorom sa výpočty vyjadrujú ako **funkcie**, nie ako sekvencie príkazov.
 Kľúčové znaky:
 
-* **Funkcie sú „prvotriedne objekty“:** môžu byť ukladané do premenných, odovzdávané ako argumenty, vracané z iných funkcií.
-* **Bezmenové (anonymné) funkcie** a **vyššie-poradia funkcie**.
+* **Funkcie sú „objekty“:** môžu byť ukladané do premenných, odovzdávané ako argumenty, vracané z iných funkcií.
 * **Immutabilita**: meníme čo najmenej údajov „na mieste“, používame mapovanie, filtrovanie, zreťazovanie atď.
 
 Python nie je čisto funkcionálny jazyk, ale poskytuje silnú podporu funkcionálneho štýlu.
@@ -25,9 +24,19 @@ print(f(5))  # Výstup: 10
 Typické použitie je ako argument pre funkcie ako `map`, `filter`, `sorted` atď.
 
 ```python
-cisla = [1, 2, 3, 4]
+cisla = [1, 2, 3, 4, 5, 6, 7, 8]
+
+# 1. map – každý prvok vynásobíme dvomi
 dvojnasobky = list(map(lambda x: x * 2, cisla))
-print(dvojnasobky)  # [2, 4, 6, 8]
+print("Dvojnásobky:", dvojnasobky)  # [2, 4, 6, 8, 10, 12, 14, 16]
+
+# 2. filter – ponecháme len párne čísla
+parne = list(filter(lambda x: x % 2 == 0, cisla))
+print("Párne čísla:", parne)  # [2, 4, 6, 8]
+
+# 3. sorted – zoradíme čísla zostupne
+zoradene = sorted(cisla, reverse=True)
+print("Zoradené (zostupne):", zoradene)  # [8, 7, 6, 5, 4, 3, 2, 1]
 ```
 
 ---
@@ -64,8 +73,7 @@ Modul **`functools`** obsahuje užitočné funkcie pre pokročilejšiu prácu s 
 | --------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | `functools.reduce(funkcia, zoznam)`           | Aplikuje funkciu akumulatívne na prvky zoznamu, vráti jeden výsledok (napr. súčet, súčin...) |
 | `functools.partial(funkcia, *args, **kwargs)` | Vytvorí „polofunkciu“ – niektoré argumenty už nastavené dopredu                              |
-| `functools.lru_cache`                         | Dekorátor na cachovanie výsledkov funkcie (urychľuje opakované výpočty)                      |
-| `functools.wraps`                             | Zachová metaúdaje pôvodnej funkcie pri dekorátore                                            |
+
 
 **Príklady:**
 
@@ -87,6 +95,15 @@ stvorcova = partial(mocnina, n=2)
 print(stvorcova(5))  # 25
 ```
 
+---
+```python
+from functools import cache
+
+@cache
+def slow_fn(x):
+    print("Computing...")
+    return x * 2
+```
 ---
 
 ## Modul `itertools`
@@ -117,6 +134,21 @@ zoznam2 = [3, 4]
 print(list(chain(zoznam1, zoznam2)))  # [1, 2, 3, 4]
 ```
 
+---
+
+from itertools import groupby
+
+data = [1, 1, 2, 2, 2, 3, 1, 1]
+
+for key, group in groupby(data):
+    print(key, list(group))
+
+
+
+#1 [1, 1]
+#2 [2, 2, 2]
+#3 [3]
+#1 [1, 1]
 ---
 
 ## Knižnica `funcy`
