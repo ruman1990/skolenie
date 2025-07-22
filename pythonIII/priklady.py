@@ -3,7 +3,7 @@
 
 x = ["ahoj", "svet", "AI", "Python", "ok"]
 upper = [i.upper() for i in x if len(i)>3]
-#print(upper)
+print(upper)
 
 
 
@@ -13,13 +13,13 @@ upper = [i.upper() for i in x if len(i)>3]
 matica = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
 rozlozene = [i for x in matica for i in x]
-#print(rozlozene)
+print(rozlozene)
 
 # 3. List comprehension s podmienkou vo vnútri – nahraď záporné čísla nulou, ostatné nechaj.
 # Vstup: [-3, -1, 0, 2, 4]
 cisla = [-3, -1, 0, 2, 4]
 nulove = [x if x>=0 else 0 for x in cisla]
-#print(nulove)
+print(nulove)
 
 
 # 4. List comprehension + lambda + map – zdvojnásob všetky čísla v matici pomocou lambda funkcie.
@@ -27,7 +27,7 @@ nulove = [x if x>=0 else 0 for x in cisla]
 
 v = [[1, 2], [3, 4]]
 vystup = [list(map(lambda x: x*2,r)) for r in v]
-#print(vystup)
+print(vystup)
 
 # 5. List comprehension – vyber mená ľudí starších ako 18 zo zoznamu slovníkov.
 # Vstup:
@@ -44,7 +44,7 @@ ludia = [
      {"meno": "Ada", "vek": 31},
 ]
 dospeli = [z['meno'] for z in ludia if z['vek']>=18]
-#print(dospeli)
+print(dospeli)
 
 
 # 6. Lambda vo funkcii sorted – zorad slová podľa dĺžky zostupne.
@@ -52,7 +52,7 @@ dospeli = [z['meno'] for z in ludia if z['vek']>=18]
 
 v =  ["ahoj", "python", "je", "super"]
 
-#print(sorted(v,key=lambda w: len(w),reverse=True))
+print(sorted(v,key=lambda w: len(w),reverse=True))
 
 
 # 7. List comprehension + lambda + zip – sčítaj po dvojiciach hodnoty z dvoch zoznamov.
