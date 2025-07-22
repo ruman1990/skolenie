@@ -4,7 +4,7 @@ import uuid
 import random
 # 💡 Konfigurácia
 BASE_URL = "https://ui.smartiepal.com"
-ASSISTANT_ID = "6f7d2523063237ab23521b8a5d024e30bd829e0abcedb9df4d5e392bd8b3250a"
+ASSISTANT_ID = ""
 QUESTION = "Ahoj, kto si?"
 
 # random 8 letters string
