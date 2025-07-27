@@ -1,13 +1,14 @@
 from decimal import Decimal
 
 class Produkt:
-    def __init__(self, nazov, pocet=0, cena=Decimal('0.0')):
+    def __init__(self, nazov, pocet=0, cena=Decimal('0.0'), kategoria=1):
         self.nazov = nazov
         self.pocet = pocet
         self.cena = cena
+        self.kategoria = kategoria
 
     def __str__(self):
         return f'{self.nazov} {self.pocet}ks {self.cena:.2f}€'
     
     def export(self):
-        return f'{self.nazov},{self.pocet},{self.cena}'
+        return f'{self.nazov},{self.pocet},{self.cena},{self.kategoria}'
