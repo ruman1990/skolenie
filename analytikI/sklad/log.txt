@@ -1,1 +1,6 @@
 [2025-07-28 12:43:27] Boli vypisane produkty
+[2025-07-28 14:15:51] Boli vypisane produkty
+[2025-07-28 14:23:04] Boli vypisane produkty
+[2025-07-28 14:24:19] Pridanie produktu K
+[2025-07-28 14:24:26] Boli vypisane produkty
+[2025-07-28 14:24:57] Odstranenie produktu K
