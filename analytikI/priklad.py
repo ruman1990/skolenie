@@ -1,5 +1,10 @@
-import pandas as pd
+import psycopg2
 
-moje_cisla = [4, 7, 8]
-moj_series = pd.Series(moje_cisla, index=[2, 3, 4])
-print(moj_series[1])
+conn = psycopg2.connect(
+    host="localhost",
+    database="moja_databaza",
+    user="postgres",
+    password="tajneheslo"
+)
+
+cur = conn.cursor()
