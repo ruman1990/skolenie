@@ -103,18 +103,6 @@ for typ, skupina in groupby(data, key=lambda x: x[1]):
     print(f"{typ}: {[item[0] for item in skupina]}")
 ```
 
-### ✅ Alternatíva: zoskupovanie do slovníka
-
-```python
-from collections import defaultdict
-
-skupiny = defaultdict(list)
-for nazov, kategoria in data:
-    skupiny[kategoria].append(nazov)
-
-print(dict(skupiny))
-```
-
 ---
 
 ## 🔢 5. `float` vs `Decimal`
