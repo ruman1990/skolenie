@@ -1,26 +1,31 @@
 from sklad import Sklad
 import export
 
+import gettext
+
+lang = gettext.translation('messages', localedir='translations', languages=['zh'])
+lang.install()
+
 print("------ SKLAD v1.0 ------")
 sklad = Sklad()
 while True:
     print("------- MENU ------")
-    print("1. Vypis produktov")
-    print("2. Pridat produkt")
-    print("3. Naskladnit produkt")
-    print("4. Vyskladnit produkt")
-    print("5. Nastav cenu")
-    print("6. Hodnota skladu")
-    print("7. Odstranenie produktu")
-    print("8. Export skladu")
-    print("9. Import skladu")
-    print("10. Vypisat dennik")
-    print("11. Export do XML")
-    print("12. Import z XML")
-    print("13. Vyhladat produkt")
-    print("14. Export do CSV")
-    print("15. Import z CSV")
-    print("0. Ukoncit program")
+    print(_("1. Vypis produktov"))
+    print(_("2. Pridat produkt"))
+    print(_("3. Naskladnit produkt"))
+    print(_("4. Vyskladnit produkt"))
+    print(_("5. Nastav cenu"))
+    print(_("6. Hodnota skladu"))
+    print(_("7. Odstranenie produktu"))
+    print(_("8. Export skladu"))
+    print(_("9. Import skladu"))
+    print(_("10. Vypisat dennik"))
+    print(_("11. Export do XML"))
+    print(_("12. Import z XML"))
+    print(_("13. Vyhladat produkt"))
+    print(_("14. Export do CSV"))
+    print(_("15. Import z CSV"))
+    print(_("0. Ukoncit program"))
     
     volba = input("Zvol moznost: ")
     if volba == '1':
@@ -54,8 +59,8 @@ while True:
     elif volba == '15':
         export.import_skladu_csv(sklad)
     elif volba == '0':
-        print("Ukoncenie programu")
+        print(_("Ukoncenie programu"))
         sklad.zavri()
         break
     else:
-        print("Neplatna volba, Skus znova.")
+        print(_("Neplatna volba, Skus znova."))

@@ -36,3 +36,64 @@ if __name__ == "__main__":
 ```
 
 ---
+
+
+
+```python
+
+from flask import Flask, request, jsonify
+from pydantic import BaseModel, ValidationError
+from typing import Any, Dict
+
+app = Flask(__name__)
+
+# --- Pydantic modely ---
+
+class EchoModel(BaseModel):
+    # Ak nevieš presnú štruktúru, môžeš povoliť akékoľvek dáta:
+    # Alebo uprav podľa toho, čo očakávaš
+    data: Any
+
+class AddModel(BaseModel):
+    a: float
+    b: float
+
+# --- Kontroléry ---
+
+@app.route("/")
+def home():
+    return "<h1>Vitaj na mojom Flask serveri!</h1>"
+
+@app.route("/echo", methods=["POST"])
+def echo():
+    json_data = request.get_json()
+    if not json_data:
+        return jsonify({"error": "Missing JSON"}), 400
+    try:
+        # Zabaliť payload do slovníka pod klúč 'data', aby vyhovoval EchoModel
+        model = EchoModel(data=json_data)
+    except ValidationError as e:
+        return jsonify({"error": e.errors()}), 422
+    return jsonify({
+        "message": "Dostal som tvoje dáta.",
+        "received": model.data  # Toto je validované dáta
+    })
+
+@app.route("/add", methods=["POST"])
+def add_numbers():
+    json_data = request.get_json()
+    if not json_data:
+        return jsonify({"error": "Missing JSON"}), 400
+    try:
+        model = AddModel(**json_data)
+    except ValidationError as e:
+        return jsonify({"error": e.errors()}), 422
+    result = model.a + model.b
+    return jsonify({"result": result})
+
+# --- Spustenie servera ---
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+```
