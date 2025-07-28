@@ -8,7 +8,6 @@ from audit import Audit
 import re
 import psycopg2
 import psycopg2.extras
-import sqlite3
 from decimal import Decimal
 
 class Sklad:
@@ -17,8 +16,8 @@ class Sklad:
         self.produkty = {}
         self.conn = psycopg2.connect(
             dbname="skolenie",
-            user="postgres",
-            password="postgres",
+            user="admin",
+            password="adminadmin",
             host="localhost",
             port=5432
         )
@@ -28,13 +27,13 @@ class Sklad:
         #self.cursor = self.conn.cursor()        
 
         # self.cursor.execute('''
-        #      CREATE TABLE IF NOT EXISTS produkty (
-        #          nazov TEXT PRIMARY KEY,
-        #          pocet INTEGER,
-        #          cena REAL
-        #      )
-        #  ''')
-        #self.conn.commit()
+        #     CREATE TABLE IF NOT EXISTS produkty (
+        #         nazov TEXT PRIMARY KEY,
+        #         pocet INTEGER,
+        #         cena REAL
+        #     )
+        # ''')
+        # self.conn.commit()
 
         self.cursor.execute("SELECT * from produkty")
         for row in self.cursor.fetchall():

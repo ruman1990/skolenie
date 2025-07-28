@@ -6,8 +6,8 @@
 from produkt import Produkt
 from audit import Audit
 import re
-import psycopg2
-import psycopg2.extras
+#import psycopg2
+#import psycopg2.extras
 import sqlite3
 from decimal import Decimal
 
@@ -15,26 +15,26 @@ class Sklad:
     def __init__(self):
         self.audit = Audit()
         self.produkty = {}
-        self.conn = psycopg2.connect(
-            dbname="skolenie",
-            user="postgres",
-            password="postgres",
-            host="localhost",
-            port=5432
-        )
-        #self.conn = sqlite3.connect("sklad.db")
-        #self.conn.row_factory = sqlite3.Row
-        self.cursor = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-        #self.cursor = self.conn.cursor()        
+        #self.conn = psycopg2.connect(
+        #    dbname="skolenie",
+        #    user="admin",
+        #    password="adminadmin",
+         #   host="localhost",
+        #    port=5432
+        #)
+        self.conn = sqlite3.connect("sklad.db")
+        self.conn.row_factory = sqlite3.Row
+        #self.cursor = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        self.cursor = self.conn.cursor()        
 
-        # self.cursor.execute('''
-        #      CREATE TABLE IF NOT EXISTS produkty (
-        #          nazov TEXT PRIMARY KEY,
-        #          pocet INTEGER,
-        #          cena REAL
-        #      )
-        #  ''')
-        #self.conn.commit()
+        self.cursor.execute('''
+             CREATE TABLE IF NOT EXISTS produkty (
+                 nazov TEXT PRIMARY KEY,
+                 pocet INTEGER,
+                 cena REAL
+             )
+         ''')
+        self.conn.commit()
 
         self.cursor.execute("SELECT * from produkty")
         for row in self.cursor.fetchall():
@@ -59,7 +59,7 @@ class Sklad:
         else:
             self.produkty[nazov] = Produkt(nazov)
             x = self.produkty[nazov]
-            self._uloz_zmenu("INSERT INTO produkty (nazov,pocet,cena,kategoria) VALUES (%s,%s,%s, %s)",(x.nazov,x.pocet,x.cena, x.kategoria))
+            self._uloz_zmenu("INSERT INTO produkty (nazov,pocet,cena,kategoria) VALUES (?,?,?, ?)",(x.nazov,x.pocet,x.cena, x.kategoria))
             print("Produkt bol pridany.")
             self.audit.zapis(f"Pridanie produktu {nazov}")
 
@@ -69,7 +69,7 @@ class Sklad:
             kusy = int(input("Zadaj pocet kusov produktu: "))
             self.produkty[nazov].pocet += kusy
             x = self.produkty[nazov]
-            self._uloz_zmenu("UPDATE produkty SET pocet=%s WHERE nazov=%s",(x.pocet,x.nazov))
+            self._uloz_zmenu("UPDATE produkty SET pocet=? WHERE nazov=?",(x.pocet,x.nazov))
             print("Produkt naskladneny")
             self.audit.zapis(f"Naskladnenie {nazov}")
         else:
@@ -85,7 +85,7 @@ class Sklad:
             else:
                 self.produkty[nazov].pocet -= kusy
                 x = self.produkty[nazov]
-                self._uloz_zmenu("UPDATE produkty SET pocet=%s WHERE nazov=%s",(x.pocet,x.nazov))
+                self._uloz_zmenu("UPDATE produkty SET pocet=? WHERE nazov=?",(x.pocet,x.nazov))
                 print("Produkt vyskladneny")
         else:
             print("Produkt nie je na sklade")
@@ -96,7 +96,7 @@ class Sklad:
             cena = Decimal(input("Zadaj cenu za kus produktu: "))
             self.produkty[nazov].cena = cena
             x = self.produkty[nazov]
-            self._uloz_zmenu("UPDATE produkty SET cena=%s WHERE nazov=%s",(x.cena,x.nazov))
+            self._uloz_zmenu("UPDATE produkty SET cena=? WHERE nazov=?",(x.cena,x.nazov))
             print("Cena bola nastavena")
         else:
             print("Produkt nie je na sklade")
@@ -110,7 +110,7 @@ class Sklad:
     def odstranit_produkt(self):
         nazov = input("Zadaj nazov produktu: ")
         if nazov in self.produkty:
-            self._uloz_zmenu("delete from produkty WHERE nazov=%s",(self.produkty[nazov].nazov,))
+            self._uloz_zmenu("delete from produkty WHERE nazov=?",(self.produkty[nazov].nazov,))
             del self.produkty[nazov]
             print("Produkt bol odstraneny")
             self.audit.zapis(f"Odstranenie produktu {nazov}")

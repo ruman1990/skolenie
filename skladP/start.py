@@ -3,7 +3,7 @@ import export
 
 import gettext
 
-lang = gettext.translation('messages', localedir='translations', languages=['sk'], fallback=True)
+lang = gettext.translation('messages', localedir='translations', languages=['zh'])
 lang.install()
 
 print("------ SKLAD v1.0 ------")

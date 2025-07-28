@@ -13,7 +13,10 @@
 #     Zobraz priemernú cenu všetkých áut (s presnosťou na dve desatinné miesta).
 
 #     Zobraz zoznam všetkých áut drahších ako 20 000 €, zoradený zostupne podľa ceny.
+import csv
+import sqlite3
 
+<<<<<<< Updated upstream
 
 # Načítaj údaje zo súboru auta.csv.
 
@@ -33,6 +36,8 @@
 import csv
 import sqlite3
 
+=======
+>>>>>>> Stashed changes
 with open('auta.csv',encoding='utf-8',newline='') as f:
     reader = csv.DictReader(f)
     auta = list(reader)
@@ -58,7 +63,12 @@ for a in auta:
 conn.commit()
 import datetime
 
+<<<<<<< Updated upstream
 rok = datetime.datetime.now().year
+=======
+rok = datetime.datetime.now()
+rok = rok.strftime('%Y')
+>>>>>>> Stashed changes
 c.execute("select count(*) from auta where ? - datum > 5 ",(rok,))
 
 pocet = c.fetchone()[0]
@@ -75,4 +85,7 @@ print(f'Priemerna cena auta: {priemer}')
 c.execute("select * from auta where cena > 20000")
 zoznam = c.fetchall()
 print(zoznam)
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

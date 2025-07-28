@@ -1,15 +1,6 @@
-[2025-07-17 13:08:15] Boli vypisane produkty
-[2025-07-17 13:08:19] Boli vypisane produkty
-[2025-07-17 13:08:23] Pridanie produktu {nazov}
-[2025-07-17 13:09:38] Boli vypisane produkty
-[2025-07-17 13:09:46] Pridanie produktu muka
-[2025-07-17 13:09:53] Pridanie produktu muka - Chyba: Produkt uz existuje
-[2025-07-21 13:19:26] Pridanie produktu voda
-[2025-07-21 13:28:06] Boli vypisane produkty
-[2025-07-21 13:28:21] Pridanie produktu cola
-[2025-07-21 13:28:30] Boli vypisane produkty
-[2025-07-21 13:28:58] Naskladnenie voda
-[2025-07-21 13:29:23] Naskladnenie cola
-[2025-07-21 13:29:39] Boli vypisane produkty
-[2025-07-21 14:05:55] Boli vypisane produkty
-[2025-07-21 14:34:43] Boli vypisane produkty
+[2025-07-28 12:43:27] Boli vypisane produkty
+[2025-07-28 14:15:51] Boli vypisane produkty
+[2025-07-28 14:23:04] Boli vypisane produkty
+[2025-07-28 14:24:19] Pridanie produktu K
+[2025-07-28 14:24:26] Boli vypisane produkty
+[2025-07-28 14:24:57] Odstranenie produktu K

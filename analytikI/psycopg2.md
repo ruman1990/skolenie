@@ -1,3 +1,11 @@
+postgre server - https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+
+pgadmin - https://www.postgresql.org/ftp/pgadmin/pgadmin4/v9.6/windows/
+
+
+
+
 # 🐘 `psycopg2` – Práca s PostgreSQL v Pythone
 
 ---
