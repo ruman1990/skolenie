@@ -1,0 +1,13 @@
+[
+    {
+        "meno": "Anna",
+        "vek": 25,
+        "email": "anna@email.com",
+        "aktivny": true,
+        "zaujmy": [
+            "\u0161port",
+            "knihy",
+            "hudba"
+        ]
+    }
+]

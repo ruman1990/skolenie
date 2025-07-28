@@ -1,0 +1,14 @@
++-------------------+          HTTP požiadavka          +-----------------------+
+|                   |  ------------------------------>  |                       |
+|  Prehliadač       |         (napr. GET /, POST /add)  |   Flask Web Server    |
+|  (klient)         |                                   |   (Python backend)    |
++-------------------+                                   +-----------------------+
+         |                                                          |
+         |                HTTP odpoveď (HTML, JSON, kód)            |
+         |  <------------------------------                        |
+         |                                                          |
++-------------------+                                   +-----------------------+
+|   Užívateľ vidí   |                                   |   Server volá         |
+|   stránku alebo   |                                   |   správny handler:    |
+|   dostane dáta    |                                   |   @app.route(...)     |
++-------------------+                                   +-----------------------+
