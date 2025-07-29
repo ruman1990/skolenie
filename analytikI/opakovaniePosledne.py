@@ -53,4 +53,8 @@ with open('lety.csv', 'w', encoding='utf-8', newline='') as f:
 
 # 5. Sčítanie pasažierov z CSV cez tablib
 q = sum([r['Pocet pasazierov'] for r in data.dict])
+<<<<<<< Updated upstream
 print(f'Pocet pasazierov na vsetkych linkach je {q}')
+=======
+print(f'Pocet pasazierov na vsetkych linkach je {q}')
+>>>>>>> Stashed changes
