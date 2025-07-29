@@ -1,4 +1,4 @@
-CREATE VIEW objedanvka_view AS
+CREATE VIEW objednavka_view AS
 SELECT op.objednavka_id,
     op.mnozstvo,
     op.cena,
