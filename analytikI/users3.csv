@@ -1,7 +1,7 @@
 id,first_name,last_name,email,city,salary
 1,Bohdana,Sýkorová,jklima@example.net,Dolné Otrokovce,2200
-2,Radomír,Uram,tarzicius00@example.net,Kysak,1400
-3,Jakub,Harvánek,bohumilafasiangova@example.com,Hrubý Šúr,2500
+2,Radomír,Uram,tarzicius00@example.net,Kysak,140000
+3,Jakub,Harvánek,bohumilafasiangova@example.com,Hrubý Šúr,-2500
 4,Izidor,Droppová,hankovapetronela@example.net,Duplín,2100
 5,Oskár,Pavelko,talpasemil@example.org,Malá Ida,4000
 6,Jarolím,Simonová,krupovaeleonora@example.org,Dúbrava,3900

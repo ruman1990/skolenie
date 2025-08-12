@@ -20,7 +20,14 @@ Napíš program, ktorý si vypýta číslo **N** a spočíta súčet čísel od 
 # Vstup: N = 5
 # Výstup: Súčet je 15
 ```
+```python
+ n = int(input("Zadaj N: "))
+ suma = 0
+ for i in range(1,n+1):
+     suma += i
+ print(f'Sucet je {suma}')
 
+```
 ---
 
 ## **Cvičenie 3: While cyklus – hádaj číslo**
@@ -46,7 +53,11 @@ Vypíš násobilku čísla 8 od 1 po 10:
 # ...
 # 8 × 10 = 80
 ```
+```python
+for i in range(1,6):
+     print('*' * i)
 
+```
 ---
 
 ## **Cvičenie 5: Vnorený cyklus – hviezdičky**
@@ -73,8 +84,35 @@ Zisti, koľko **párnych čísel** je v zozname:
 cisla = [2, 7, 4, 9, 6, 1, 10]
 # Výstup: 4
 ```
-
+```python
+for x in cisla:
+     if x % 2 == 0:
+         pocet_parnych += 1
+```
 ---
 
+## **Cvičenie 7: Pyramida**
+
+```
+    *        *
+   ***      ***
+  *****    *****
+ *******  *******
+******************
+```
+```python
+n = int(input("Zadaj pocet riadkov: "))
+
+for i in range(1,n+1):
+    print(' ' * (n-i), end='')
+
+    print('*' * (2 * i - 1), end='')
+
+    print(' ' * (2 * (n-i)), end='')
+
+    print('*' * (2 * i - 1))
+
+
+```
 ---
 
