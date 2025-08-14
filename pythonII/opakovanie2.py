@@ -11,7 +11,11 @@
 # Zadanie:
 # Vytvor zoznam, kde každý prvok je slovník s informáciami o knihe (nazov, autor, rok).
 # Pridaj 3 knihy a vypíš názvy všetkých kníh vydaných po roku 2010.
-
+knihy = [
+    {'nazov': '1984', 'autor': 'George Orwell', 'rok': 1949},
+    {'nazov': 'Sto rokov samoty', 'autor': 'Gabriel García Márquez', 'rok': 1967},
+    {'nazov': 'Sila zvyku', 'autor': 'Charles Duhigg', 'rok': 2012}
+]
 
 # ---------------------------------------------------------
 
