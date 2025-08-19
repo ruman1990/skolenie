@@ -144,3 +144,135 @@ except requests.RequestException as e:
 * Umožňuje GET, POST, PUT, DELETE a ďalšie HTTP operácie.
 * Jednoduché čítanie a posielanie JSON, prácu s formulármi, upload/sťahovanie súborov.
 * Kód je prehľadný a zrozumiteľný – vhodný aj pre začiatočníkov.
+
+
+
+
+## 1️⃣ GET – získanie dát
+
+Používa sa na **čítanie** (napr. zoznam užívateľov, články, …).
+
+```python
+import requests
+
+url = "https://jsonplaceholder.typicode.com/posts"
+response = requests.get(url)
+
+print(response.status_code)   # 200 = OK
+print(response.headers)       # HTTP hlavičky
+print(response.text[:100])    # prvých 100 znakov surového textu
+print(response.json()[:2])    # dekódovaný JSON (prvé 2 položky)
+```
+
+➡️ Parametre do query stringu (`?id=1&sort=asc`):
+
+```python
+response = requests.get(url, params={"userId": 1})
+print(response.json())
+```
+
+---
+
+## 2️⃣ POST – vytvorenie dát
+
+Používa sa na **odoslanie nových dát** na server (napr. registrácia, nový článok).
+
+```python
+import requests
+
+url = "https://jsonplaceholder.typicode.com/posts"
+payload = {"title": "Môj príspevok", "body": "Obsah...", "userId": 1}
+
+response = requests.post(url, json=payload)
+
+print(response.status_code)   # 201 = Created
+print(response.json())        # odpoveď s uloženým objektom
+```
+
+* `json=...` → pošle JSON (`Content-Type: application/json`)
+* `data=...` → pošle formulárové dáta (`application/x-www-form-urlencoded`)
+
+---
+
+## 3️⃣ PUT – úplná aktualizácia
+
+Používa sa na **úplnú zmenu existujúceho záznamu**.
+
+```python
+import requests
+
+url = "https://jsonplaceholder.typicode.com/posts/1"
+payload = {"id": 1, "title": "Nový titulok", "body": "Nový obsah", "userId": 1}
+
+response = requests.put(url, json=payload)
+
+print(response.status_code)   # 200 = OK
+print(response.json())
+```
+
+---
+
+## 4️⃣ PATCH – čiastočná aktualizácia
+
+Keď meníš len časť údajov:
+
+```python
+url = "https://jsonplaceholder.typicode.com/posts/1"
+payload = {"title": "Zmenený titulok"}
+
+response = requests.patch(url, json=payload)
+
+print(response.json())
+```
+
+---
+
+## 5️⃣ DELETE – zmazanie dát
+
+Používa sa na **odstránenie** záznamu.
+
+```python
+url = "https://jsonplaceholder.typicode.com/posts/1"
+response = requests.delete(url)
+
+print(response.status_code)   # 200 alebo 204 (No Content)
+```
+
+---
+
+## 🔹 Hlavičky (headers)
+
+Napr. keď API vyžaduje autentifikáciu alebo špeciálny formát:
+
+```python
+headers = {"Authorization": "Bearer MOJ_TOKEN"}
+response = requests.get("https://api.example.com/data", headers=headers)
+```
+
+---
+
+## 🔹 Timeout a error handling
+
+Nikdy nenechaj request visieť donekonečna:
+
+```python
+try:
+    response = requests.get("https://api.example.com", timeout=5)
+    response.raise_for_status()   # vyhodí chybu pri 4xx / 5xx
+except requests.exceptions.RequestException as e:
+    print("Chyba:", e)
+```
+
+---
+
+## 🔹 Rýchle porovnanie metód
+
+| Metóda   | Účel                        | Typický status              |
+| -------- | --------------------------- | --------------------------- |
+| `GET`    | Získať dáta                 | `200 OK`                    |
+| `POST`   | Vytvoriť nové dáta          | `201 Created`               |
+| `PUT`    | Úplne nahradiť existujúce   | `200 OK`                    |
+| `PATCH`  | Čiastočne zmeniť existujúce | `200 OK`                    |
+| `DELETE` | Odstrániť dáta              | `200 OK` / `204 No Content` |
+
+---
