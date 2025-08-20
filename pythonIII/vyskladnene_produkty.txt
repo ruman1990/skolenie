@@ -1,0 +1,5 @@
+produklt,pocet_vyskladneni,posledny_datum
+rohlik,1,2025-07-21 08:10:01
+kava,1,2025-07-21 08:14:40
+cukor,1,2025-07-21 08:17:56
+muka,2,2025-07-21 09:18:55
