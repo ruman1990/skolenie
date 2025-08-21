@@ -14,14 +14,35 @@
 # 9. Import skladu
 from produkt import Produkt
 from audit import Audit
+import sqlite3
 
 class Sklad:
     def __init__(self,nazov):
         self.nazov = nazov
-        self.produkty = { 'voda' : Produkt('voda',2.5,20), 
-                         'chlieb' : Produkt('chlieb',1.5,50), 
-                         'muka' : Produkt('muka',0.80,30) }
+        self.produkty = {}
         self.log = Audit()
+
+        self.conn = sqlite3.connect('sklad.db')
+        self.c = self.conn.cursor()
+
+        self.c.execute('''
+                    CREATE TABLE IF NOT EXISTS produkty (
+                       nazov TEXT PRIMARY KEY,
+                       cena REAL NOT NULL DEFAULT 0.0,
+                       pocet INTEGER NOT NULL DEFAULT 0
+                       )
+                    ''')
+        
+        self.conn.commit()
+
+        self.c.execute('SELECT * FROM produkty')
+        for row in self.c.fetchall():
+            self.produkty[row[0]] = Produkt(row[0],row[1],row[2])
+
+
+    def prikaz_db(self,sql,params):
+        self.c.execute(sql,params)
+        self.conn.commit()
 
     def vypis_produkty(self):
         print('')
@@ -38,12 +59,14 @@ class Sklad:
             cena = float(input("Zadaj cenu produktu: "))
             pocet = int(input("Zadaj pocet kusov: "))
             self.produkty[nazov] = Produkt(nazov,cena,pocet)
+            self.prikaz_db('INSERT INTO produkty (nazov,cena,pocet) VALUES (?,?,?)',(nazov,cena,pocet))
             self.log.zapis(f'Produkt {nazov} bol uspesne pridany do skladu')
 
     def odstran_produkt(self):
         nazov = input("Zadaj nazov produktu na odstranenie: ")
         if nazov in self.produkty:
             del self.produkty[nazov]
+            self.prikaz_db('DELETE FROM produkty where nazov=?',(nazov,))
             self.log.zapis(f"Produkt {nazov} bol odstraneny.")
         else:
             print('Produkt sa nenasiel.')
@@ -71,7 +94,10 @@ class Sklad:
         for i in zoznam_produktov:
             x = i.split(';')
             self.produkty[x[0]] = Produkt(x[0],float(x[1]),int(x[2]))
-            
+        self.prikaz_db('DELETE from produkty',())
+
+        for x in self.produkty:
+            self.prikaz_db('INSERT INTO produkty (nazov,cena,pocet) VALUES (?,?,?)',(self.produkty[x].nazov,self.produkty[x].cena,self.produkty[x].pocet))          
         self.log.zapis(f"Import bol uspesny. Pocet naimportovanych produktov {len(self.produkty)}")
 
     def naskladnit(self):
@@ -79,6 +105,7 @@ class Sklad:
         if nazov in self.produkty:
             kusy = int(input("Zadaj pocet kusov: "))
             self.produkty[nazov].pocet += kusy
+            self.prikaz_db('UPDATE produkty SET pocet=? WHERE nazov=?',(self.produkty[nazov].pocet,nazov))
             self.log.zapis(f'Produkt {nazov} bol naskladneny {kusy}')
         else:
             print("Produkt nie je na sklade")
@@ -92,6 +119,7 @@ class Sklad:
                 print('Nedostatok kusov na sklade')
             else:
                 self.produkty[nazov].pocet -= kusy
+                self.prikaz_db('UPDATE produkty SET pocet=? WHERE nazov=?',(self.produkty[nazov].pocet,nazov))
                 self.log.zapis(f"Produkt {nazov} bol vyskladneny")
         else:
             print("Produkt nie je na sklade")

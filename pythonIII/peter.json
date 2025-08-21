@@ -1,0 +1,6 @@
+[{
+    "meno": "Peter",
+    "vek": 30,
+    "email": "peter@email.com",
+    "aktivny": [true, false, true]
+}]
