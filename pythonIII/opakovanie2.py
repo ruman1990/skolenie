@@ -1,7 +1,5 @@
 # Načítaj údaje zo súboru auta.csv.
 
-# Spracuj hodnotu cena pomocou typu decimal.Decimal kvôli presnosti.
-
 # Vytvor databázu auta.db a v nej tabuľku auta so zodpovedajúcimi stĺpcami.
 
 # Vlož všetky údaje z CSV do databázy.
