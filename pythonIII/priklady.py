@@ -12,6 +12,11 @@ print(upper)
 
 matica = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
+rozlozene = []
+for x in matica:
+    for i in x:
+        rozlozene.append(i)
+
 rozlozene = [i for x in matica for i in x]
 print(rozlozene)
 
@@ -26,6 +31,9 @@ print(nulove)
 # Vstup: [[1, 2], [3, 4]]
 
 v = [[1, 2], [3, 4]]
+
+
+
 vystup = [list(map(lambda x: x*2,r)) for r in v]
 print(vystup)
 

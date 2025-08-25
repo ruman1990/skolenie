@@ -1,0 +1,87 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-08-21 13:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: start.py:9
+msgid "Hello!"
+msgstr ""
+
+#: start.py:13
+msgid "1. Vypísať zoznam produktov na sklade"
+msgstr ""
+
+#: start.py:14
+msgid "2. Pridať produkt do skladu"
+msgstr ""
+
+#: start.py:15
+msgid "3. Odstrániť produkt"
+msgstr ""
+
+#: start.py:16
+msgid "4. Nastavenie ceny produktu"
+msgstr ""
+
+#: start.py:17
+msgid "5. Naskladnenie produktu"
+msgstr ""
+
+#: start.py:18
+msgid "6. Vyskladnenie produktu"
+msgstr ""
+
+#: start.py:19
+msgid "7. Hodnota skladu"
+msgstr ""
+
+#: start.py:20
+msgid "8. Export skladu"
+msgstr ""
+
+#: start.py:21
+msgid "9. Import skladu"
+msgstr ""
+
+#: start.py:22
+msgid "10. Vypis logu"
+msgstr ""
+
+#: start.py:23
+msgid "0. Ukoncit program"
+msgstr ""
+
+#: start.py:28
+msgid "Skladovy softver v. 1.0"
+msgstr ""
+
+#: start.py:38
+msgid "Zadaj cislo volby: "
+msgstr ""
+
+#: start.py:60
+msgid "Program sa ukoncuje."
+msgstr ""
+
+#: start.py:63
+msgid "Zadal si neexistujucu volbu !!!"
+msgstr ""
+
+#: start.py:65
+msgid "Zadal si zlu volbu!"
+msgstr ""
+

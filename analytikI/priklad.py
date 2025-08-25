@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import pandas as pd
 
 data = {
@@ -8,3 +9,5 @@ data = {
 df = pd.DataFrame(data)
 print(df.loc[-1])
 
+=======
+>>>>>>> 014d6c7653bbabde16c419ec4d714d8ebcc1158d

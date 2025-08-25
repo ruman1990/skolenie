@@ -1,22 +1,30 @@
 from sklad import Sklad
 
+
+import gettext
+
+lang = gettext.translation('messages', localedir='translations', languages=['cs'])
+lang.install()
+
+
+
 volby = [
-    "1. Vypísať zoznam produktov na sklade",
-    "2. Pridať produkt do skladu",
-    "3. Odstrániť produkt",
-    "4. Nastavenie ceny produktu",
-    "5. Naskladnenie produktu",
-    "6. Vyskladnenie produktu",
-    "7. Hodnota skladu",
-    "8. Export skladu",
-    "9. Import skladu",
-    "10. Vypis logu",
-    "0. Ukoncit program"
+    _("1. Vypísať zoznam produktov na sklade"),
+    _("2. Pridať produkt do skladu"),
+    _("3. Odstrániť produkt"),
+    _("4. Nastavenie ceny produktu"),
+    _("5. Naskladnenie produktu"),
+    _("6. Vyskladnenie produktu"),
+    _("7. Hodnota skladu"),
+    _("8. Export skladu"),
+    _("9. Import skladu"),
+    _("10. Vypis logu"),
+    _("0. Ukoncit program")
 ]
 
 
 def menu():
-    print('Skladovy softver v. 1.0')
+    print(_('Skladovy softver v. 1.0'))
     print('-' * 10,'MENU','-' * 10)
     for x in volby:
         print(x)
@@ -26,7 +34,7 @@ sklad = Sklad('Firemny')
 while True:
     menu()
     try:
-        volba = int(input("Zadaj cislo volby: "))
+        volba = int(input(_("Zadaj cislo volby: ")))
         if volba == 1:
             sklad.vypis_produkty()
         elif volba == 2:
@@ -48,9 +56,9 @@ while True:
         elif volba == 10:
             sklad.log.vypis()
         elif volba == 0:
-            print("Program sa ukoncuje.")
+            print(_("Program sa ukoncuje."))
             break
         else:
-            print("Zadal si neexistujucu volbu !!!")
+            print(_("Zadal si neexistujucu volbu !!!"))
     except ValueError:
-        print("Zadal si zlu volbu!")
+        print(_("Zadal si zlu volbu!"))
