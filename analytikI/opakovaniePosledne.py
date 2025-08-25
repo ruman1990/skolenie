@@ -6,6 +6,14 @@
 
 # 3. Uloženie do Excelu (openpyxl)
 
-# Prečítaj všetky riadky z Excelu a zapis do tablib Dataset a exportuj do CSV
 
-# 5. Sčítanie pasažierov z CSV cez tablib
+
+# precitaj vsetky riadky a zapis ich do postgre databazy, predtym vytvo tabulku letov
+# 4. Uloženie do Postgre (psycopg2)
+
+
+# 5. spocitaj pocet pasazierov celkovo pomocou sql a cez python
+
+#6. vypis vsetky lety do Pariza a kolko ich je cez sql a python
+
+#7. let s najvacsim poctom pasazierov v sql a python
