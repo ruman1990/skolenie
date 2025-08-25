@@ -1,7 +1,3 @@
-Samozrejme! Tu je **prehľadný učebný materiál o knižnici Tablib** (v slovenčine), vhodný pre rýchle samoštúdium aj do výučby:
-
----
-
 # 📦 Tablib – jednoduchá práca s tabuľkovými dátami v Pythone
 
 ---
