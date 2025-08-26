@@ -1,66 +1,64 @@
 from sklad import Sklad
-import export
+
 
 import gettext
 
-lang = gettext.translation('messages', localedir='translations', languages=['sk'], fallback=True)
+lang = gettext.translation('messages', localedir='translations', languages=['sk'])
 lang.install()
 
-print("------ SKLAD v1.0 ------")
-sklad = Sklad()
+
+
+volby = [
+    _("1. Vypísať zoznam produktov na sklade"),
+    _("2. Pridať produkt do skladu"),
+    _("3. Odstrániť produkt"),
+    _("4. Nastavenie ceny produktu"),
+    _("5. Naskladnenie produktu"),
+    _("6. Vyskladnenie produktu"),
+    _("7. Hodnota skladu"),
+    _("8. Export skladu"),
+    _("9. Import skladu"),
+    _("10. Vypis logu"),
+    _("0. Ukoncit program")
+]
+
+
+def menu():
+    print(_('Skladovy softver v. 1.0'))
+    print('-' * 10,'MENU','-' * 10)
+    for x in volby:
+        print(x)
+
+sklad = Sklad('Firemny')
+
 while True:
-    print("------- MENU ------")
-    print(_("1. Vypis produktov"))
-    print(_("2. Pridat produkt"))
-    print(_("3. Naskladnit produkt"))
-    print(_("4. Vyskladnit produkt"))
-    print(_("5. Nastav cenu"))
-    print(_("6. Hodnota skladu"))
-    print(_("7. Odstranenie produktu"))
-    print(_("8. Export skladu"))
-    print(_("9. Import skladu"))
-    print(_("10. Vypisat dennik"))
-    print(_("11. Export do XML"))
-    print(_("12. Import z XML"))
-    print(_("13. Vyhladat produkt"))
-    print(_("14. Export do CSV"))
-    print(_("15. Import z CSV"))
-    print(_("0. Ukoncit program"))
-    
-    volba = input("Zvol moznost: ")
-    if volba == '1':
-        sklad.vypis_produktov()
-    elif volba == '2':
-        sklad.pridanie_produktu()
-    elif volba == '3':
-        sklad.naskladnit()
-    elif volba == '4':
-        sklad.vyskladnit()
-    elif volba == '5':
-        sklad.nastav_cenu()
-    elif volba == '6':
-        sklad.celkova_suma()
-    elif volba == '7':
-        sklad.odstranit_produkt()
-    elif volba == '8':
-        export.export_skladu(sklad)
-    elif volba == '9':
-        export.import_skladu(sklad)
-    elif volba == '10':
-        sklad.vypisat_dennik()
-    elif volba == '11':
-        export.export_skladu_xml(sklad)
-    elif volba == '12':
-        export.import_skladu_xml(sklad)
-    elif volba == '13':
-        sklad.vyhladat_nazov()
-    elif volba == '14':
-        export.export_skladu_csv(sklad)
-    elif volba == '15':
-        export.import_skladu_csv(sklad)
-    elif volba == '0':
-        print(_("Ukoncenie programu"))
-        sklad.zavri()
-        break
-    else:
-        print(_("Neplatna volba, Skus znova."))
+    menu()
+    try:
+        volba = int(input(_("Zadaj cislo volby: ")))
+        if volba == 1:
+            sklad.vypis_produkty()
+        elif volba == 2:
+            sklad.pridaj_produkt()
+        elif volba == 3:
+            sklad.odstran_produkt()
+        elif volba == 4:
+            pass
+        elif volba == 5:
+            sklad.naskladnit()
+        elif volba == 6:
+            sklad.vyskladnit()
+        elif volba == 7:
+            sklad.zobraz_sumu()
+        elif volba == 8:
+            sklad.export_skladu()
+        elif volba == 9:
+            sklad.import_skladu()
+        elif volba == 10:
+            sklad.log.vypis()
+        elif volba == 0:
+            print(_("Program sa ukoncuje."))
+            break
+        else:
+            print(_("Zadal si neexistujucu volbu !!!"))
+    except ValueError:
+        print(_("Zadal si zlu volbu!"))

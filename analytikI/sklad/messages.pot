@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-22 14:32+0200\n"
+"POT-Creation-Date: 2025-08-21 13:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
+#: start.py:9
+msgid "Hello!"
+msgstr ""
+
 #: start.py:13
-msgid "1. Vypis produktov"
+msgid "1. Vypísať zoznam produktov na sklade"
 msgstr ""
 
 #: start.py:14
-msgid "2. Pridat produkt"
+msgid "2. Pridať produkt do skladu"
 msgstr ""
 
 #: start.py:15
-msgid "3. Naskladnit produkt"
+msgid "3. Odstrániť produkt"
 msgstr ""
 
 #: start.py:16
-msgid "4. Vyskladnit produkt"
+msgid "4. Nastavenie ceny produktu"
 msgstr ""
 
 #: start.py:17
-msgid "5. Nastav cenu"
+msgid "5. Naskladnenie produktu"
 msgstr ""
 
 #: start.py:18
-msgid "6. Hodnota skladu"
+msgid "6. Vyskladnenie produktu"
 msgstr ""
 
 #: start.py:19
-msgid "7. Odstranenie produktu"
+msgid "7. Hodnota skladu"
 msgstr ""
 
 #: start.py:20
@@ -54,38 +58,30 @@ msgid "9. Import skladu"
 msgstr ""
 
 #: start.py:22
-msgid "10. Vypisat dennik"
+msgid "10. Vypis logu"
 msgstr ""
 
 #: start.py:23
-msgid "11. Export do XML"
-msgstr ""
-
-#: start.py:24
-msgid "12. Import z XML"
-msgstr ""
-
-#: start.py:25
-msgid "13. Vyhladat produkt"
-msgstr ""
-
-#: start.py:26
-msgid "14. Export do CSV"
-msgstr ""
-
-#: start.py:27
-msgid "15. Import z CSV"
-msgstr ""
-
-#: start.py:28
 msgid "0. Ukoncit program"
 msgstr ""
 
-#: start.py:62
-msgid "Ukoncenie programu"
+#: start.py:28
+msgid "Skladovy softver v. 1.0"
 msgstr ""
 
-#: start.py:66
-msgid "Neplatna volba, Skus znova."
+#: start.py:38
+msgid "Zadaj cislo volby: "
+msgstr ""
+
+#: start.py:60
+msgid "Program sa ukoncuje."
+msgstr ""
+
+#: start.py:63
+msgid "Zadal si neexistujucu volbu !!!"
+msgstr ""
+
+#: start.py:65
+msgid "Zadal si zlu volbu!"
 msgstr ""
 

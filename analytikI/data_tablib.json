@@ -1,0 +1,38 @@
+[
+    {
+        "meno": "Janko",
+        "vek": 25,
+        "mesto": "Bratislava",
+        "vyska": 185
+    },
+    {
+        "meno": "Katka",
+        "vek": 22,
+        "mesto": "Ko\u0161ice",
+        "vyska": 175
+    },
+    {
+        "meno": "Robo",
+        "vek": 30,
+        "mesto": "\u017dilina",
+        "vyska": 165
+    },
+    {
+        "meno": "Marta",
+        "vek": 28,
+        "mesto": "Nitra",
+        "vyska": 154
+    },
+    {
+        "meno": "Lenka",
+        "vek": 27,
+        "mesto": "Pre\u0161ov",
+        "vyska": 175
+    },
+    {
+        "meno": "Miro",
+        "vek": 29,
+        "mesto": "Poprad",
+        "vyska": 198
+    }
+]

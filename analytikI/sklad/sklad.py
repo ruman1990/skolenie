@@ -1,141 +1,134 @@
-# Chceme spravit program pre manazment skladu
-# budeme mat textove rozhranie - MENU
-# vypis produktu, pridat_produkt, odstran_produkt
-# naskladnit, vyskladnenie, nastavenie ceny
-# zobrazit sumu, exportovat zo skladu, import do skladu
+# Chcem vytvori skladovy softver
+# Bude mat textove menu s volbami
+# ked klient vyberie volbu, zadane potrebne vstupne udaje, volba sa vykona
+# Po vykonani zvolenej volby sa zobrazi znovu MENU s volbami
+# Pre ukoncenie programu je potrebne mat vlastnu volbu.
+# 1. Vypisat zoznam produktov na sklade
+# 2. Pridat produkt do skladu
+# 3. Odstranit produkt
+# 4. Nastavenie ceny produktu
+# 5. Naskladnenie produktu
+# 6. Vyskladnenie produktu
+# 7. Hodnota skladu
+# 8. Export skladu
+# 9. Import skladu
 from produkt import Produkt
 from audit import Audit
-import re
-import psycopg2
-import psycopg2.extras
-import sqlite3
 from decimal import Decimal
+import sqlite3
+import psycopg2
 
 class Sklad:
-    def __init__(self):
-        self.audit = Audit()
+    def __init__(self,nazov):
+        self.nazov = nazov
         self.produkty = {}
-        self.conn = psycopg2.connect(
-            dbname="skolenie",
-            user="postgres",
-            password="postgres",
-            host="localhost",
-            port=5432
-        )
-        #self.conn = sqlite3.connect("sklad.db")
-        #self.conn.row_factory = sqlite3.Row
-        self.cursor = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-        #self.cursor = self.conn.cursor()        
+        self.log = Audit()
 
-        # self.cursor.execute('''
-        #      CREATE TABLE IF NOT EXISTS produkty (
-        #          nazov TEXT PRIMARY KEY,
-        #          pocet INTEGER,
-        #          cena REAL
-        #      )
-        #  ''')
-        #self.conn.commit()
+        #self.conn = sqlite3.connect('sklad.db')
+        #self.c = self.conn.cursor()
 
-        self.cursor.execute("SELECT * from produkty")
-        for row in self.cursor.fetchall():
-            self.produkty[row['nazov']] = Produkt(row['nazov'],row['pocet'],Decimal(str(row['cena'])))
+        self.conn = psycopg2.connect(host='localhost',database='sklad',user='postgres',password='admin')
+        self.c = self.conn.cursor()
 
-    def _uloz_zmenu(self,sql,params=()):
-        self.cursor.execute(sql,params)
+
+        # self.c.execute('''
+        #             CREATE TABLE IF NOT EXISTS produkty (
+        #                nazov TEXT PRIMARY KEY,
+        #                cena REAL NOT NULL DEFAULT 0.0,
+        #                pocet INTEGER NOT NULL DEFAULT 0
+        #                )
+        #             ''')
+        
         self.conn.commit()
 
-    # Produkt: nazov X ks XX.XX €
-    def vypis_produktov(self):
-        for x in self.produkty.values():
-            print(x)
-        self.audit.zapis(f"Boli vypisane produkty")
+        self.c.execute('SELECT * FROM produkty')
+        for row in self.c.fetchall():
+            self.produkty[row[0]] = Produkt(row[0],Decimal(str(row[1])),row[2])
+
+
+    def prikaz_db(self,sql,params):
+        self.c.execute(sql,params)
+        self.conn.commit()
+
+    def vypis_produkty(self):
+        print('')
+        for p in self.produkty.values():
+            print(p)
         print('')
 
-    def pridanie_produktu(self):
-        nazov = input("Zadaj nazov produktu: ")
+    def pridaj_produkt(self):
+        print('')
+        nazov = input('Zadaj nazov produktu: ')
         if nazov in self.produkty:
-            print("Produkt uz existuje.")
-            self.audit.zapis(f"Pridanie produktu {nazov} - Chyba: Produkt uz existuje")
+            print('Produkt uz existuje')
         else:
-            self.produkty[nazov] = Produkt(nazov)
-            x = self.produkty[nazov]
-            self._uloz_zmenu("INSERT INTO produkty (nazov,pocet,cena,kategoria) VALUES (%s,%s,%s, %s)",(x.nazov,x.pocet,x.cena, x.kategoria))
-            print("Produkt bol pridany.")
-            self.audit.zapis(f"Pridanie produktu {nazov}")
+            cena = float(input("Zadaj cenu produktu: "))
+            pocet = int(input("Zadaj pocet kusov: "))
+            self.produkty[nazov] = Produkt(nazov,Decimal(str(cena)),pocet)
+            self.prikaz_db('INSERT INTO produkty (nazov,cena,pocet) VALUES (%s,%s,%s)',(nazov,cena,pocet))
+            self.log.zapis(f'Produkt {nazov} bol uspesne pridany do skladu')
+
+    def odstran_produkt(self):
+        nazov = input("Zadaj nazov produktu na odstranenie: ")
+        if nazov in self.produkty:
+            del self.produkty[nazov]
+            self.prikaz_db('DELETE FROM produkty where nazov=%s',(nazov,))
+            self.log.zapis(f"Produkt {nazov} bol odstraneny.")
+        else:
+            print('Produkt sa nenasiel.')
+
+    def zobraz_sumu(self):
+        suma = 0.0
+        for p in self.produkty.values():
+            suma += (p.cena * p.pocet)
+        print(f'Celkova hodnota skladu: {suma:.2f}€')
+
+    def export_skladu(self):
+        vystup = []
+        for p in self.produkty.values():
+            vystup.append(p.export_tvar())
+        retazec = '|'.join(vystup)
+        print('====EXPORT TEXT====')
+        print(retazec)
+        print('====Skopiruj a uloz====')
+
+    def import_skladu(self):
+        text = input("Vloz vstupny text: ")
+        zoznam_produktov = text.split("|")
+        self.produkty.clear()
+
+        for i in zoznam_produktov:
+            x = i.split(';')
+            self.produkty[x[0]] = Produkt(x[0],Decimal(x[1]),int(x[2]))
+        self.prikaz_db('DELETE from produkty',())
+
+        for x in self.produkty:
+            self.prikaz_db('INSERT INTO produkty (nazov,cena,pocet) VALUES (%s,%s,%s)',(self.produkty[x].nazov,self.produkty[x].cena,self.produkty[x].pocet))          
+        self.log.zapis(f"Import bol uspesny. Pocet naimportovanych produktov {len(self.produkty)}")
 
     def naskladnit(self):
-        nazov = input("Zadaj nazov produktu: ")
+        nazov = input('Zadaj nazov produktu: ')
         if nazov in self.produkty:
-            kusy = int(input("Zadaj pocet kusov produktu: "))
+            kusy = int(input("Zadaj pocet kusov: "))
             self.produkty[nazov].pocet += kusy
-            x = self.produkty[nazov]
-            self._uloz_zmenu("UPDATE produkty SET pocet=%s WHERE nazov=%s",(x.pocet,x.nazov))
-            print("Produkt naskladneny")
-            self.audit.zapis(f"Naskladnenie {nazov}")
+            self.prikaz_db('UPDATE produkty SET pocet=%s WHERE nazov=%s',(self.produkty[nazov].pocet,nazov))
+            self.log.zapis(f'Produkt {nazov} bol naskladneny {kusy}')
         else:
             print("Produkt nie je na sklade")
-            self.audit.zapis(f"Naskladnenie {nazov} - Chyba: Produkt nie je na sklade")
+        
 
     def vyskladnit(self):
-        nazov = input("Zadaj nazov produktu: ")
+        nazov = input('Zadaj nazov produktu: ')
         if nazov in self.produkty:
-            kusy = int(input("Zadaj pocet kusov produktu: "))
-            if self.produkty[nazov].pocet <= kusy:
-                print("Nie je dost tovaru na vyskladnenie")
+            kusy = int(input("Zadaj pocet kusov: "))
+            if kusy>self.produkty[nazov].pocet:
+                print('Nedostatok kusov na sklade')
             else:
                 self.produkty[nazov].pocet -= kusy
-                x = self.produkty[nazov]
-                self._uloz_zmenu("UPDATE produkty SET pocet=%s WHERE nazov=%s",(x.pocet,x.nazov))
-                print("Produkt vyskladneny")
+                self.prikaz_db('UPDATE produkty SET pocet=%s WHERE nazov=%s',(self.produkty[nazov].pocet,nazov))
+                self.log.zapis(f"Produkt {nazov} bol vyskladneny")
         else:
             print("Produkt nie je na sklade")
 
-    def nastav_cenu(self):
-        nazov = input("Zadaj nazov produktu: ")
-        if nazov in self.produkty:
-            cena = Decimal(input("Zadaj cenu za kus produktu: "))
-            self.produkty[nazov].cena = cena
-            x = self.produkty[nazov]
-            self._uloz_zmenu("UPDATE produkty SET cena=%s WHERE nazov=%s",(x.cena,x.nazov))
-            print("Cena bola nastavena")
-        else:
-            print("Produkt nie je na sklade")
 
-    def celkova_suma(self):
-        suma = Decimal('0.00')
-        for x in self.produkty.values():
-            suma += x.cena * x.pocet
-        print(f'Celkova hodnota skladu je: {suma:.2f}€')
 
-    def odstranit_produkt(self):
-        nazov = input("Zadaj nazov produktu: ")
-        if nazov in self.produkty:
-            self._uloz_zmenu("delete from produkty WHERE nazov=%s",(self.produkty[nazov].nazov,))
-            del self.produkty[nazov]
-            print("Produkt bol odstraneny")
-            self.audit.zapis(f"Odstranenie produktu {nazov}")
-        else:
-            print("Produkt nie je na sklade")
-            self.audit.zapis(f"Odstranenie produktu {nazov} - Chyba: Produkt nie je na sklade")
-
-    def vypisat_dennik(self):
-        self.audit.vypis()
-
-    def vyhladat_nazov(self):
-        nazov = input("Zadaj cast nazvu produktu alebo regex: ")
-        self.audit.zapis(f"Vyhladavanie v produktoch {nazov}")
-        zhody = []
-        for p in self.produkty:
-            if re.search(nazov,p,re.IGNORECASE):
-                zhody.append(p)
-
-        if not zhody:
-            print('Zaznam sa nenasiel')
-            return
-        
-        for i in zhody:
-            print(f'{i}')
-
-    def zavri(self):
-        self.conn.commit()
-        self.conn.close()

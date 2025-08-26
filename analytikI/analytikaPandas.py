@@ -1,43 +1,42 @@
-import pandas as pd
 import psycopg2
-
+import pandas as pd
 conn = psycopg2.connect(
-    dbname='skolenie',
-    user='postgres',
-    password='postgres',
-    host='localhost',
-    port=5432
-)
+    host="localhost",
+    dbname="sklad",
+    user="postgres",
+    password='admin')
 
-data = pd.read_sql('select * from objednavka_view',conn)
+cur = conn.cursor()
 
-#print(data)
+def fetch_data():
+    df = pd.read_sql("SELECT * FROM objednavky_view", conn)
+    print(df)
+    df['datum'] = pd.to_datetime(df['datum'])
+    df['mesiac'] = df['datum'].dt.to_period('M').dt.to_timestamp()
+    df['hodnota'] = df['mnozstvo'] * df['cena']
+    return df
 
-najdrahsi = data.loc[data['cena'].idxmax()]
+import datetime
+from decimal import Decimal
 
-najlacnejsi = data.loc[data['cena'].idxmin()]
+def report_mesacne_obraty(df):
+    df = df.groupby(['mesiac','typ']).agg(
+        pocet_objednavok = ('objednavka_id','nunique'),
+        ks_spolu = ('mnozstvo','sum'),
+        obrat = ('hodnota','sum')
+    ).reset_index().sort_values(['mesiac','typ'])
+    return df
 
-#print(najdrahsi)
 
-#print(najlacnejsi)
+data = fetch_data()
+df = report_mesacne_obraty(data)
+df['mesiac'] = df['mesiac'].dt.strftime('%Y-%m-%d')
+df.to_excel("report_mesacne_obraty_pandas.xlsx", index=False)
 
-#print(data['cena'],data['mnozstvo'])
-
-data['trzba'] = data['cena'] * data['mnozstvo']
-
-print(data['trzba'])
-
-obrat_podla_produktov = data.groupby('nazov')['trzba'].sum().reset_index()
-
-print(obrat_podla_produktov.head(20))
 
 import matplotlib.pyplot as plt
 
-
-plt.pie(obrat_podla_produktov['trzba'].head(10),labels=obrat_podla_produktov['nazov'].head(10),autopct='%1.1f%%')
+df.plot(x='mesiac', y='obrat', kind='bar')
 plt.show()
 
 
-
-#najdrahsi_obrat = obrat_podla_produktov.loc[obrat_podla_produktov['trzba'].idxmax()]
-#print(najdrahsi_obrat)
