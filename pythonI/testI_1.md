@@ -123,22 +123,4 @@ d) `obj[:]`
 
 ---
 
-## ✅ **Správne odpovede:**
-
-1. **b**
-2. **a**
-3. **a**
-4. **b**
-5. **b**
-6. **c**
-7.
-
-* `x = "text"` → **hodnota**
-* `y = [1, 2, 3]` → **referencia**
-* `z = {"a": 1}` → **referencia**
-* `t = (1, 2, 3)` → **hodnota**
-
-8. `new_lst = lst.copy()` **alebo** `new_lst = lst[:]`
-9. **c**
-
 ---

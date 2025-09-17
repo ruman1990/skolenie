@@ -181,15 +181,4 @@ d) args
 
 ## ✅ Riešenia testových otázok
 
-1. Hello from a function
-2. Funkcia nič nevypíše
-3. 15
-4. Emil
-5. Refsnes
-6. TypeError
-7. I am from Norway
-8. apple\nbanana
-9. 1\n3
-10. (1, 2, 3)
 
-Ak chceš, môžem ti tieto otázky vygenerovať aj ako PDF alebo interaktívny test.
