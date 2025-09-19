@@ -5,8 +5,10 @@ ziskaj od pouzivatela vstup kolko hviezdiciek
 ```
 *****
 ****
+
 ***
 **
+
 *
 ```
 
