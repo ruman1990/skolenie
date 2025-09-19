@@ -1,3 +1,4 @@
+```
 Znak	Použitie v Pythone	Ako napísať (SK klávesnica)
 #	komentár	AltGr + X
 :	bloky (napr. if, for)	Shift + ;
@@ -22,3 +23,4 @@ _	v názvoch premenných	AltGr + - (na klávese ?)
 ^	XOR alebo mocniny	AltGr + D
 ~	bitová negácia	AltGr + (vľavo od Backspace)
 @	dekorátory (@staticmethod)	AltGr + V
+```
