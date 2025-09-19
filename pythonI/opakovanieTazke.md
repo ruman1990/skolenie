@@ -30,3 +30,12 @@ Napíš program, ktorý si vypýta číslo N a spočíta súčet čísel od 1 po
 ```
 Vzorec:         BMI = váha / (výška v metroch)²
 ```
+
+6. napis horizontalnu pyramidu
+```
+    *
+   ***
+  *****
+ *******
+*********
+```
