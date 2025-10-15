@@ -1,6 +1,3 @@
-Samozrejme! Tu je **učebný text pre prácu s dátumom a časom v Pythone**, vhodný ako úvod aj pre mierne pokročilých, s ukážkami a vysvetlením:
-
----
 
 # 🕓 Dátum a čas v Pythone
 
