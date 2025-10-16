@@ -1,12 +1,14 @@
-import datetime as d
+import xml.etree.ElementTree as ET
 
-#now = d.date.today()
-now = d.date(2025,12,30)
-vianoce = d.date(now.year,12,24)
-print(now)
-if now > vianoce:
-    vianoce = d.date(now.year + 1,12,24)
+xml_data = """
+<data>
+    <person>
+        <name>Janko</name>
+        <age>30</age>
+    </person>
+</data>
+"""
 
-rozdiel = vianoce - now
-print(rozdiel.days)
-
+root = ET.fromstring(xml_data)
+for person in root.findall('person'):
+    print(person.find('name').text)
