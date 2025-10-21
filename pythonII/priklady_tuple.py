@@ -1,7 +1,7 @@
 # -- Pridanie pomocou sčítania tuplov --
 thistuple = ("apple", "banana", "cherry")
 y = ("orange",)     # tuple s jedným prvkom (pozri čiarku!)
-thistuple += y      # spojí tuplu a y
+thistuple = thistuple + y      # spojí tuplu a y
 print(thistuple)    # výstup: ('apple', 'banana', 'cherry', 'orange')
 
 # -- Vymazanie celej tupli pomocou del --

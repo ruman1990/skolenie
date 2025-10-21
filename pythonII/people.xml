@@ -4,4 +4,12 @@
         <name>Janko</name>
         <age>30</age>
     </person>
+    <person>
+        <name>Fero</name>
+        <age>25</age>
+    </person>
+    <person>
+        <name>Peter</name>
+        <age>28</age>
+    </person>
 </data>
