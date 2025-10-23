@@ -1,32 +1,14 @@
-from flask import Flask, request, jsonify
+import locale
 
-app = Flask(__name__)
+# Nastavenie slovenského locale (pre Unix/Linux)
+locale.setlocale(locale.LC_ALL, 'sk_SK.UTF-8')
 
-# Kontrolér č. 1 – základná stránka
-@app.route("/")
-def home():
-    return "<h1>Vitaj na mojom Flask serveri!</h1>"
-
-# Kontrolér č. 2 – echo API, ktoré prijme JSON a vráti ho späť
-@app.route("/echo", methods=["POST"])
-def echo():
-    data = request.get_json()
-    if not data:
-        return jsonify({"error": "Missing JSON"}), 400
-    return jsonify({
-        "message": "Dostal som tvoje dáta.",
-        "received": data
-    })
+# Formátovanie čísla s oddelovačom tisícov
+cislo = 1234567.89
+print(locale.format_string("%.2f", cislo, grouping=True))  # napr. '1 234 567,89'
 
 
-@app.route("/add", methods=["POST"])
-def add_numbers():
-    data = request.get_json()
-    a = data.get("a", 0)
-    b = data.get("b", 0)
-    return jsonify({"result": a + b})
+import gettext
+_ = gettext.gettext
 
-
-# Spustenie servera
-if __name__ == "__main__":
-    app.run(debug=True)
+print(_("Vitajte v aplikácii!"))

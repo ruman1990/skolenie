@@ -1,6 +1,12 @@
 [{
-    "meno": "Peter",
+    "meno": "Peter Š.",
     "vek": 30,
     "email": "peter@email.com",
-    "aktivny": [true, false, true]
+    "aktivny": false
+},
+{
+    "meno": "Peter P.",
+    "vek": 30,
+    "email": "peter@email.com",
+    "aktivny": false
 }]
