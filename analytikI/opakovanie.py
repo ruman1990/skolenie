@@ -5,11 +5,6 @@
 
 # DOPLŇTE KÓD TU
 
-for i in range(7):
-    print("hello there",end=' ')
-
-x = 'hello there ' * 7
-print(x.strip())
 
 
 
@@ -17,10 +12,7 @@ print(x.strip())
 
 vals = [1, 1, 1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 8, 9, 10]
 
-print(tuple(set(vals)))
 
-import funcy
-print(tuple(funcy.distinct(vals)))
 
 # # DOPLŇTE KÓD TU
 
@@ -31,8 +23,6 @@ words = [
      'small', 'terrific', 'alternative', 'book', 'dictionary', 'word'
  ]
 
-y = [word for word in words if 'r' in word ]
-print(y)
 
 # DOPLŇTE KÓD TU
 
@@ -41,15 +31,7 @@ print(y)
 
 # DOPLŇTE KÓD TU
 
-import requests
 
-resp = requests.get('https://webcode.me/users.json')
-data = resp.json()
-print(data)
-
-
-for x in data['users']:
-    print(x['email'])
 
 
 # 5. Práca so zoznamom miest:
@@ -82,14 +64,3 @@ cities = [
 # e) Vyfiltrujte mestá, ktoré majú menej ako 1 milión obyvateľov.
 
 # DOPLŇTE KÓD TU
-for x in cities[:5]:
-    print(f'{x['name']} {x['population']}')
-
-for x in cities[-5:]:
-    print(f'{x['name']} {x['population']}')
-
-print(max(cities,key=lambda x: x['population']))
-
-print(min(cities,key=lambda x: x['population']))
-
-print([city for city in cities if city['population'] < 1_000_000])
