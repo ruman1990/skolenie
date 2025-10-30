@@ -1,0 +1,54 @@
+[2025-10-16 13:52:38] Nacitanie logu
+[2025-10-16 13:54:35] Nacitanie logu
+[2025-10-16 13:55:41] Nacitanie logu
+[2025-10-16 13:55:44] Export logu sa uspesne vykonal
+[2025-10-16 13:56:08] Naskladnene
+[2025-10-16 13:58:29] Nacitanie logu
+[2025-10-16 13:58:40] Naskladnene produkt voda
+[2025-10-16 14:14:51] Nacitanie logu
+[2025-10-16 14:15:31] Sklad sa zapisal do suboru
+[2025-10-16 14:15:59] Nacitanie logu
+[2025-10-16 14:15:59] Zly import string
+[2025-10-16 14:17:01] Sklad sa zapisal do suboru
+[2025-10-16 14:17:12] Nacitanie logu
+[2025-10-16 14:17:12] Import bol uspesne dokonceny
+[2025-10-16 14:17:50] Produkt bol pridany do skladu
+[2025-10-16 14:18:01] Sklad sa zapisal do suboru
+[2025-10-16 14:18:12] Nacitanie logu
+[2025-10-16 14:18:12] Import bol uspesne dokonceny
+[2025-10-16 14:32:55] Sklad sa zapisal do suboru
+[2025-10-23 11:46:59] Nacitanie logu
+[2025-10-23 11:47:12] Sklad sa zapisal do suboru
+[2025-10-23 11:55:20] Nacitanie logu
+[2025-10-23 11:55:38] Zadal si neplatne hodnoty
+[2025-10-23 11:56:18] Sklad sa zapisal do suboru
+[2025-10-23 11:56:22] Nacitanie logu
+[2025-10-23 11:57:11] Zadal si neplatne hodnoty
+[2025-10-23 11:59:15] Sklad sa zapisal do suboru
+[2025-10-23 11:59:16] Nacitanie logu
+[2025-10-23 11:59:24] Produkt bol pridany do skladu
+[2025-10-23 12:42:49] Sklad sa zapisal do suboru
+[2025-10-23 13:12:09] Nacitanie logu
+[2025-10-23 13:16:28] Sklad sa zapisal do suboru
+[2025-10-23 13:16:30] Nacitanie logu
+[2025-10-23 13:16:56] Produkt bol pridany do skladu
+[2025-10-23 13:17:13] Naskladnene produkt cola
+[2025-10-23 13:17:28] Vyskladnenie produkt voda
+[2025-10-23 13:18:16] Cena je nastavena voda
+[2025-10-23 13:18:27] Celkova cena tovarov je: 980.0
+[2025-10-23 13:21:15] Sklad sa zapisal do suboru
+[2025-10-23 13:23:06] Nacitanie logu
+[2025-10-23 13:23:10] Celkova cena tovarov je: 560.0
+[2025-10-23 13:38:18] Sklad sa zapisal do suboru
+[2025-10-23 15:01:27] Nacitanie logu
+[2025-10-23 15:02:04] Sklad sa zapisal do suboru
+[2025-10-23 15:02:12] Nacitanie logu
+[2025-10-23 15:09:46] Sklad sa zapisal do suboru
+[2025-10-29 13:47:56] Nacitanie logu
+[2025-10-29 13:48:04] Sklad sa zapisal do suboru
+[2025-10-29 13:48:51] Nacitanie logu
+[2025-10-29 14:16:38] Sklad sa zapisal do suboru
+[2025-10-30 10:10:31] Nacitanie logu
+[2025-10-30 10:11:07] Sklad sa zapisal do suboru
+[2025-10-30 10:13:35] Nacitanie logu
+[2025-10-30 10:13:51] Sklad sa zapisal do suboru
