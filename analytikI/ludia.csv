@@ -1,7 +1,6 @@
-meno,vek,mesto,vyska
-Janko,25,Bratislava,185
-Katka,22,Košice,175
-Robo,30,Žilina,165
-Marta,28,Nitra,154
-Lenka,27,Prešov,175
-Miro,29,Poprad,198
+meno,vek,mesto
+Janko,25,Bratislava
+Katka,22,Košice
+Robo,30,Žilina
+Lenka,27,Prešov
+Miro,29,"Banska, Bystrica"
