@@ -4,37 +4,61 @@
 # # 1. Otočenie stringu
 # # Napíš funkciu, ktorá prijme reťazec a vráti ho v opačnom poradí (napr. "python" → "nohtyp").
 
-#x = "Python"
+x = "Python"
 
+x[2:]
+
+print(x[::-1])
 
 
 # # 2. Cykly – párne čísla
 # # Napíš program, ktorý vypíše všetky párne čísla od 1 do 50 na jeden riadok, oddelené medzerou.
 # # (Príklad: výstup: 2 4 6 ... 50)
+i = 1
 
+while i <= 50:
+    if i % 2 == 0:
+        print(i, end=' ')
+    i += 1
+
+for x in range(1,51):
+    if x % 2 == 0:
+        print(x, end=' ')
 
 # 3. Podmienený príkaz – priestupný rok
 # Napíš funkciu, ktorá zistí, či je zadaný rok priestupný.
 # # priestupny je ked: delitelny 4 a zaroven nedelitelny 100, vynimka je delitelnost 400
-# rok = 2024
+rok = 2024
+
+if (rok % 4 == 0 and rok % 100 != 0) or (rok % 400 == 0):
+    print(f'Rok {rok} je priestupny.')
+else:
+    print(f'Rok {rok} nie je priestupny.')
 
 
 # 4. Funkcia – najväčšie číslo zo zoznamu
 # Napíš funkciu, ktorá prijme zoznam čísel a vráti najväčšie číslo v zozname.
-# y = [9,1,5,3,7,25,2]
+y = [9,1,5,3,7,25,2]
 
+print(max(y))
 
 # print(najvacsie_cislo(y))
 
 # 5. Funkcia – veková skupina
 # Napíš program, ktorý prijme meno a vek, vypíše, či je dospelý alebo mladistvý.
 
+random_number =5
+x = 'ss'
+
+
 
 
 # 6. Vyrezávanie (slicing) stringu
 # Z reťazca vypíš len prvých 5 znakov a posledné 3 znaky.
-# slovo = "programovanie"
+slovo = "programovanie"
 
+print(slovo[:25])  # prvých 5 znakov
+print(slovo[-3:])  # posledné 3 znaky
 
 # 7. Pridávanie a odoberanie prvkov zo zoznamu
 # Vytvor zoznam s tromi ovocnými názvami. Pridaj do zoznamu ďalšie ovocie, potom jedno ovocie zo zoznamu vymaž a vypíš výsledný zoznam.
@@ -43,8 +67,9 @@
 
 # 8. Zložitejšie vyrezávanie stringov
 # Funkcia, ktorá vráti reťazec s vynechanými znakmi na párnych indexoch.
-# retazec = "programovanie"
+retazec = "programovanie"
 
+retazec[1::2]
 
 
 # 9. Práca so zoznamom – vkladanie, odoberanie a vyhľadávanie
