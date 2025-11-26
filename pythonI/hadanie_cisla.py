@@ -1,39 +1,28 @@
-# mame tajne cislo, vyzveme pouzivatela hadat, ak uhadne , pochvalime ho
-# ak neuhadne tak ho vyzveme hadat znovu
-
-# spravme hru, kde hadame tajne cislo
-# od pouzivatela si vypytame cislo a ked sa nerovna tajnemu cislu, vyzveme ho aby pokracoval v hadani
-# ked uhadne, vypiseme, ze vyhral
+# hra - hadaj cislo, mas 7 pokusov, ak uhadnes vyhral si.
+# cislo moze byt od 0 do 100
+# ked neuhadne, tak mu povieme, ci hadane cislo je mensie alebo je vacsie
 import random
 
-tajne_cislo = random.randint(1,100)
-pocet_pokusov = 0
+secret_number = random.randint(0,100)
 
-while True:
-    cislo = int(input("Hadaj cislo od 1 do 100: "))
+pocet_pokusov = 7
+vyhral = False
+while pocet_pokusov > 0:
+    number = int(input(f'Hadaj cislo od 0 do 100 (Mas este {pocet_pokusov} pokusov): '))
 
-    if cislo == tajne_cislo:
-        print("Super, uhadol si!")
+    if number == secret_number:
+        print('Vyhral si!')
+        vyhral = True
         break
     else:
-        pocet_pokusov += 1
-        ostavajuce = 7-pocet_pokusov
-        
-        if ostavajuce == 0 or ostavajuce > 4:
-            tvar_slova = 'pokusov'
-        elif ostavajuce == 1:
-            tvar_slova = 'pokus'
+        print('Neuhadol si')
+        pocet_pokusov = pocet_pokusov - 1
+        if number < secret_number:
+            print("Cislo je vacsie")
         else:
-            tvar_slova = 'pokusy'
-
-        if pocet_pokusov >= 7:
-            print('Prehral si, koniec hry!')
-            break
-        else:
-            if cislo < tajne_cislo:
-                print("Tajne cislo je vacsie. Ostava este ",ostavajuce,tvar_slova)
-            else:
-                print("Tajne cislo je mensie. Ostava este ",ostavajuce,tvar_slova)
+            print("Cislo je mensie")
+if not vyhral:
+    print('Minul si vsetky pokusy a neuhadol si.')
 
 
-        
+
