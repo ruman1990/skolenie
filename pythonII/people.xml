@@ -1,10 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <data>
     <person>
-        <name>Janko</name>
-        <age>30</age>
-    </person>
-    <person>
         <name>Fero</name>
         <age>25</age>
     </person>

@@ -1,3 +1,5 @@
-[2025-07-17 14:13:50] Boli vypisane produkty voda
-[2025-07-17 14:15:01] Boli vypisane produkty cola
-[2025-07-17 14:15:19] Boli vypisane produkty muka
+Toto je logovací súbor.
+Toto je logovací súbor2.
+Toto je logovací súbor3.
+Toto je logovací súbor4.
+

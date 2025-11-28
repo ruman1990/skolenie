@@ -1,0 +1,3 @@
+2025-11-28 13:31:05.129761 - Uspesne pridanie tovaru pepsi
+2025-11-28 13:31:38.754831 - Vypis skladu
+2025-11-28 13:33:07.593375 - Uspesne exportovanie skladu
