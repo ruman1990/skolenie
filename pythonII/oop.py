@@ -1,21 +1,21 @@
-class A:
-    def __init__(self):
-        print("A")
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-class B(A):
-    def __init__(self):
-        super().__init__()
-        print("B")
+    def __repr__(self):
+        return f"Point({self.x}, {self.y})"
 
-class C(A):
-    def __init__(self):
-        super().__init__()
-        print("C")
+#    def __eq__(self, other):
+#        return (self.x) == (other.x)
 
-class D(B, C):
-    def __init__(self):
-        super().__init__()
-        print("D")
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
 
-d = D()
-print(D.mro())
+    def __len__(self):
+        return abs(self.x) + abs(self.y)
+    
+bod = Point(1,1)
+bod2 = Point(1,2)
+
+print(bod == bod2)
