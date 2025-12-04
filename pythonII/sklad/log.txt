@@ -1,0 +1,3 @@
+Tovar bol uspesne pridany do skladu
+2025-12-04 13:19:22.844329 - Tovar bol uspesne pridany do skladu
+2025-12-04 13:32:19.188344 - Naskladnenie bolo uspesne

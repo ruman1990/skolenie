@@ -1,5 +1,0 @@
-Toto je logovací súbor.
-Toto je logovací súbor2.
-Toto je logovací súbor3.
-Toto je logovací súbor4.
-

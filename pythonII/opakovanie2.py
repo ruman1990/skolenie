@@ -5,6 +5,12 @@
 # Pridaj do slovníka nového študenta a vypíš priemernú známku triedy.
 znamky = {'Jana' : 2, 'Peter' : 1, 'Marek' : 3, 'Lucia' : 2}
 
+znamky['Vlado'] = 4
+
+priemer = sum(znamky.values())/len(znamky)
+
+print(priemer)
+
 #[2,1,3,2]
 
 
@@ -20,7 +26,15 @@ knihy = [
     {'nazov': 'Sila zvyku', 'autor': 'Charles Duhigg', 'rok': 2012}
 ]
 
+knihy.append({'nazov': 'Kniha 1', 'autor': 'George Orwell st.', 'rok': 1752})
+knihy.append({'nazov': 'Kniha 2', 'autor': 'George Orwell ml.', 'rok': 1995})
+knihy.append({'nazov': 'Kniha 3', 'autor': 'George Orwell najml.', 'rok': 2025})
 
+#print(knihy)
+
+for x in knihy:
+    if x['rok'] > 2010:
+        print(x['nazov'])
 
 
 # ---------------------------------------------------------
@@ -30,6 +44,19 @@ knihy = [
 # Vytvor triedu Kniha, ktorá má atribúty nazov, autor a rok.
 # Vytvor objekt a vypíš o ňom informácie.
 
+class Kniha:
+
+    def __init__(self,nazov,autor,rok):
+        self.nazov = nazov
+        self.autor = autor
+        self.rok = rok
+
+    def __str__(self):
+        return f'Nazov knihy {self.nazov} autor {self.autor} rok {self.rok}'
+    
+kniha = Kniha('1984','George Orwell',1949)
+
+print(kniha)
 
 # ---------------------------------------------------------
 
@@ -40,6 +67,19 @@ knihy = [
 
 y = ['nazov knihy','autor knihy',2000,'56464654']
 
+class EKniha(Kniha):
+
+    def __init__(self,n,a,r,velkost):
+        super().__init__(n,a,r)
+        self.velkost = velkost
+
+    def vypis_info(self):
+        print(f'{super().__str__()} velkost {self.velkost}')
+
+
+ekniha = EKniha('1984','George Orwell',1949,10)
+
+ekniha.vypis_info()
 # ---------------------------------------------------------
 
 # Priklad 5: Dedičnosť a kontrola roku (Metóda)
@@ -47,3 +87,11 @@ y = ['nazov knihy','autor knihy',2000,'56464654']
 # Vytvor triedu StaraKniha, ktorá dedí z Kniha a má metódu je_historicka(),
 # ktorá vráti True ak bola vydaná pred rokom 1950.
 
+STARA_KNIHA = 1950
+
+class StaraKniha(Kniha):
+    def je_historicka(self):
+        return self.rok < STARA_KNIHA
+
+stara = StaraKniha('1984','George Orwell',1949)
+print(stara.je_historicka())
