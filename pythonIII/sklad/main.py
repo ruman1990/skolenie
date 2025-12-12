@@ -1,23 +1,27 @@
 from sklad import Sklad
+import gettext
+lang = gettext.translation('messages', localedir='translations', languages=['zh'])
+lang.install()
+
 def display_menu():
-    print('Skladovy softver 1.0')
-    print(f'{'-'*10}MENU{'-'*10}')
-    print('0. Ukoncit program')
-    print('1. Vypis skladu')
-    print('2. Pridanie tovaru na sklad')   
-    print('3. Naskladnenie tovaru')
-    print('4. Vyskladnenie tovaru')
-    print('5. Nastavenie ceny tovaru')
-    print('6. Sucet ceny tovarov na sklade')
-    print('7. Odstranenie tovaru zo skladu')
-    print('8. Exportovat sklad do stringu')
-    print('9. Importovat sklad zo stringu')
+    print(_('Skladovy softver 1.0'))
+    print(_(f'{'-'*10}MENU{'-'*10}'))
+    print(_('0. Ukoncit program'))
+    print(_('1. Vypis skladu'))
+    print(_('2. Pridanie tovaru na sklad'))   
+    print(_('3. Naskladnenie tovaru'))
+    print(_('4. Vyskladnenie tovaru'))
+    print(_('5. Nastavenie ceny tovaru'))
+    print(_('6. Sucet ceny tovarov na sklade'))
+    print(_('7. Odstranenie tovaru zo skladu'))
+    print(_('8. Exportovat sklad do stringu'))
+    print(_('9. Importovat sklad zo stringu'))
 
 sklad = Sklad('test')
 
 while True:
     display_menu()
-    volba = input('Zadaj svoju volbu: ')
+    volba = input(_('Zadaj svoju volbu: '))
     if volba == '0':
         break
     elif volba == '1':

@@ -1,0 +1,70 @@
+# Chinese translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-12-12 14:36+0100\n"
+"PO-Revision-Date: 2025-12-12 14:39+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh\n"
+"Language-Team: zh <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+#: main.py:7
+msgid "Skladovy softver 1.0"
+msgstr "仓库管理软件 1.0"
+
+#: main.py:8
+msgid "--"
+msgstr "--"
+
+#: main.py:9
+msgid "0. Ukoncit program"
+msgstr "0. 退出程序"
+
+#: main.py:10
+msgid "1. Vypis skladu"
+msgstr "1. 显示库存"
+
+#: main.py:11
+msgid "2. Pridanie tovaru na sklad"
+msgstr "2. 添加商品到仓库"
+
+#: main.py:12
+msgid "3. Naskladnenie tovaru"
+msgstr "3. 商品入库"
+
+#: main.py:13
+msgid "4. Vyskladnenie tovaru"
+msgstr "4. 商品出库"
+
+#: main.py:14
+msgid "5. Nastavenie ceny tovaru"
+msgstr "5. 设置商品价格"
+
+#: main.py:15
+msgid "6. Sucet ceny tovarov na sklade"
+msgstr "6. 库存商品总价值"
+
+#: main.py:16
+msgid "7. Odstranenie tovaru zo skladu"
+msgstr "7. 从仓库删除商品"
+
+#: main.py:17
+msgid "8. Exportovat sklad do stringu"
+msgstr "8. 将库存导出为字符串"
+
+#: main.py:18
+msgid "9. Importovat sklad zo stringu"
+msgstr "9. 从字符串导入库存"
+
+#: main.py:24
+msgid "Zadaj svoju volbu: "
+msgstr "请输入你的选择："

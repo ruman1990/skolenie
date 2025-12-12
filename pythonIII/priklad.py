@@ -1,12 +1,9 @@
-import sqlite3
+from funcy import memoize
 
-conn = sqlite3.connect('firma.db')
-c = conn.cursor()
+@memoize
+def draha_funkcia(x):
+    print("Volám funkciu...")
+    return x * 2
 
-#c.execute("insert into zamestnanec (meno,plat,oddelenie_id) values" \
-#"('Vlado',2000,8)")
-
-c.execute("insert into oddelenie (nazov) values ('Accounting')")
-
-conn.commit()
-conn.close()
+print(draha_funkcia(10))  # vypočíta
+print(draha_funkcia(10))  # použije cache, nevypíše "Volám funkciu..."

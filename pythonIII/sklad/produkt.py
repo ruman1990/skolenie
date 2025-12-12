@@ -1,4 +1,6 @@
 
+from babel.numbers  import format_decimal
+
 class Produkt:
 
     def __init__(self,nazov,cena,pocet):
@@ -29,4 +31,4 @@ class Produkt:
         self.cena = cena
 
     def __str__(self):
-        return f'Nazov produktu: {self.nazov:<15} Cena: {self.cena:8.2f}€ Pocet kusov {self.pocet:8}'
+        return f'Nazov produktu: {self.nazov:<15} Cena: {format_decimal(self.cena,format="#,##0.00",locale='sk')}€ Pocet kusov {self.pocet:8}'
