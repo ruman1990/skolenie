@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 # Pripojenie do DB (uprav podľa svojej konfigurácie)
 conn = psycopg2.connect(
-    dbname="skolenie",
+    dbname="sklad",
     user="postgres",
     password="admin",
     host="localhost",
