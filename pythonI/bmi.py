@@ -11,8 +11,8 @@
 # print(x * y)
 # print(x / y)
 
-# Spravte program, ktory vypocita BMI index
-# pouzivatel zada hmotnost a vysku a vy vypisete hodnotu BMI
+# Spravte program, ktory vypocita bmi index
+# pouzivatel zada hmotnost a vysku a vy vypisete hodnotu bmi
 # a interpretovanie vysledku (normal,nadvaha,obezita)
 # vzorec =  hmotnost / ((vyska/100) ** 2)
 # < 18.5 podvaha
@@ -27,11 +27,11 @@ bmi = x / (y/100)**2
 print(bmi)
 
 if bmi < 18.5:
-    print(f'Pri hmotnosti {x} a vyske {y} mas BMI {round(bmi,2)} a to je podvaha')
+    print(f'Pri hmotnosti {x} a vyske {y} mas bmi {round(bmi,2)} a to je podvaha')
 elif bmi < 25:
-    print(f'Pri hmotnosti {x} a vyske {y} mas BMI {round(bmi,2)} a to je normal')
+    print(f'Pri hmotnosti {x} a vyske {y} mas bmi {round(bmi,2)} a to je normal')
 elif bmi < 30:
-    print(f'Pri hmotnosti {x} a vyske {y} mas BMI {bmi:8.2f} a to je nadvaha')
+    print(f'Pri hmotnosti {x} a vyske {y} mas bmi {bmi:8.2f} a to je nadvaha')
 else:
-    print(f'Pri hmotnosti {x} a vyske {y} mas BMI {round(bmi,2)} a to je obezita')
+    print(f'Pri hmotnosti {x} a vyske {y} mas bmi {round(bmi,2)} a to je obezita')
 
