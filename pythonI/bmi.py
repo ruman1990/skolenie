@@ -35,4 +35,3 @@ elif bmi < 30:
 else:
     print(f'Pri hmotnosti {x} a vyske {y} mas BMI {round(bmi,2)} a to je obezita')
 
-
