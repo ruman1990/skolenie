@@ -11,7 +11,7 @@ def print_menu():
     print('0. ukoncenie programu')
 
 # voda,2.5,20
-with(open(r'C:\Users\ruman\skolenie\pythonII\sklad\sklad.txt','r',encoding='utf-8')) as f:
+with(open('sklad.txt','r',encoding='utf-8')) as f:
     for x in f:
         nazov,cena,pocet = x.split(',')
         sklad.produkty.append(Produkt(nazov,float(cena),int(pocet.strip())))
