@@ -10,120 +10,71 @@
     # odstranenie tovaru zo skladu
     # exportovat sklad
     # importovat sklad
-import os
-from datetime import datetime
 from produkt import Produkt
 
-class Sklad:
+produkty = []
+# [nazov produktu, cena, pocet kusov]
 
-    def __init__(self,nazov,data_path='sklad.txt',log_path='log.txt'):
-        self.nazov = nazov
-        self.produkty = {}
-        self.log_path = log_path
-        self.data_path = data_path
+def vypis_skladu():
+    print()
+    for x in produkty:
+        print(x)
+    print()
 
-        if os.path.exists(data_path):
-            with open(data_path,'r',encoding='utf-8') as f:
-                self._import_skladu(f.read())
+def zapis_do_suboru():
+    with(open(r'C:\Users\ruman\skolenie\pythonII\sklad\sklad.txt','w',encoding='utf-8',newline='')) as f:
+        for x in produkty:
+            f.write(f'{x.nazov},{x.cena},{x.pocet}\n')
+
+def pridaj_produkt():
+    name = input('Zadaj nazov produktu: ')
+    price = float(input('Zadaj jednotkovu cena: '))
+    count = int(input('Zadaj pocet kusov: '))
+    if _is_product(name):
+        print('Produkt uz existuje')
+        return
+    produkty.append(Produkt(name,price,count))
+    zapis_do_suboru()
+    print('Produkt uspesne pridany do skladu')
+
+def odstran_produkt():
+    name = input('Zadaj nazov produktu: ')
+    for x in produkty:
+        if x.nazov == name:
+            produkty.remove(x)
+            print('Produkt bol uspesne odstraneny')
+            zapis_do_suboru()
+
+def _is_product(name):
+    for x in produkty:
+        if x.nazov == name:
+            return True
+    return False
+
+def _get_product(name):
+    for x in produkty:
+        if x.nazov == name:
+            return x
+
+def naskladnenie():
+    name = input('Zadaj nazov produktu: ')
+    if _is_product(name):
+        pocet = int(input("Zadaj pocet kusov: "))
+        product = _get_product(name)
+        product.pocet += pocet
+        zapis_do_suboru()
+
+def vyskladnenie():
+    name = input('Zadaj nazov produktu: ')
+    if _is_product(name):
+        pocet = int(input("Zadaj pocet kusov: "))
+        product = _get_product(name)
+        if pocet > product.pocet:
+            print('Nedostat0ok tovaru na sklade')
         else:
-            with open(data_path,'w',encoding='utf-8') as f:
-                pass
-    
-    def vypis_skladu(self):
-        for x in self.produkty:
-            print(self.produkty[x])
-            
-    def _write_to_log(self,message):
-        with open(self.log_path,'a',encoding='utf-8') as f:
-            f.write(f'{datetime.now()} - {message}\n')
-            print(message)
+            product.pocet -= pocet
+            zapis_do_suboru()
 
-    def pridanie_tovaru(self):
-        nazov = input('Zadaj nazov tovaru: ')
-        if nazov in self.produkty:
-            self._write_to_log("Tovar uz je na sklade")
-        else:
-            cena = float(input('Zadaj cenu tovaru: '))
-            pocet = int(input('Zadaj pocet kusov na sklade: '))
-            self.produkty[nazov] = Produkt(nazov,cena,pocet) 
-            self._write_to_log("Tovar bol uspesne pridany do skladu")
-            self._export_skladu()
-            
-
-
-    def odstranenie_tovaru(self):
-        nazov = input('Zadaj nazov tovaru: ')
-        if nazov not in self.produkty:
-            self._write_to_log('Tovar neexistuje')
-        else:
-            del self.produkty[nazov]
-            self._write_to_log('Tovar uspesne odstraneny')
-            self._export_skladu()
-
-    def naskladnenie(self):
-        nazov = input('Zadaj nazov tovaru: ')
-        if nazov not in self.produkty:
-            self._write_to_log("Tovar neexistuje")
-        else:
-            pocet = int(input('Kolko kusov tovaru naskladnit: '))
-            self.produkty[nazov].pripocitat(pocet)
-            self._write_to_log(f"Naskladnenie bolo uspesne {nazov}")
-            self._export_skladu()
-
-    def vyskladnenie(self):
-        nazov = input('Zadaj nazov tovaru: ')
-        if nazov not in self.produkty:
-            self._write_to_log("Tovar neexistuje")
-        else:
-            pocet = int(input('Kolko kusov tovaru vyskladnit: '))
-            self.produkty[nazov].odpocitat(pocet)
-            self._export_skladu()
-            
-
-    def nastav_cenu(self):
-        nazov = input('Zadaj nazov tovaru: ')
-        if nazov not in self.produkty:
-            self._write_to_log("Tovar neexistuje")
-        else:
-            cena = float(input('Zadaj cenu tovaru: '))
-            self.produkty[nazov].nacen(cena)
-            self._write_to_log('Cena bola uspesne nastavena')
-            self._export_skladu()
-
-    def hodnota_skladu(self):
-        suma = 0
-        for x in self.produkty.values():
-            suma += x.vrat_celkovu_cenu()
-        self._write_to_log(f"Celkova cena skladu je {suma}€")
-
-    #"voda;2.5;20|chlieb;2;50"
-    def export_skladu(self):
-        for x in self.produkty.values():
-            print(x.export_vypis(),end="|")
-        print()
-    
-    def _export_skladu(self):
-        records = []
-        for x in self.produkty.values():
-            records.append(x.export_vypis())
-        data = "|".join(records)
-        with open(self.data_path,'w',encoding='utf-8') as f:
-            f.write(data)
-
-    def _import_skladu(self,data):
-        x = data.split('|')
-        #"voda;2.5;20"
-        self.produkty.clear()
-        for i in x:
-            if i == '':
-                continue
-            result = i.split(';')
-            # ["voda",2.5,20]
-            self.produkty[result[0]] = Produkt(result[0],float(result[1]),int(result[2]))
-
-    def import_skladu(self):
-        import_string = input("Zadaj import string: ")
-        self._import_skladu(import_string)
 
 
 

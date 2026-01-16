@@ -1,26 +1,10 @@
-## Objekty a funkcie
-###################################################################################
-class Person:
+import mojbalik.test as t
+import mojbalik.test2 as t2
 
-    def __init__(self,name,lastname):
-        self.name = name
-        self.lastname = lastname
-
-class Student(Person):
-    def __init__(self,name,lastname,rocnik):
-        super().__init__(name,lastname)
-        self.rocnik = rocnik
-
-def sucet(a,b):
-    return a + b
-
-##################################################################################
-## Logika programu
-
-x = 10
-
-y = Student("Jan","Novak",4)
+from mojbalik.test2 import PI
 
 
-x = Student("Jan","Novak",4)
-print(x.lastname)
+print(PI)
+
+
+print(t.sucet(5,5))

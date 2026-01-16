@@ -1,6 +1,10 @@
 
-__all__ = ['y']
 
-y =111
-def suma():
-    return 2+2
+
+__tajna_premenna = 5
+
+x = 'Ahoj'
+
+
+def sucet(a,b):
+    return a + b

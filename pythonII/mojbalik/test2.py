@@ -1,2 +1,5 @@
-def suma2():
-    return 3+32
+
+
+
+
+PI = 3.14

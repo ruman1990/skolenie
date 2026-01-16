@@ -1,41 +1,35 @@
-from sklad import Sklad
-def display_menu():
-    print('Skladovy softver 1.0')
-    print(f'{'-'*10}MENU{'-'*10}')
-    print('0. Ukoncit program')
-    print('1. Vypis skladu')
-    print('2. Pridanie tovaru na sklad')   
-    print('3. Naskladnenie tovaru')
-    print('4. Vyskladnenie tovaru')
-    print('5. Nastavenie ceny tovaru')
-    print('6. Sucet ceny tovarov na sklade')
-    print('7. Odstranenie tovaru zo skladu')
-    print('8. Exportovat sklad do stringu')
-    print('9. Importovat sklad zo stringu')
+import sklad
+from produkt import Produkt
 
-sklad = Sklad('test')
+def print_menu():
+    print(f'{"-"*10}MENU{"-"*10}')
+    print('1. Vypis skladu')
+    print('2. Pridanie produktu')
+    print('3. odstranenie produktu')
+    print('4. naskladnenie')
+    print('5. vyskladnenie')
+    print('0. ukoncenie programu')
+
+# voda,2.5,20
+with(open(r'C:\Users\ruman\skolenie\pythonII\sklad\sklad.txt','r',encoding='utf-8')) as f:
+    for x in f:
+        nazov,cena,pocet = x.split(',')
+        sklad.produkty.append(Produkt(nazov,float(cena),int(pocet.strip())))
 
 while True:
-    display_menu()
-    volba = input('Zadaj svoju volbu: ')
-    if volba == '0':
-        break
-    elif volba == '1':
+
+    print_menu()
+    volba = input("Zadaj svoju volbu: ")
+
+    if volba == '1':
         sklad.vypis_skladu()
     elif volba == '2':
-        sklad.pridanie_tovaru()
+        sklad.pridaj_produkt()
     elif volba == '3':
-        sklad.naskladnenie()
+        sklad.odstran_produkt()
     elif volba == '4':
-        sklad.vyskladnenie()
+        sklad.naskladnenie()
     elif volba == '5':
-        sklad.nastav_cenu()
-    elif volba == '6':
-        sklad.hodnota_skladu()
-    elif volba == '7':
-        sklad.odstranenie_tovaru()
-    elif volba == '8':
-        sklad.export_skladu()
-    elif volba == '9':
-        sklad.import_skladu()
-
+        sklad.vyskladnenie()
+    elif volba == '0':
+        break
