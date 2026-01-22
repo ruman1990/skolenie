@@ -25,7 +25,7 @@ def zapis_do_db():
     conn = sqlite3.connect('sklad.db')
     cur = conn.cursor()
     for x in produkty:
-        cur.execute('insert into produkty values (?,?,?)',x.nazov,x.cena,x.pocet)
+        cur.execute('insert into produkty (nazov,cena,pocet) values (?,?,?)',(x.nazov,x.cena,x.pocet))
     conn.commit()
     conn.close()
 
@@ -42,7 +42,7 @@ def pridaj_produkt():
         print('Produkt uz existuje')
         return
     produkty.append(Produkt(name,price,count))
-    zapis_do_suboru()
+    zapis_do_db()
     print('Produkt uspesne pridany do skladu')
 
 def odstran_produkt():
