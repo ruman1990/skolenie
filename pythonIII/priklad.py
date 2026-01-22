@@ -1,9 +1,5 @@
-from funcy import memoize
+import json
 
-@memoize
-def draha_funkcia(x):
-    print("Volám funkciu...")
-    return x * 2
-
-print(draha_funkcia(10))  # vypočíta
-print(draha_funkcia(10))  # použije cache, nevypíše "Volám funkciu..."
+with open('peter.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+    print(data)

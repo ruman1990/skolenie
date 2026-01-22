@@ -1,12 +1,6 @@
-[{
-    "meno": "PeterŠ",
-    "vek": 30,
-    "email": "peter@email.com",
-    "aktivny": false
-},
 {
     "meno": "PeterŠ",
     "vek": 30,
     "email": "peter@email.com",
     "aktivny": false
-}]
+}
