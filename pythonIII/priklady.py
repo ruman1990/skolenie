@@ -2,8 +2,14 @@
 # Vstup: ["ahoj", "svet", "AI", "Python", "ok"]
 
 x = ["ahoj", "svet", "AI", "Python", "ok"]
+
 upper = [i.upper() for i in x if len(i)>3]
 print(upper)
+
+upper = []
+for i in x:
+    if len(i)>3:
+        upper.append(i.upper())
 
 
 
@@ -23,7 +29,7 @@ print(rozlozene)
 # 3. List comprehension s podmienkou vo vnútri – nahraď záporné čísla nulou, ostatné nechaj.
 # Vstup: [-3, -1, 0, 2, 4]
 cisla = [-3, -1, 0, 2, 4]
-nulove = [x if x>=0 else 0 for x in cisla]
+nulove = [x if x>=0 else 0 for x in cisla ]
 print(nulove)
 
 

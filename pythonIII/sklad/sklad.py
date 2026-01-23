@@ -12,6 +12,7 @@
     # importovat sklad
 from produkt import Produkt
 import sqlite3
+import datetime
 produkty = []
 # [nazov produktu, cena, pocet kusov]
 
@@ -24,15 +25,16 @@ def vypis_skladu():
 def zapis_do_db():
     conn = sqlite3.connect('sklad.db')
     cur = conn.cursor()
+    cur.execute('delete from produkty')
     for x in produkty:
         cur.execute('insert into produkty (nazov,cena,pocet) values (?,?,?)',(x.nazov,x.cena,x.pocet))
     conn.commit()
     conn.close()
 
-def zapis_do_suboru():
-    with(open(r'C:\Users\ruman\skolenie\pythonII\sklad\sklad.txt','w',encoding='utf-8',newline='')) as f:
-        for x in produkty:
-            f.write(f'{x.nazov},{x.cena},{x.pocet}\n')
+def zapis_do_logu(message):
+    with(open(r'C:\Users\ruman\skolenie\pythonII\sklad\log.txt','a',encoding='utf-8',newline='')) as f:
+        f.write(f'[{datetime.datetime.now()}] : {message}')
+        f.write('\n')
 
 def pridaj_produkt():
     name = input('Zadaj nazov produktu: ')
@@ -51,7 +53,7 @@ def odstran_produkt():
         if x.nazov == name:
             produkty.remove(x)
             print('Produkt bol uspesne odstraneny')
-            zapis_do_suboru()
+            zapis_do_db()
 
 def _is_product(name):
     for x in produkty:
@@ -70,7 +72,7 @@ def naskladnenie():
         pocet = int(input("Zadaj pocet kusov: "))
         product = _get_product(name)
         product.pocet += pocet
-        zapis_do_suboru()
+        zapis_do_db()
 
 def vyskladnenie():
     name = input('Zadaj nazov produktu: ')
@@ -81,9 +83,7 @@ def vyskladnenie():
             print('Nedostat0ok tovaru na sklade')
         else:
             product.pocet -= pocet
-            zapis_do_suboru()
-
-
+            zapis_do_db()
 
 
 

@@ -1,5 +1,0 @@
-import json
-
-with open('peter.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
-    print(data)
