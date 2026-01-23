@@ -3,16 +3,23 @@ from produkt import Produkt
 import sqlite3
 import os
 
+import gettext
+
+lang = gettext.translation('messages', localedir='translations', languages=['en'])
+lang.install()
+
+print(_('Hello!'))
+
 os.chdir('C:\\Users\\ruman\\skolenie\\pythonIII\\sklad')
 
 def print_menu():
     print(f'{"-"*10}MENU{"-"*10}')
-    print('1. Vypis skladu')
-    print('2. Pridanie produktu')
-    print('3. odstranenie produktu')
-    print('4. naskladnenie')
-    print('5. vyskladnenie')
-    print('0. ukoncenie programu')
+    print(_('1. Vypis skladu'))
+    print(_('2. Pridanie produktu'))
+    print(_('3. odstranenie produktu'))
+    print(_('4. naskladnenie'))
+    print(_('5. vyskladnenie'))
+    print(_('0. ukoncenie programu'))
 
 def init_sklad():
     conn = sqlite3.connect('sklad.db')

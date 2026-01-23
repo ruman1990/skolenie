@@ -46,6 +46,7 @@ def pridaj_produkt():
     produkty.append(Produkt(name,price,count))
     zapis_do_db()
     print('Produkt uspesne pridany do skladu')
+    zapis_do_logu(f'Pridany produkt {name} cena {price} pocet {count}')
 
 def odstran_produkt():
     name = input('Zadaj nazov produktu: ')
