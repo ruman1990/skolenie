@@ -1,13 +1,4 @@
-from openpyxl import load_workbook
 from openpyxl import Workbook
-
-wb = load_workbook("data.xlsx")
-ws = wb.active  # alebo wb["Nazov_harka"]
-print(ws["B2"].value)  # Výpis obsahu bunky A1
-
-for r in ws.iter_rows(min_row=2,min_col=2, values_only=True):
-    print(r)
-
 import requests
 resp = requests.get('https://jsonplaceholder.typicode.com/users')
 data = resp.json()
