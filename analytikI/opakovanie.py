@@ -25,7 +25,7 @@ words = [
 # # DOPLŇTE KÓD TU
 
 # # 4. Stiahnite JSON zo stránky a vypíšte všetky emaily používateľov.
-# #    URL: https://webcode.me/users.json
+# #    URL: https://jsonplaceholder.typicode.com/users
 
 # # DOPLŇTE KÓD TU
 
