@@ -1,28 +1,14 @@
-from openpyxl import load_workbook
-from openpyxl import Workbook
+import pandas as pd
+import psycopg2
 
-wb = load_workbook("data.xlsx")
-ws = wb.active  # alebo wb["Nazov_harka"]
-print(ws["B2"].value)  # Výpis obsahu bunky A1
+conn = psycopg2.connect(
+    database = 'postgres',
+    host = 'localhost',
+    user = 'postgres',
+    password = 'admin'
+)
 
-for r in ws.iter_rows(min_row=2,min_col=2, values_only=True):
-    print(r)
-
-import requests
-resp = requests.get('https://jsonplaceholder.typicode.com/users')
-data = resp.json()
-
-vyfiltrovane = [{"name" : x['name'],"email" : x['email']} for x in data]
-
-wb = Workbook()
-ws = wb.active
-
-
-
-ws['A1'] = "MENO"
-ws['B1'] = "EMAIL"
-
-for x in vyfiltrovane:
-    ws.append(list(x.values()))
-
-wb.save('priklad.xlsx')
+df = pd.read_csv('users3.csv')
+df.loc[df["salary"] < 0,'salary'] = 0
+print(df[df['salary'] < 0])
+df.to_json('vystup3.json',orient="records",force_ascii=False,indent=4)
