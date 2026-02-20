@@ -10,49 +10,55 @@
     # odstranenie tovaru zo skladu
     # exportovat sklad
     # importovat sklad
-
-produkty = [["voda",2.5,20],["chlieb",1.5,30]]
-# [nazov produktu, cena, pocet kusov]
-
-def print_menu():
-    print(f'{"-"*10}MENU{"-"*10}')
-    print('1. Vypis skladu')
-    print('2. Pridanie produktu')
-    print('3. odstranenie produktu')
-    print('0. ukoncenie programu')
-
 def vypis_skladu():
     print()
     for x in produkty:
-        print(f'Produkt {x[0]} cena {x[1]}€ mnozstvo {x[2]} ks')
+        print(f'Nazov: {x[0]},cena: {x[1]}€, pocet kusov {x[2]}')
     print()
 
-def pridaj_produkt():
-    name = input('Zadaj nazov produktu: ')
-    price = float(input('Zadaj jednotkovu cena: '))
-    count = int(input('Zadaj pocet kusov: '))
+def pridanie_tovaru():
+    nazov = input("Zadaj nazov tovaru: ")
     for x in produkty:
-        if name in x:
-            print('Produkt uz existuje')
+        if nazov == x[0]:
+            print("Produkt uz existuje")
             return
-    produkty.append([name,price,count])
-    print('Produkt uspesne pridany do skladu')
+    cena = float(input("Zadaj cenu tovaru: "))
+    pocet = int(input("Zadaj pocet kusov: "))
+    produkty.append([nazov,cena,pocet])
+    print("Produkt bol uspesne pridany")
+
+def odstranenie_tovaru():
+    nazov = input("Zadaj nazov tovaru: ")
+    for x in produkty:
+        if nazov == x[0]:
+            produkty.remove(x)
+            print("Tovar bol uspesne odstraneny")
+            return
+    print("Tovar sa nenasiel")
+
+def sucet_ceny():
+    suma = 0
+    for x in produkty:
+        suma = suma + (x[1]*x[2])
+    print(suma)
+
+produkty = [["voda",2.5,50],["mlieko",1.5,100],["pivo",1,250]]
 
 while True:
-
-    print_menu()
+    print('-----MENU------')
+    print('0. ukoncenie programu')
+    print('1. vypis skladu')
+    print('2. pridanie tovaru na sklad')
+    print('3. sucet ceny tovarov')
+    print('4. odstranenie tovaru zo skladu')
     volba = input("Zadaj svoju volbu: ")
-
-    if volba == '1':
+    if volba == '0':
+        break
+    elif volba == '1':
         vypis_skladu()
     elif volba == '2':
-        pridaj_produkt()
+        pridanie_tovaru()
     elif volba == '3':
-        pass
-    elif volba == '0':
-        break
-
-
-
-
-
+        sucet_ceny()
+    elif volba == '4':
+        odstranenie_tovaru()
