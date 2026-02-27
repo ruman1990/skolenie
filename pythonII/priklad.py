@@ -1,10 +1,16 @@
-import mojbalik.test as t
-import mojbalik.test2 as t2
+import xml.etree.ElementTree as ET
 
-from mojbalik.test2 import PI
+data = ET.Element('data')
 
+person1 = ET.SubElement(data, 'person')
+ET.SubElement(person1, 'name').text = 'Janko'
+ET.SubElement(person1, 'age').text = '30'
+pet = ET.SubElement(person1, 'pet')
+ET.SubElement(pet,'name').text = 'Azor'
 
-print(PI)
+person2 = ET.SubElement(data, 'person')
+ET.SubElement(person2, 'name').text = 'Eva'
+ET.SubElement(person2, 'age').text = '25'
 
-
-print(t.sucet(5,5))
+tree = ET.ElementTree(data)
+tree.write('novi_ludia.xml', encoding='utf-8', xml_declaration=True)

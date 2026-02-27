@@ -3,6 +3,9 @@
     <person>
         <name>Janko</name>
         <age>30</age>
+        <pet>
+            <name>Azor</name>
+        </pet>
     </person>
     <person>
         <name>Eva</name>
