@@ -1,6 +1,18 @@
 {
-    "meno": "PeterŠ",
+    "meno": "Peter",
     "vek": 30,
     "email": "peter@email.com",
-    "aktivny": false
+    "aktivny": false,
+    "auta" : [
+        {
+            "znacka": "BMW",
+            "model": "X5",
+            "rok_vyroby": 2018
+        },
+        {
+            "znacka": "Audi",
+            "model": "A4",
+            "rok_vyroby": 2020
+        }
+    ]
 }

@@ -1,0 +1,17 @@
+[
+    {
+        "nazov": "voda",
+        "cena": 1.0,
+        "pocet": 100
+    },
+    {
+        "nazov": "cola",
+        "cena": 2.0,
+        "pocet": 200
+    },
+    {
+        "nazov": "chlieb",
+        "cena": 2.5,
+        "pocet": 50
+    }
+]

@@ -69,6 +69,7 @@ print(cur.fetchall())
 cur.execute("select * from auta")
 result = list(cur.fetchall())
 result = [x for x in result if x[4]>20000]
+
 print(sorted(result,key=lambda x : x[4],reverse=True))
 
 conn.close()
