@@ -38,3 +38,15 @@ x = int(input('zadaj vysku pyramidy: '))
 
 for i in range(1,x):
     print(' ' * (x - 1 - i) + '*' * (2 * i - 1))
+
+
+notes = ['Jack','Robert']
+
+def pridaj_meno():
+    meno = input("Pridaj do adresara meno: ")
+    notes.append(meno)
+
+
+while True:
+    pridaj_meno()
+    print(notes)
