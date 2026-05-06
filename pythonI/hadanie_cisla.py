@@ -1,19 +1,20 @@
 import random
 
-secret_number = random.randint(1,100)
-number = -1
-counter = 6
-while number!=secret_number:
-    number = int(input(f"Hadaj cislo od 1 do 100 (Pocet pokusov {counter}): "))
-    counter -= 1
-    if number == secret_number:
-        print("Vyhral si!")
+vyherne_cislo = random.randint(0,100)
+number = int(input("Hadaj cislo 0-100: "))
+pocet_pokusov = 6
+while number != vyherne_cislo:
+    pocet_pokusov -= 1
+    if pocet_pokusov == 0:
         break
-    elif number < secret_number:
-        print('Hadaj vacsie cislo')
+    if number < vyherne_cislo:
+        print("Hadaj vyssie!")
     else:
-        print('Hadaj mensie cislo')
+        print("Hadaj nizsie!")
 
-    if counter == 0:
-        print('Prehral si!')
-        break
+    number = int(input(f"Hadaj cislo 0-100 (Zostavajucich pokusov {pocet_pokusov}): "))
+
+if pocet_pokusov == 0:
+    print("Prehral si!")
+else:
+    print("Vyhral si!")
