@@ -41,14 +41,19 @@ print(is_priestupny(rok))
 # Napíš funkciu, ktorá prijme zoznam čísel a vráti najväčšie číslo v zozname.
 y = [9,1,5,3,7,25,2]
 
-naj_cislo = 0
-for x in y:
-    if naj_cislo < x:
-        naj_cislo = x
+# naj_cislo = None
+# for x in y:
+#     if naj_cislo:
+#         if naj_cislo < x:
+#             naj_cislo = x
+#     else:
+#         naj_cislo = x
 
-print(naj_cislo)
+# print(naj_cislo)
 
 print(max(y))
+print(min(y))
+print(sum(y))
 
 
 # 6. Vyrezávanie (slicing) stringu
