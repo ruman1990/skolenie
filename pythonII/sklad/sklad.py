@@ -11,6 +11,8 @@
     # exportovat sklad
     # importovat sklad
 from decimal import Decimal
+from produkt import Produkt
+from datetime import datetime
 
 class Sklad:
     def __init__(self):
@@ -30,6 +32,7 @@ class Sklad:
         self.produkty[nazov] = (Produkt(nazov,cena,pocet_kusov))
         print("Tovar bol uspesne pridany.")
         self.ulozit_sklad()
+        self.log(f'Tovar bol uspesne pridany. {nazov}')
 
     def ulozit_sklad(self):
         with open("data.txt",'w',encoding='utf-8') as f:
@@ -37,36 +40,14 @@ class Sklad:
                 f.write(self.produkty[x].export_format())
                 f.write("\n")
 
+    def log(self,message):
+        with open("log.txt",'a',encoding="utf-8") as f:            
+            f.write(f"[{datetime.now()}] {message}")
+            f.write("\n")
+
+
     def vypis_skladu(self):
         for x in self.produkty:
             print(self.produkty[x])
 
 
-class Produkt:
-    def __init__(self,nazov,cena,pocet):
-        self.nazov = nazov
-        self.cena = float(cena)
-        self.pocet = int(pocet)
-    def __str__(self):
-        return f"Produkt {self.nazov}, cena {self.cena:.2f}€, pocet {self.pocet}"
-    def export_format(self):
-        return f'{self.nazov},{self.cena},{self.pocet}'
-
-
-
-sklad = Sklad()
-
-while True:
-
-    print("-----MENU-----")
-    print("1. Vypis skladu")
-    print("2. Pridanie tovaru na sklad")
-    print("0. Ukoncenie programu")
-
-    volba = input("Zadaj svoju volbu: ")
-    if volba == '0':
-        break
-    elif volba == '1':
-        sklad.vypis_skladu()
-    elif volba == '2':
-        sklad.pridanie_tovaru()
