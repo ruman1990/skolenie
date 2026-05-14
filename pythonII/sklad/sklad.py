@@ -14,7 +14,11 @@ from decimal import Decimal
 
 class Sklad:
     def __init__(self):
-        self.produkty = {"voda" : Produkt('voda',1.5,10),"chlieb" : Produkt('chlieb',2,20),"jogurt" : Produkt('jogurt',0.5,10)}
+        self.produkty = {}
+        with open("data.txt",'r',encoding='utf-8') as f:
+            for x in f:
+                values = x.split(',')  # ['voda',2,100]
+                self.produkty[values[0]] = Produkt(values[0],values[1],values[2])
 
     def pridanie_tovaru(self):
         nazov = input("Zadaj nazov tovaru: ")
@@ -25,6 +29,13 @@ class Sklad:
         pocet_kusov = int(input("Zadaj pocet kusov tovaru: "))
         self.produkty[nazov] = (Produkt(nazov,cena,pocet_kusov))
         print("Tovar bol uspesne pridany.")
+        self.ulozit_sklad()
+
+    def ulozit_sklad(self):
+        with open("data.txt",'w',encoding='utf-8') as f:
+            for x in self.produkty:
+                f.write(self.produkty[x].export_format())
+                f.write("\n")
 
     def vypis_skladu(self):
         for x in self.produkty:
@@ -34,10 +45,12 @@ class Sklad:
 class Produkt:
     def __init__(self,nazov,cena,pocet):
         self.nazov = nazov
-        self.cena = cena
-        self.pocet = pocet
+        self.cena = float(cena)
+        self.pocet = int(pocet)
     def __str__(self):
         return f"Produkt {self.nazov}, cena {self.cena:.2f}€, pocet {self.pocet}"
+    def export_format(self):
+        return f'{self.nazov},{self.cena},{self.pocet}'
 
 
 
