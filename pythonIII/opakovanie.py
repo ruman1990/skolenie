@@ -1,6 +1,8 @@
 # Načítaj celý log súbor do zoznamu. (log.txt)
-
+import os
 zoznam = []
+
+os.chdir("pythonIII")
 
 with open("log.txt","r",encoding="utf-8") as f:
     for x in f:
