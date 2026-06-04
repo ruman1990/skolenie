@@ -1,6 +1,3 @@
-Samozrejme! Tu je **učebný text o posielaní emailov v Pythone** – najprv základná teória, potom praktická práca s ukážkami kódu.
-
----
 
 # Posielanie emailov v Pythone
 
