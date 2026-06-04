@@ -1,0 +1,6 @@
+voda,2.0,100
+chlieb,1.5,60
+jogurt,0.5,50
+muka,2.0,150
+cola,2.0,500
+pepsi,2.5,30
