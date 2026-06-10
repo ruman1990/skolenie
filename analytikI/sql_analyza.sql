@@ -9,16 +9,19 @@ select * from a union select * from b
 select sum(suma) from c;
 
 
-
-
-create view objednavky_view as
- SELECT op.objednavka_id,
-    o.datum,
-    o.typ,
-    p.nazov,
-    op.mnozstvo,
-    op.cena,
-    p.kategoria
-   FROM objednavky_produkty op
-     JOIN produkty p ON p.id = op.produkt_id
-     JOIN objednavky o ON op.objednavka_id = o.id;
+create view objednavky_view as (
+select op.id as polozka,
+		o.id,
+		o.typ,
+		o.datum,
+		p.nazov as produkt,
+		op.mnozstvo,
+		op.cena,
+		p.kategoria,
+		d.nazov as dodavatel,
+		od.nazov as odberatel 
+	from objednavky_produkty as op 
+		join objednavky as o on op.objednavka_id=o.id 
+		join produkty as p on op.produkt_id=p.id
+		left join dodavatelia as d on o.dodavatel_id=d.id
+		left join odberatelia as od on o.odberatel_id=od.id)
