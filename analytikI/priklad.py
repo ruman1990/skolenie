@@ -1,17 +1,6 @@
-import psycopg2
+import numpy as np
 
-conn = psycopg2.connect(
-    host="localhost",
-    database="test",
-    user="postgres",
-    password="admin",
-    port=5432
-)
+arr = np.array([[1, 2, 3], [4, 5, 6]])
 
-cur = conn.cursor()
-
-
-cur.execute("select * from objednavky_view")
-
-for x in cur.fetchall():
+for x in np.nditer(arr):
     print(x)

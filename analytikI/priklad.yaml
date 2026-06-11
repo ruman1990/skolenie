@@ -1,0 +1,11 @@
+- {city: Bratislava, meno: Janko, vek: '25'}
+- {city: Košice, meno: Katka, vek: '22'}
+- {city: Žilina, meno: Robo, vek: '30'}
+- {city: Prešov, meno: Lenka, vek: '27'}
+- {city: 'Banska, Bystrica', meno: Miro, vek: '29'}
+- {city: Bratislava, meno: Janko, vek: 25}
+- {city: Košice, meno: Katka, vek: 22}
+- {city: Žilina, meno: Robo, vek: 30}
+- {city: Bratislava, meno: Vlado, vek: 36}
+- {city: Žilina, meno: Robo, vek: 33}
+- {city: Zvolen, meno: Robo, vek: 38}
