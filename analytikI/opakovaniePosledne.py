@@ -85,3 +85,4 @@ print(f"Pocet letov do Pariza bolo : {len(result)}")
 filter = [x for x in namedtuples if x.ciel == 'Paríž']
 print(filter)
 print(f"Pocet letov do Pariza bolo : {len(filter)}")
+conn.close()
