@@ -1,44 +1,29 @@
-# import random
-
-# secret_number = random.randint(1,100)
-# counter = 6
-# while True:
-#     number = int(input(f"Zadaj cislo 1-100 (Pocet pokusov {counter}): "))
-#     counter -= 1
-#     if secret_number == number:
-#         print("Gratulujem, uhadol si.")
-#         break
-    
-#     if counter == 0:
-#         print(f"Prehral si! Tajne cislo bolo {secret_number}")
-#         break
-#     elif secret_number < number:
-#         print("Hadaj nizsie")
-#     elif secret_number > number:
-#         print("Hadaj vyssie")
-
-
-
-
-# pouzivatel nech hada cislo, a ked uhadne vypiseme vyhral a ked nie, tak prehral
 import random
 
-secret_number = random.randint(1,100)
-failed = True
-for x in range(6,0,-1):
-    number = int(input(f"Hadaj cislo od 1 do 100 pocet pokusov {x}: "))
+print("Vitaj v hre")
+level = input("Vyber si obtiaznost (1. lahka, 2. stredna, 3. tazka): ")
 
-    if secret_number == number:
-        print("Vyhral si BINGO!")
-        failed = False
+secret = random.randint(1,100)
+if level == '1':
+    pocet_pokusov = 10
+elif level == '2':
+    pocet_pokusov = 7
+else:
+    pocet_pokusov = 6
+
+while True:
+    number = int(input(f"Hadaj cislo (1-100) Mas este {pocet_pokusov} pokusov: "))
+
+    if number == secret:
+        print("uhadol si!")
         break
+    elif number < secret and number >= 1:
+        print("zadal si mensie cislo")
+    elif number > secret and number <= 100:
+        print("zadal si vacsie cislo")
     else:
-        if secret_number < number:
-            if x > 1:
-                print("Neuhadol si, hadaj nizsie!")
-        else:
-            if x > 1:
-                print("Neuhadol si, hadaj vyssie!")
-
-if failed:
-    print("Prehral si!")
+        print("zadal si cislo mimo rozsah")
+    pocet_pokusov -= 1
+    if pocet_pokusov == 0:
+        print(f"Prehral si! Tajne cislo bolo {secret}.")
+        break
