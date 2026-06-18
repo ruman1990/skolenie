@@ -3,36 +3,10 @@
 # # 1. Nájdite viaceré spôsoby, ako vypísať "hello there" 7-krát.
 # #    (Použite aspoň for cyklus, while cyklus, rekurziu, list comprehension alebo iný spôsob.)
 
-for x in range(7):
-    print("hello there",end=" ")
-
-print()
-print("hello there "*7)
-
-print(*["hello there" for _ in range(7)])
-print("hello there","hello there","hello there","hello there","hello there","hello there","hello there")
-
-def print_hello(n):
-    print("hello there",end =" ")
-    if n > 1:
-        print_hello(n-1)
-
-print_hello(7)
-print()
 # # 2. Vytvorte z premennej vals n-ticu (tuple) unikátnych hodnôt.
 
 vals = [1, 1, 1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 8, 9, 10]
 
-print(tuple(set(vals)))
-
-result = []
-for x in vals:
-    if x not in result:
-        result.append(x)
-
-print(tuple(result))
-
-# # # DOPLŇTE KÓD TU
 
 # # 3. Vyfiltrujte slová, ktoré obsahujú písmeno 'r'.
 
@@ -41,19 +15,9 @@ words = [
      'sMall', 'terrific', 'alternative', 'book', 'dictionaRy', 'word'
  ]
 
-print([w.lower() for w in words if 'r' in w.lower()])
-
-# # DOPLŇTE KÓD TU
 
 # # 4. Stiahnite JSON zo stránky a vypíšte všetky emaily používateľov.
 # #    URL: https://jsonplaceholder.typicode.com/users
-import requests
-
-resp = requests.get("https://jsonplaceholder.typicode.com/users")
-if "json" in resp.headers["Content-type"]:
-    print([x['email'] for x in resp.json()])
-
-# # DOPLŇTE KÓD TU
 
 
 # 5. Práca so zoznamom miest:
@@ -80,30 +44,12 @@ cities = [
 
 # Úlohy:
 # a) Vypíšte prvých 5 miest.
-for y in [x['name'] for x in cities[:5]]:
-    print(y)
-
-print()
 # b) Vypíšte posledných 5 miest.
-for y in [x['name'] for x in cities[-5:]]:
-    print(y)
+
 # c) Nájdite mesto s najväčším počtom obyvateľov.
-print(max(cities,key=lambda x:x['population']))
 
-max_value = {}
-
-for x in cities:
-    if not max_value or max_value['population'] < x['population']:
-        max_value = x
-
-print(max_value)
 
 # d) Nájdite mesto s najmenším počtom obyvateľov.
-print(min(cities,key=lambda x:x['population']))
+
 
 # e) Vyfiltrujte mestá, ktoré majú menej ako 1 milión obyvateľov.
-print([x['name'] for x in cities if x['population'] < 1_000_000])
-
-
-
-# DOPLŇTE KÓD TU
