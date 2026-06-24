@@ -86,6 +86,7 @@ def funkcia_vyrezania(x):
     zoznam = []
     for x in mena:
         zoznam.append(x[1:])
+    return zoznam
 
 print(zoznam)
 # 11. Odstránenie záporných čísel zo zoznamu
