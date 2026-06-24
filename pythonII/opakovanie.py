@@ -97,7 +97,7 @@ zoznam = []
 for x in cisla:
     if x >= 0:
         zoznam.append(x)
-[print(zoznam)]
+print(zoznam)
 
 
 # 12. Použitie strip()
