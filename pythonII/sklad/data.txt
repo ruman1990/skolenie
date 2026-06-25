@@ -1,0 +1,5 @@
+banany,1.5,50
+jablka,2.5,40
+pomarance,1.5,20
+cola,2.5,100
+pepsi,1.5,60
