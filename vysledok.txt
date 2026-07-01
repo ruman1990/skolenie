@@ -1,2 +1,1 @@
 produkt,pocet_vyskladneni,posledny_datum
-rohlik,1,2025-07-21 08:10:01
