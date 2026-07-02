@@ -1,8 +1,14 @@
-import locale
+import csv
 
-# Nastavenie slovenského locale (pre Unix/Linux)
-locale.setlocale(locale.LC_ALL, 'sk_SK.UTF-8')
+# with open('names.csv', 'w',newline="") as f:
+#     fnames = ['first_name', 'last_name']
+#     writer = csv.DictWriter(f, fieldnames=fnames,delimiter="#")
+#     writer.writeheader()
+#     writer.writerow({'first_name' : 'John', 'last_name': 'Smith#Wesson'})
+#     writer.writerow({'first_name' : 'Robert', 'last_name': 'Brown'})
+#     writer.writerow({'first_name' : 'Julia', 'last_name': 'Griffin'})
 
-# Formátovanie čísla s oddelovačom tisícov
-cislo = 1234567.89
-print(locale.format_string("%.2f", cislo, grouping=True))  # napr. '1 234 567,89'
+with open("names.csv","r") as f:
+    reader = csv.reader(f,delimiter="#")
+    for x in reader:
+        print(x)
