@@ -20,6 +20,18 @@ Vhodná je na malé a stredne veľké aplikácie, učenie sa SQL, vývoj desktop
 
 ---
 
+## TYPY
+
+| Typ       | Význam                                      |
+| --------- | ------------------------------------------- |
+| `NULL`    | prázdna alebo neznáma hodnota               |
+| `INTEGER` | celé číslo                                  |
+| `REAL`    | desatinné číslo                             |
+| `TEXT`    | textový reťazec                             |
+| `BLOB`    | binárne dáta, napríklad obrázok alebo súbor |
+
+---
+
 ## Základné použitie v Pythone
 
 ### 1. Pripojenie k databáze
