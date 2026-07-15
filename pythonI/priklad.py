@@ -1,21 +1,21 @@
-# chceme zistit aky ma pouzivatel vek a podla toho vypiseme ci je alebo nie je plnolety
-import datetime
+# pouzivatel nech hada tajne cislo a ked uhadne, tak vyhral inak prehral
+import random
 
-now = datetime.datetime.now()
-AKTUALNY_ROK = now.year
+secret_number = random.randint(1,100)
+pocet_pokusov = 7
+while(pocet_pokusov > 0):
+    number = int(input(f"Hadaj cislo od 1 po 100 (mas {pocet_pokusov} pokusov): "))
+    pocet_pokusov -= 1
+    if number == secret_number:
+        print("Uhadol si!")
+        break
+    elif number > secret_number:
+        print("Hadaj nizsie")
+    elif number < secret_number:
+        print("Hadaj vyssie")
 
-rok_narodenia = int(input("Zadaj rok narodenia: "))
-
-vek = AKTUALNY_ROK-rok_narodenia
-
-if rok_narodenia < 1900 or rok_narodenia > AKTUALNY_ROK:
-    print("Zadal si nespravny rok")
-else:
-    if vek > 65:
-        print(f"Si dochodza a mas {vek} rokov")
-    elif vek >= 50:
-        print(f"Si senior a mas {vek} rokov")
-    elif vek >= 18:
-        print(f"Si plnolety a mas {vek} rokov")
-    else:
-        print(f"Nie si plnolety a mas {vek} rokov")
+    if pocet_pokusov == 0:
+        print("Prehral si!")
+        x = input("Ak chces hrat znovu, zadaj Y: ")
+        if x.upper() == 'Y':
+            pocet_pokusov = 7
