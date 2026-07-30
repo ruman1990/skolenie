@@ -12,21 +12,28 @@
     # importovat sklad
 from produkt import Produkt
 import xml.etree.ElementTree as ET
+import sqlite3
+import csv
 
 class Sklad:
     def __init__(self):
         self.produkty = {}
-        try:
-            with open("data.txt","r",encoding="utf-8") as f:
-                for x in f:
-                    item = x.strip().split(",")
-                    self.produkty[item[0]] = Produkt(*item)
-        except Exception:
-            print("Nemas inicialny data.txt")
-        finally:
-            if not self.produkty:
-                with open("data.txt","w",encoding="utf-8") as f:
-                    print("Inicialny subor data.txt bol vytvoreny!")
+        self.conn = sqlite3.connect("sklad.db")
+        self.cur = self.conn.cursor()
+        self._init_db()
+        self.cur.execute("SELECT * FROM produkty")
+        self.produkty = {x[1] : Produkt(*x[1:]) for x in self.cur.fetchall()}
+
+    def _init_db(self):
+        self.cur.execute("""
+                    CREATE TABLE IF NOT EXISTS produkty (
+                        id INTEGER PRIMARY KEY,
+                        nazov TEXT NOT NULL,
+                        cena REAL NOT NULL,
+                        pocet_kusov INTEGER NOT NULL
+                    )
+                """)
+        
     def vypis_skladu(self):
         for x in self.produkty.values():
             print(x)
@@ -56,9 +63,9 @@ class Sklad:
             print("Produkt neexistuje!")
 
     def _ulozenie_skladu(self):
-        with open("data.txt","w",encoding="utf-8") as f:
-            for x in self.produkty.values():
-                f.write(x.formatovany_vypis())
+        self.cur.execute("DELETE FROM produkty")
+        self.cur.executemany("INSERT INTO produkty (nazov,cena,pocet_kusov) VALUES (?,?,?)",[x.as_list() for x in self.produkty.values()])
+        self.conn.commit()
 
     def cena_tovarov(self):
         suma = 0
@@ -85,4 +92,10 @@ class Sklad:
         for x in root.findall("produkt"):
             self.produkty[x.find("nazov").text] = Produkt(x.find("nazov").text,x.find("cena").text,x.find("pocet").text)
         print("Import bol uspesny!")
+
+    def export_skladu_csv(self):
+        with open("export.csv","w",encoding="utf-8",newline="") as f:
+            writer = csv.writer(f)
+            for x in self.produkty.values():
+                writer.writerow(x.as_list())
 

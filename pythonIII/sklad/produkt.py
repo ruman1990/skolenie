@@ -12,3 +12,6 @@ class Produkt:
 
     def celkova_cena(self):
         return self.cena * self.pocet
+
+    def as_list(self):
+        return [self.nazov,self.cena,self.pocet]

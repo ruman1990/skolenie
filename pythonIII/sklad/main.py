@@ -10,6 +10,7 @@ while True:
     print("4. sucet ceny tovarov")
     print("5. export skladu")
     print("6. import skladu")
+    print("7. export skladu do csv")
     print("0. ukoncenie programu")
 
     volba = input("Zadaj svoju volbu: ")
@@ -29,5 +30,7 @@ while True:
         sklad.export_skladu()
     elif volba == '6':
         sklad.import_skladu()
+    elif volba == '7':
+        sklad.export_skladu_csv()
     else:
         print("Nespravna volba")
