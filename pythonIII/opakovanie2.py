@@ -46,7 +46,9 @@ c.executemany("INSERT INTO auta (znacka,model,rok_vyroby,cena) VALUES (?,?,?,?)"
 from datetime import datetime
 current_year = datetime.now().year
 c.execute('SELECT COUNT(*) FROM auta WHERE ? - rok_vyroby > 5', (current_year,))
-count_old_cars = c.fetchone()[0]
+data = c.fetchone()
+print(data)
+count_old_cars = data[0]
 print(f'Počet áut starších ako 5 rokov: {count_old_cars}')
  
 # Zobraz zoznam všetkých áut drahších ako 20 000 €, zoradený zostupne podľa ceny.
