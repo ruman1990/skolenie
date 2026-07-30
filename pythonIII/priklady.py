@@ -5,6 +5,11 @@ x = ["ahoj", "svet", "AI", "Python", "ok"]
 upper = [i.upper() for i in x if len(i)>3]
 print(upper)
 
+v = []
+for i in x:
+    if len(i) > 3:
+        v.append(i.upper())
+print(v)
 
 
 # 2. Vnorený list comprehension – rozlož maticu (zoznam zoznamov) na jeden zoznam čísel.
@@ -15,19 +20,40 @@ matica = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 rozlozene = [i for x in matica for i in x]
 print(rozlozene)
 
+v = []
+for x in matica:
+     for i in x:
+          v.append(i)
+print(v)
+
+
 # 3. List comprehension s podmienkou vo vnútri – nahraď záporné čísla nulou, ostatné nechaj.
 # Vstup: [-3, -1, 0, 2, 4]
 cisla = [-3, -1, 0, 2, 4]
 nulove = [x if x>=0 else 0 for x in cisla]
 print(nulove)
 
+v = []
+for x in cisla:
+     if x >= 0:
+          v.append(x)
+     else:
+          v.append(0)
+print(v)
 
 # 4. List comprehension + lambda + map – zdvojnásob všetky čísla v matici pomocou lambda funkcie.
 # Vstup: [[1, 2], [3, 4]]
 
 v = [[1, 2], [3, 4]]
-vystup = [list(map(lambda x: x*2,r)) for r in v]
+vystup = [[x*2 for x in r] for r in v]
 print(vystup)
+
+a = []
+for r in v:
+     a.append([])
+     for x in r:
+          a[-1].append(x*2)
+print(a)
 
 # 5. List comprehension – vyber mená ľudí starších ako 18 zo zoznamu slovníkov.
 # Vstup:
@@ -41,10 +67,17 @@ ludia = [
      {"meno": "Eva", "vek": 17},
      {"meno": "Jano", "vek": 22},
      {"meno": "Mato", "vek": 15},
-     {"meno": "Ada", "vek": 31},
+     {"meno": "Ada", "vek": 31}
 ]
 dospeli = [z['meno'] for z in ludia if z['vek']>=18]
 print(dospeli)
+
+v = []
+for x in ludia:
+     if x["vek"] >= 18:
+          v.append(x["meno"])
+
+print(v)
 
 
 # 6. Lambda vo funkcii sorted – zorad slová podľa dĺžky zostupne.
