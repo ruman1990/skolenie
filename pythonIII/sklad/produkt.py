@@ -15,3 +15,23 @@ class Produkt:
 
     def as_list(self):
         return [self.nazov,self.cena,self.pocet]
+
+
+# from dataclasses import dataclass
+# from decimal import Decimal
+
+
+# @dataclass
+# class Produkt:
+#     nazov : str
+#     cena : Decimal
+#     pocet : int
+
+#     def formatovany_vypis(self):
+#         return f"{self.nazov},{self.cena},{self.pocet}\n"
+
+#     def celkova_cena(self):
+#         return self.cena * self.pocet
+
+#     def as_list(self):
+#         return [self.nazov,self.cena,self.pocet]
