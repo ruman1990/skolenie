@@ -17,8 +17,13 @@ import csv
 #         self.pocet_pasazierov = pocet_pasazierov
 #         self.typ_lietadla = typ_lietadla
 
+import argparse
 
+parser = argparse.ArgumentParser(description="skript pre import letov")
+parser.add_argument("--source", help="Cesta k zdrojovemu suboru", default="lety.csv")
+parser.add_argument("--output", type=str, help="Nazov xlsx suboru, ktory sa vytvori", default="lety2.xlsx")
 
+args = parser.parse_args()
 
 
 # 1. Vytvorenie letov pomocou namedtuple nazov Let a atributy cislo, odlet, ciel, pocet_pasazierov
@@ -26,7 +31,7 @@ from collections import namedtuple
 
 Let = namedtuple("Let",["cislo","odlet","ciel","pocet_pasazierov","typ_lietadla"])
 
-with open("lety.csv","r",encoding="utf-8") as f:
+with open(args.source,"r",encoding="utf-8") as f:
     reader = csv.reader(f)
     header = reader.__next__()
     data = [Let(*x) for x in reader]
@@ -81,7 +86,7 @@ chart.set_categories(kategorie)
 
 ws.add_chart(chart)
 
-wb.save("lety.xlsx")
+wb.save(args.output)
 
 # precitaj vsetky riadky a zapis ich do postgre databazy, predtym vytvor tabulku letov
 # 4. Uloženie do Postgre (psycopg2)
