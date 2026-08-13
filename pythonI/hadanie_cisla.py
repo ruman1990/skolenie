@@ -1,30 +1,24 @@
-# pouzivatel nech hada tajne cislo a ked uhadne, tak vyhral inak prehral
+# hra hadaj cislo
+# budeme si pytat od pouzivatela, aby uhadol cislo
+# bude mat 7 pokusov
+# ak hada nizsie cislo alebo vyssie tak mu poradime
+# tajne cislo bude ako literal
 import random
 
-def get_pokusy_format(pokusy):
-    match pokusy:
-        case 7 | 6 | 5:
-            return f"{pokusy} pokusov"
-        case 4 | 3 | 2:
-            return f"{pokusy} pokusy"
-        case 1:
-            return f"{pokusy} pokus"
 
-secret_number = random.randint(1,100)
-pocet_pokusov = 7
-while(pocet_pokusov > 0):
-    number = int(input(f"Hadaj cislo od 1 po 100 (mas {get_pokusy_format(pocet_pokusov)}): "))
-    pocet_pokusov -= 1
-    if number == secret_number:
-        print("Uhadol si!")
+tajne_cislo = random.randint(1,100)
+pokusy = 7
+
+while pokusy > 0:
+    number = int(input(f"Hadaj cislo od 1-100 (Mas {pokusy} pokusov): "))
+    if number == tajne_cislo:
+        print("Uhadol si")
         break
-    elif number > secret_number:
-        print("Hadaj nizsie")
-    elif number < secret_number:
+    elif number < tajne_cislo:
         print("Hadaj vyssie")
+    else:
+        print("Hadaj nizsie")
+    pokusy -= 1
 
-    if pocet_pokusov == 0:
-        print("Prehral si!")
-        x = input("Ak chces hrat znovu, zadaj Y: ")
-        if x.upper() == 'Y':
-            pocet_pokusov = 7
+if pokusy==0:
+    print("Prehral si")
