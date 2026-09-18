@@ -1,71 +1,69 @@
-# skladovy softver
-# textove menu s volbami
-    # ukoncenie programu
-    # vypis skladu
-    # pridanie tovaru na sklad
-    # naskladnenie
-    # vyskladnenie
-    # nastavenie ceny tovaru
-    # sucet ceny tovarov
-    # odstranenie tovaru zo skladu
-    # exportovat sklad
-    # importovat sklad
-# produkty maju - nazov, cena, pocet kusov
+# vytvorime jednoduche textove menu
+# pouzivatel zvoli volbu a vykoname potrebnu akciu
+# skladovy softver, ukladame si udaje o produktoch
+# nazov, cena, pocet kusov na sklade
+# vypis obsah skladu
+# pridat tovar na sklad
+# odobrat tovar zo skladu
+# zobrazit hodnotu tovaru na sklade
+# naskladnenie
+# vyskladnenie
+# produkt sa sklada v poradi nazov, cena, pocet kusov
+produkty = [["voda",2.5,50],["cola",2,100],["pepsi",2.20,150]]
 
 def vypis_skladu():
     for x in produkty:
-        print(f"{x[0]}, cena {x[1]}€, pocet kusov {x[2]}")
+        print(f"nazov produktu {x[0]:10}, jednotkova cena {x[1]:10}€, pocet kusov {x[2]:10}")
 
 def pridanie_tovaru():
     nazov = input("Zadaj nazov tovaru: ")
     for x in produkty:
-        if nazov in x:
-            print("Zadany produkt uz existuje")
+        if nazov == x[0]:
+            print("Zadany tovar uz existuje")
             return
     cena = float(input("Zadaj cenu: "))
-    pocet_kusov = int(input("Zadaj pocet kusov: "))
-    produkty.append([nazov,cena,pocet_kusov])
-    print("Pridanie tovaru bolo uspesne")
+    pocet = int(input("Zadaj pocet kusov: "))
+    produkty.append([nazov,cena,pocet])
+    print("Produkt bol uspesne pridany")
 
 def odobratie_tovaru():
     nazov = input("Zadaj nazov tovaru: ")
     for x in produkty:
-        if nazov in x:
+        if nazov == x[0]:
             produkty.remove(x)
-            print("Odobratie tovaru bolo uspesne")
+            print("Tovar bol uspesne odstraneny")
             return
-    print("Zadany tovar neexistuje")
+    print("Zadany produkt sa nenasiel")
 
-def sucet_ceny():
-    sucet = 0
+def hodnota_skladu():
+    hodnota = 0
     for x in produkty:
-        sucet += x[1]*x[2]
-    print(f"Hodnota skladu je {sucet:.2f}€")
-
-produkty = [["voda",2.5,20],["chlieb",2,50],["muka",1,100]]
-
-nazvy = ["voda","chlieb","muka"]
-ceny = [2.5,2,1]
-pocty = [20,50,100]
+        hodnota += x[1] * x[2]
+    print(f"Hodnota skladu je {hodnota}")
 
 while True:
     print("-----MENU-----")
     print("1. vypis skladu")
     print("2. pridanie tovaru")
     print("3. odobratie tovaru")
-    print("4. sucet ceny tovarov")
+    print("4. hodnota skladu")
     print("0. ukoncenie programu")
-    volba = input("Zadaj svoju volbu: ")
+    print()
+    volba = input("Zadaj volbu z MENU: ")
 
     if volba == '0':
+        print()
+        print("Dovidenia")
         break
     elif volba == '1':
+        print("Vypis skladu")
         vypis_skladu()
     elif volba == '2':
         pridanie_tovaru()
     elif volba == '3':
         odobratie_tovaru()
     elif volba == '4':
-        sucet_ceny()
+        hodnota_skladu()
     else:
-        print("Nespravna volba")
+        print()
+        print("Zadal si zlu volbu.")
