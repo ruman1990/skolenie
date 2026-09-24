@@ -3,42 +3,13 @@
 # # 1. Nájdite viaceré spôsoby, ako vypísať "hello there" 7-krát.
 # #    (Použite aspoň for cyklus, while cyklus, rekurziu, list comprehension alebo iný spôsob.)
 sprava = "hello there"
-count = 6
- 
-while count >= 0:
-    count -= 1
-    print (sprava, end=" ")
 
-print() 
- 
-for x in range (0,7):
-    print(sprava, end=" ")
-
-print()
-
-def print_hello_there(n):
-    print("hello there",end=" ")
-    if n > 1:
-        print_hello_there(n - 1)
-
-print_hello_there(7)
-
-print()
-
-print("hello there "*7,end=" ")
-
-print()
-
-print(*["hello there" for _ in range(7)])
 
 # # 2. Vytvorte z premennej vals n-ticu (tuple) unikátnych hodnôt.
 
 vals = [1, 1, 1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 8, 9, 10]
 
-unikatne = tuple(set(vals))
- 
-print("\nUnikátne hodnoty:")
-print(unikatne)
+
 
 # # 3. Vyfiltrujte slová, ktoré obsahujú písmeno 'r'.
 
@@ -48,22 +19,13 @@ words = [
 ]
 
 
-vysledok = [x for x in words if 'r' in x.lower()]
-print(vysledok)
+
 
 
 
 
 # # 4. Stiahnite JSON zo stránky a vypíšte všetky emaily používateľov.
 # #    URL: https://jsonplaceholder.typicode.com/users
-import requests
-
-resp = requests.get("https://jsonplaceholder.typicode.com/users")
-data = resp.json()
-
-#print(data)
-# unpacking
-print(*[x['email'] for x in data])
 
 
 
@@ -93,28 +55,19 @@ cities = [
 
 # Úlohy:
 # a) Vypíšte prvých 5 miest.
-print([x['name'] for x in cities[:5]])
 
-vysledok = []
-for x in cities[:5]:
-    vysledok.append(x['name'])
-print(vysledok)
 
 
 # b) Vypíšte posledných 5 miest.
-print([x["name"] for x in cities[-5:]])
+
 
 # c) Nájdite mesto s najväčším počtom obyvateľov.
 
-print(max(cities,key=lambda x: x["population"]))
+
 
 
 # d) Nájdite mesto s najmenším počtom obyvateľov.
-print(min(cities,key=lambda x: x["population"]))
+
 
 # e) Vyfiltrujte mestá, ktoré majú menej ako 1 milión obyvateľov.
 
-vysledok = [x for x in cities if x["population"] < 1_000_000]
-for x in vysledok:
-    print(f"Mesto {x["name"]} ma pocet obyvatelov {x["population"]}")
-#print(vysledok)
