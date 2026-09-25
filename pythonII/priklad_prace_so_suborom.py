@@ -38,7 +38,24 @@ with open("vysledok.csv","r",encoding="utf-8") as f:
 for x in zoznam:
    print(x)
 
-with open("vysledok2.csv","w",encoding="utf-8") as f:
+with open("vysledok2.csv","a",encoding="utf-8") as f:
    for x in zoznam[:-1]:
       f.write(x.to_file())
    f.write(zoznam[-1].to_file(True))
+
+# riesenie cez CSV modul
+import csv
+
+zoznam = []
+
+with open("vysledok.csv","r",encoding="utf-8") as f:
+    reader = csv.reader(f,delimiter=";")
+    for x in reader:
+        print(x)
+        if x[0] != "Vlado":
+         zoznam.append(x)
+
+
+with open("vysledok2.csv","w",encoding="utf-8",newline="") as f:
+   writer = csv.writer(f,delimiter=",")
+   writer.writerows(zoznam)
