@@ -1,4 +1,4 @@
-__init__ = ["Person"]
+__all__ = ["Person","zoznam"]
 
 class Person:
    def __init__(self,name,age):

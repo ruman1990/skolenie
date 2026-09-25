@@ -1,8 +1,14 @@
-import csv
-#import priklad_prace_so_suborom as ps
-from priklad_prace_so_suborom import *
+import xml.etree.ElementTree as ET
 
+data = ET.Element('data')
 
-Person("adam",44)
+person1 = ET.SubElement(data, 'person')
+ET.SubElement(person1, 'name').text = 'Janko'
+ET.SubElement(person1, 'age').text = '30'
 
-print(zoznam)
+person2 = ET.SubElement(data, 'person')
+ET.SubElement(person2, 'name').text = 'Eva'
+ET.SubElement(person2, 'age').text = '25'
+
+tree = ET.ElementTree(data)
+tree.write('novi_ludia.xml', encoding='utf-8', xml_declaration=True)
