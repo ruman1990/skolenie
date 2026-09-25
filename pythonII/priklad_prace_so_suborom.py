@@ -1,7 +1,9 @@
+__init__ = ["Person"]
+
 class Person:
    def __init__(self,name,age):
       self.name = name.strip()
-      self.age = age.strip()
+      self.age = str(age).strip()
 
    def __str__(self):
       return f"{self.name},{self.age}"
