@@ -1,29 +1,6 @@
-import sqlite3
-import csv
+import secrets
+import string
 
-conn = sqlite3.connect("mojadb.db")
-
-cur = conn.cursor()
-
-cur.execute("""create table if not exists users (
-
-    id INTEGER PRIMARY KEY,
-    meno TEXT,
-    vek INTEGER
-
-) """)
-
-cur.execute("alter table users add column email TEXT")
-
-with open("users.csv","r",encoding="utf-8") as f:
-    reader = csv.reader(f)
-    reader.__next__()
-    for x in reader:
-        cur.execute("insert into users (id,meno,email) values (?,?,?)",(int(x[0]),x[1]+x[2],x[3]))
-
-#cur.execute("drop table users")
-
-conn.commit()
-cur.close()
-conn.close()
-
+abeceda = "abcdefgijklmnoprstuvyzqwxABCDEFGHIJKLMNOPRS" + "0123456789" + "!@#$%^&*"
+heslo = ''.join(secrets.choice(abeceda) for _ in range(12))
+print(heslo)  # napr. 'b7V$u19@GwLs'
