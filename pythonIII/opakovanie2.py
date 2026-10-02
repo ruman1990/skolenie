@@ -70,7 +70,7 @@ with open("auta.csv","r",encoding="utf-8") as f:
             print(f"{x[0]}, {x[1]}, {x[3]}")
 #znacka,model,rok_vyroby,cena
  
-
+    conn.close()
 
 
  
