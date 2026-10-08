@@ -1,33 +1,21 @@
-import pandas as pd
 import psycopg2
-import matplotlib.pyplot as plt
+
+conn = psycopg2.connect(
+    host="aws-0-eu-west-2.pooler.supabase.com",
+    database="postgres",
+    user="postgres.mianvtfnpgfqnzdaendq",
+    password="SilneHeslo123"
+)
+
+cur = conn.cursor()
 
 
-conn = psycopg2.connect(host="localhost",database="analytik",user="postgres",password="admin")
-df = pd.read_sql("select * from objednavka_view",conn)
+cur.execute("select * from vlado.objednavky where datum > '2024-03-01'")
 
-df["datum"] = pd.to_datetime(df["datum"])
-
-df["mesiac"] = df["datum"].dt.to_period("M").dt.to_timestamp()
-
-df["hodnota"] = df["mnozstvo"] * df["cena"]
-
-df = df.groupby(["mesiac","typ"]).agg(
-    pocet_objednavok = ("objednavka_id","nunique"),
-    ks_spolu = ("mnozstvo","sum"),
-    obrat= ("hodnota","sum")
-).reset_index()
+data = cur.fetchall()
+import datetime
 
 
-# for typ, typy in df.groupby("typ"):
-#     plt.barh(
-#         typy["mesiac"],
-#         typy["obrat"]
-#     )
-# plt.title("Obrat po mesiacoch")
-# plt.xlabel("mesiace")
-# plt.ylabel("obrat v €")
-# plt.show()
+print(data)
 
-df.to_excel("priklad.xlsx",index=False)
-
+conn.commit()
