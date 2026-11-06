@@ -1,33 +1,15 @@
-class Machine:
-    def move(self):
-        print("Vrrr")
+from datetime import datetime
+import zoneinfo
 
-class Car(Machine):
-    def __init__(self, brand, model):
-        self.brand = brand
-        self.model = model
-    def move(self):
-        print("Drive!")
+# Pôvodný čas v New Yorku
+ny_tz = zoneinfo.ZoneInfo("America/New_York")
+dt_ny = datetime(2025, 1, 15, 12, 0, tzinfo=ny_tz)
 
-class Boat(Machine):
-    def __init__(self, brand, model):
-        self.brand = brand
-        self.model = model
-    def move(self):
-        print("Sail!")
+# Prevod do Bratislavy
+ba_tz = zoneinfo.ZoneInfo("Europe/Bratislava")
+dt_ba = dt_ny.astimezone(ba_tz)
 
-class Plane(Machine):
-    def __init__(self, brand, model):
-        self.brand = brand
-        self.model = model
-    def move(self):
-        print("Fly!")
+print("New York:", dt_ny)
+print("Bratislava:", dt_ba)
 
-car1 = Car("Ford", "Mustang")
-boat1 = Boat("Ibiza", "Touring 20")
-plane1 = Plane("Boeing", "747")
-
-ntica = (car1, boat1, plane1)
-
-for x in ntica:
-    x.move()
+print("UTC:", dt_ny.astimezone(zoneinfo.ZoneInfo("UTC")))
