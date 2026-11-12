@@ -1,22 +1,41 @@
-import xml.etree.ElementTree as ET
-
-
-tree = ET.parse('people.xml')
-
-root = tree.getroot()
+globalna_premenna = 100
 
 class Person:
-    def __init__(self,name,age):
+    count = 0
+
+    def __init__(self,id,name,surname,age=18):
+        self.id = id
         self.name = name
+        self.surname = surname
         self.age = age
+        Person.count += 1
 
-    def print_data(self):
-        return f'{self.name};{self.age}'
-persons = []
+    def __eq__(self, value):
+        return self.id == value.id
 
-for x in root.findall('person'):
-    persons.append(Person(x.find('name').text,x.find('age').text))
+    def __str__(self):
+        return f"{self.name} {self.surname} ma vek {self.age}"
 
-with open('vysledok.csv','w',encoding='UTF-8') as f:
-    for x in persons:
-        f.write(x.print_data()+ '\n')
+    def je_dospely(self):
+        if self.age >= 18:
+            print("je dospely")
+        else:
+            print("je malolety")
+
+
+class Student(Person):
+    def __init__(self,id,name,surname,age=18,school=None):
+        super().__init__(id,name,surname,age)
+        self.school = school
+
+    def __str__(self):
+        return f"{self.name} {self.surname} ma vek {self.age} a chodi na {self.school}"
+
+p = Person(1,"Vlado","Ruman")
+p2 = Person(2,"Jan","Mrkvicka",85)
+p3 = Person(3,"Jozef","Hrach",74)
+
+s = Student(4,"Peter","Petrovic",22,"gamca")
+
+print(s)
+print(p3)

@@ -9,61 +9,50 @@
 # naskladnenie
 # vyskladnenie
 # produkt sa sklada v poradi nazov, cena, pocet kusov
-produkty = [["voda",2.5,50],["cola",2,100],["pepsi",2.20,150]]
 
 def vypis_skladu():
     for x in produkty:
-        print(f"nazov produktu {x[0]:10}, jednotkova cena {x[1]:10}€, pocet kusov {x[2]:10}")
+        print(f"{x[0]:15}, cena {x[1]:10.2f}€, pocet kusov {x[2]:10}")
 
 def pridanie_tovaru():
     nazov = input("Zadaj nazov tovaru: ")
     for x in produkty:
-        if nazov == x[0]:
-            print("Zadany tovar uz existuje")
+        if nazov in x:
+            print("Tovar uz existuje")
             return
     cena = float(input("Zadaj cenu: "))
     pocet = int(input("Zadaj pocet kusov: "))
     produkty.append([nazov,cena,pocet])
-    print("Produkt bol uspesne pridany")
 
-def odobratie_tovaru():
+def odstranenie_tovaru():
     nazov = input("Zadaj nazov tovaru: ")
-    for x in produkty:
-        if nazov == x[0]:
-            produkty.remove(x)
-            print("Tovar bol uspesne odstraneny")
-            return
-    print("Zadany produkt sa nenasiel")
+    for i,x in enumerate(produkty):
+        if nazov in x:
+                produkty.pop(i)
 
-def hodnota_skladu():
-    hodnota = 0
-    for x in produkty:
-        hodnota += x[1] * x[2]
-    print(f"Hodnota skladu je {hodnota}")
-
+produkty = [["voda",1.0,50],["cola",2.5,100],["pepsi",2,250]]
+#              0     1   2
 while True:
     print("-----MENU-----")
-    print("1. vypis skladu")
-    print("2. pridanie tovaru")
-    print("3. odobratie tovaru")
-    print("4. hodnota skladu")
+    print("1. vypis obsahu skladu")
+    print("2. pridat tovar")
+    print("3. odobrat tovar")
+    print("4. hodnota tovaru na sklade")
     print("0. ukoncenie programu")
-    print()
-    volba = input("Zadaj volbu z MENU: ")
 
-    if volba == '0':
+    volba = input("Zadaj svoju volbu: ")
+
+    if volba == "1":
         print()
-        print("Dovidenia")
-        break
-    elif volba == '1':
-        print("Vypis skladu")
         vypis_skladu()
-    elif volba == '2':
-        pridanie_tovaru()
-    elif volba == '3':
-        odobratie_tovaru()
-    elif volba == '4':
-        hodnota_skladu()
-    else:
         print()
-        print("Zadal si zlu volbu.")
+    elif volba == "2":
+        pridanie_tovaru()
+    elif volba == "3":
+        odstranenie_tovaru()
+    elif volba == "4":
+        pass
+    elif volba == "0":
+        break
+    else:
+        print("Zadal si zlu volbu")

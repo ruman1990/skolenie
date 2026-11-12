@@ -6,20 +6,13 @@
 
 studenti = { 'Jana' : 2 , 'Peter' : 1 , 'Zuzana' : 3 , 'Vlado' : 4}
 
-studenti['Boris'] = 2
+studenti['Marek'] = 2
+priemer = round(sum(studenti.values()) / len(studenti))
 
-print(studenti)
+print(f"Priemerna znamka: {priemer:.2f}, pocet studentov je {len(studenti)}, najhorsia znamka {max(studenti.values())}")
 
-# suma = 0
-# for x in studenti:
-#     suma += studenti[x]
-
-# priemer = suma / len(studenti)
-
-priemer = sum(studenti.values())/len(studenti)
-
-print(priemer)
-
+round(2.5)  # 2
+round(3.5) # 4
 
 # ---------------------------------------------------------
 
@@ -27,14 +20,19 @@ print(priemer)
 # Zadanie:
 # Vytvor zoznam, kde každý prvok je slovník s informáciami o knihe (nazov, autor, rok).
 # Pridaj 3 knihy a vypíš názvy všetkých kníh vydaných po roku 2010.
-zoznam = [{"nazov" : "Python Guru" , "autor" : "Guru" , "rok" : 2005},
-          {"nazov" : "Python Guru II" , "autor" : "Guru" , "rok" : 2017},
-          {"nazov" : "Python Guru III" , "autor" : "Guru" , "rok" : 2025}]
 
-for x in zoznam:
-    if x['rok'] > 2010:
-        print(x['nazov'])
+knihy = [
+    {'nazov': 'Kubko sa uci rozpravat', 'autor': 'Marta Galewska-Kustra', 'rok': 2020},
+    {'nazov': 'Rozprávky o psíkovi a mačičke', 'autor': 'Josef Capek', 'rok': 1940},
+    {'nazov': 'Budkovo', 'autor': 'Zuzana Smatanova', 'rok': 2025}
+]
+ 
+for kniha in knihy:
+    if kniha['rok'] > 2010:
+        print(f"Nazov knihy vydanej po roku 2010 : {kniha['nazov']}")
 
+print()
+print()
 # ---------------------------------------------------------
 
 # Priklad 3: Základná trieda Kniha (objekty)
@@ -42,22 +40,21 @@ for x in zoznam:
 # Vytvor triedu Kniha, ktorá má atribúty nazov, autor a rok.
 # Vytvor objekt a vypíš o ňom informácie.
 class Kniha:
-    def __init__(self,nazov,autor,rok):
+    def __init__(self, nazov, autor, rok):
         self.nazov = nazov
         self.autor = autor
         self.rok = rok
-
+ 
     def __str__(self):
-        return f"{self.nazov}, autor je {self.autor}, rok vydania {self.rok}"
+        return f"Nazov: {self.nazov}, Autor: {self.autor}, Rok: {self.rok}"    
 
-    def vypis_info(self):
-        print(f"{self.nazov}, autor je {self.autor}, rok vydania {self.rok}")
+knihy_zoznam = []
+for x in knihy:
+    #knihy_zoznam.append(Kniha(x['nazov'],x['autor'],x['rok']))
+    knihy_zoznam.append(Kniha(*x.values()))
 
-zoznam = [Kniha("Python Guru","Guru",2005),Kniha("Python Guru II","Guru",2015),Kniha("Python Guru","Guru",2025)]
 
-for x in zoznam:
-    if x.rok > 2010:
-        print(x.vypis_info())
+
 
 # ---------------------------------------------------------
 
@@ -65,17 +62,16 @@ for x in zoznam:
 # Zadanie:
 # Vytvor triedu EKniha, ktorá dedí z Kniha a má navyše atribut velkost_MB.
 # Prepis metódu vypis_info tak, aby vypísala aj veľkosť súboru.
-
 class EKniha(Kniha):
-    def __init__(self,nazov,autor,rok,velkost_MB):
+
+    def __init__(self, nazov, autor, rok, velkost_MB=10):
         super().__init__(nazov,autor,rok)
         self.velkost_MB = velkost_MB
-     
+
     def __str__(self):
-        return f"{super().__str__()}, velkost {self.velkost_MB}"
+            return f"{super().__str__()}, Velkost v MB {self.velkost_MB}"    
 
-zoznam.append(EKniha("Java Guru","Guru",2002,10))
-
+knihy_zoznam.append(EKniha('Budkovo II','Zuzana Smatanova',2027,25))
 
 
 # ---------------------------------------------------------
@@ -84,19 +80,20 @@ zoznam.append(EKniha("Java Guru","Guru",2002,10))
 # Zadanie:
 # Vytvor triedu StaraKniha, ktorá dedí z Kniha a má metódu je_historicka(),
 # ktorá vráti True ak bola vydaná pred rokom 1950.
-
 class StaraKniha(Kniha):
+
     def je_historicka(self):
         return self.rok < 1950
 
     def __str__(self):
-        return f"{super().__str__()}, je historicka {k.je_historicka()}"
+                return f"{super().__str__()}, historicka {self.je_historicka()}"    
 
-k = StaraKniha("1984","Orwell",1948)
-zoznam.append(k)
+s = StaraKniha("1984","George Orwell",1948)
+knihy_zoznam.append(s)
 
-print(f"Je historicka: {k.je_historicka()}")
+print(s.je_historicka())
 
 
-for x in zoznam:
+for x in knihy_zoznam:
     print(x)
+            

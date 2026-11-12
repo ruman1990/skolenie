@@ -4,31 +4,13 @@
 # #    (Použite aspoň for cyklus, while cyklus, rekurziu, list comprehension alebo iný spôsob.)
 sprava = "hello there"
 
-
 # # 2. Vytvorte z premennej vals n-ticu (tuple) unikátnych hodnôt.
 
 vals = [1, 1, 1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 6, 7, 8, 9, 10]
 
 
-
-# # 3. Vyfiltrujte slová, ktoré obsahujú písmeno 'r'.
-
-words = [
-     'worD', 'sky', 'tomorrow', 'cat', 'dog', 'apple', 'orange', 'banana',
-     'sMall', 'terrific', 'alternative', 'book', 'dictionaRy', 'word'
-]
-
-
-
-
-
-
-
 # # 4. Stiahnite JSON zo stránky a vypíšte všetky emaily používateľov.
 # #    URL: https://jsonplaceholder.typicode.com/users
-
-
-
 
 
 # 5. Práca so zoznamom miest:
@@ -52,6 +34,8 @@ cities = [
     {"id": 16, "name": "Bangkok", "population": 10539000},
     {"id": 17, "name": "Toronto", "population": 2930000}
 ]
+
+print()
 
 # Úlohy:
 # a) Vypíšte prvých 5 miest.

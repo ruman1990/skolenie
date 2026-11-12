@@ -1,14 +1,15 @@
-import xml.etree.ElementTree as ET
+from datetime import datetime
+import zoneinfo
 
-data = ET.Element('data')
+# Pôvodný čas v New Yorku
+ny_tz = zoneinfo.ZoneInfo("America/New_York")
+dt_ny = datetime(2025, 1, 15, 12, 0, tzinfo=ny_tz)
 
-person1 = ET.SubElement(data, 'person')
-ET.SubElement(person1, 'name').text = 'Janko'
-ET.SubElement(person1, 'age').text = '30'
+# Prevod do Bratislavy
+ba_tz = zoneinfo.ZoneInfo("Europe/Bratislava")
+dt_ba = dt_ny.astimezone(ba_tz)
 
-person2 = ET.SubElement(data, 'person')
-ET.SubElement(person2, 'name').text = 'Eva'
-ET.SubElement(person2, 'age').text = '25'
+print("New York:", dt_ny)
+print("Bratislava:", dt_ba)
 
-tree = ET.ElementTree(data)
-tree.write('novi_ludia.xml', encoding='utf-8', xml_declaration=True)
+print("UTC:", dt_ny.astimezone(zoneinfo.ZoneInfo("UTC")))

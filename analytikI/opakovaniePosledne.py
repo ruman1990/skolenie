@@ -6,10 +6,9 @@
 # KL101	Amsterdam	Madrid	220	Boeing 737
 # LX202	Ženeva	Brusel	170	Boeing 737
 
-
+# 1. Vytvorenie letov pomocou namedtuple nazov Let a atributy cislo, odlet, ciel, pocet_pasazierov
 
 # 2. Prevod na dataclass, pridanie typu lietadla
-
 
 #print(zoznam)
 # 3. Uloženie do Excelu (openpyxl)
@@ -18,9 +17,7 @@
 # 4. Uloženie do Postgre (psycopg2)
 
 
+
 # 5. spocitaj pocet pasazierov celkovo pomocou sql a cez python
 
-
 #6. vypis vsetky lety do Pariza a kolko ich je cez sql a python 
-
-

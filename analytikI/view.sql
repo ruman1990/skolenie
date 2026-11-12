@@ -1,14 +1,15 @@
-CREATE VIEW objednavka_view AS
-SELECT op.objednavka_id,
-    op.mnozstvo,
-    op.cena,
-    o.typ,
-    o.datum,
-    p.nazov,
-    d.nazov AS dodavatel,
-    od.nazov AS odberatel
-   FROM objednavky_produkty op
-     JOIN objednavky o ON op.objednavka_id = o.id
-     JOIN produkty p ON p.id = op.produkt_id
-     LEFT JOIN dodavatelia d ON d.id = o.dodavatel_id
-     LEFT JOIN odberatelia od ON od.id = o.odberatel_id;
+-- nazov produktov, nazov dodavatela, odberatela, cenu, mnozstvo, datum objednavky, typ objednavky
+create view vlado.objednavka_view AS
+select op.objednavka_id,
+		op.mnozstvo,
+		op.cena,
+		o.typ,
+		o.datum,
+		p.nazov,
+		case when o.typ = 'odberatelska' then od.nazov
+		when o.typ = 'dodavatelska' then d.nazov else null end as spolocnost
+	from vlado.objednavky_produkty op 
+		join vlado.objednavky o on op.objednavka_id=o.id 
+		join vlado.produkty p on op.produkt_id=p.id
+		left join vlado.dodavatelia d on o.dodavatel_id=d.id
+		left join vlado.odberatelia od on o.odberatel_id=od.id

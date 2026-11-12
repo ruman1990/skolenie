@@ -1,4 +1,7 @@
 # -- Definovanie funkcie bez parametrov --
+from typing import Iterable
+
+
 def my_function():
     print("Hello from a function")
 
