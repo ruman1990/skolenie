@@ -1,1 +1,1 @@
-ahojČ
+produkt,pocet_vyskladneni,posledny_datum_cas\nrohlik,1,2025-07-21 08:10:01\nkava,1,2025-07-21 08:14:40\ncukor,1,2025-07-21 08:17:56\nmuka,2,2025-07-21 09:18:55\n
