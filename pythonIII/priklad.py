@@ -1,6 +1,10 @@
-import secrets
-import string
+import requests
 
-abeceda = "abcdefgijklmnoprstuvyzqwxABCDEFGHIJKLMNOPRS" + "0123456789" + "!@#$%^&*"
-heslo = ''.join(secrets.choice(abeceda) for _ in range(12))
-print(heslo)  # napr. 'b7V$u19@GwLs'
+url = "http://127.0.0.1:5500/hotovo.csv"
+
+response = requests.get(url)
+
+print(response.status_code)   # 201 = Created
+print(response.text)        # odpoveď s uloženým objektom
+
+

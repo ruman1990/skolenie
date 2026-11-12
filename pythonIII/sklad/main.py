@@ -11,8 +11,9 @@
 # produkt sa sklada v poradi nazov, cena, pocet kusov
 #produkty = [["voda",2.5,50],["cola",2,100],["pepsi",2.20,150]]
 from sklad import Sklad
+import os
 
-sklad = Sklad("test")
+sklad = Sklad("sklad")
 
 while True:
     print("-----MENU-----")
@@ -20,6 +21,8 @@ while True:
     print("2. pridanie tovaru")
     print("3. odobratie tovaru")
     print("4. hodnota skladu")
+    print("5. export do csv")
+    print("6. export do json")
     print("0. ukoncenie programu")
     print()
     volba = input("Zadaj volbu z MENU: ")
@@ -37,6 +40,11 @@ while True:
         sklad.odobratie_tovaru()
     elif volba == '4':
         sklad.hodnota_skladu()
+        sklad._ulozenie_do_databazy()
+    elif volba == '5':
+        sklad.export_skladu('csv')
+    elif volba == '6':
+        sklad.export_skladu('json')
     else:
         print()
         print("Zadal si zlu volbu.")

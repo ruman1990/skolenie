@@ -30,7 +30,7 @@ print(v)
 # 3. List comprehension s podmienkou vo vnútri – nahraď záporné čísla nulou, ostatné nechaj.
 # Vstup: [-3, -1, 0, 2, 4]
 cisla = [-3, -1, 0, 2, 4]
-nulove = [x if x>=0 else 0 for x in cisla]
+nulove = [x if x>=0 else 0 for x in cisla if x < -100]
 print(nulove)
 
 v = []
@@ -94,5 +94,7 @@ print(sorted(v,key=lambda w: len(w),reverse=True))
 a = [1, 2, 3]
 b = [10, 20, 30]
 
-sums = [(lambda x,y : x+y)(x,y) for x,y in zip(a,b)]
+def s(x,y): return x + y
+
+sums = [s(x,y) for x,y in zip(a,b)]
 print(sums)

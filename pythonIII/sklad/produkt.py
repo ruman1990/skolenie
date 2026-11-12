@@ -9,3 +9,13 @@ class Produkt:
 
     def get_value(self):
         return self.cena * self.pocet
+
+    def get_as_list(self):
+        return [self.nazov,self.cena,self.pocet]
+
+    def to_dict(self):
+        return {
+            "nazov" : self.nazov,
+            "cena" : self.cena,
+            "pocet" : self.pocet
+        }

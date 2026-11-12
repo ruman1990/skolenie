@@ -42,10 +42,10 @@ with open("auta.csv","r",encoding="utf-8") as f:
     cur.execute("select count(*) from auta where rok_vyroby<?",(current_year-5,))
     print(f"Pocet aut starsich ako 5 rokov je {cur.fetchone()[0]}")
 
-    vysledok = []
-    for x in data:
-        if int(x[2]) < current_year-5:
-            vysledok.append(x)
+    vysledok = list(filter(lambda x : int(x[2]) < current_year-5,data))
+    # for x in data:
+    #     if int(x[2]) < current_year-5:
+    #         vysledok.append(x)
 
     print(f"Pocet aut starsich ako 5 rokov je {len(vysledok)}")
 
@@ -60,12 +60,12 @@ with open("auta.csv","r",encoding="utf-8") as f:
 
     print()
 
-    vysledok = []
-    for x in data:
-        if Decimal(x[3]) > 20000:
-            vysledok.append(x)
-
-    vysledok.sort(reverse=True)
+    vysledok = list(filter(lambda x : Decimal(x[3]) > 20000,data))
+    # for x in data:
+    #     if Decimal(x[3]) > 20000:
+    #         vysledok.append(x)
+    #vysledok = sorted(vysledok,key=lambda x: x[3],reverse=True)
+    vysledok.sort(key=lambda x: x[3],reverse=True)
     for x in vysledok:
             print(f"{x[0]}, {x[1]}, {x[3]}")
 #znacka,model,rok_vyroby,cena
