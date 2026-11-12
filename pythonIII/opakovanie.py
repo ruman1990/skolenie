@@ -17,9 +17,9 @@ for riadok in riadky:
  
         produkty[produkt].append(datum_cas)
 
-with open("pythonIII/vysledky2.txt", "w", encoding="utf-8") as f:
+with open("pythonIII/vysledky2.csv", "w", encoding="utf-8") as f:
     for produkt, udaje in produkty.items():
-        f.write(f"{produkt}, {len(udaje)}, {udaje[-1]}\n")
+        f.write(f"{produkt}; {len(udaje)}; {udaje[-1]}\n")
 
 # Pre každý riadok zisti, či ide o vyskladnenie produktu.
 # Vyfiltruj len tie riadky, kde bolo vyskladnenie úspešné (neobsahuje „Chyba“).
